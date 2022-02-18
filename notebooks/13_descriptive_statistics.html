@@ -1,0 +1,2216 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 1.3 — Descriptive statistics &#8212; No BS Stats Notebooks</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../tutorials/appendix.html" />
+    <link rel="prev" title="Chapter 1 — Data" href="10_data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">No BS Stats Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   No Bullshit Stats Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../stats_overview/00_Introduction.html">
+   Statistics overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats_overview/01_DATA.html">
+     Chapter 1: DATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats_overview/02_PROB.html">
+     Chapter 2: Probability theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats_overview/03_STATS.html">
+     Chapter 3: Inferential statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats_overview/04_LINEAR_MODELS.html">
+     Chapter 4: Linear models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="10_data.html">
+   Chapter 1 — Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Section 1.3 — Descriptive statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/appendix.html">
+   Appendix
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/intro_to_python.html">
+     Appendix C — Introduction to Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/intro_to_pandas.html">
+     Appendix D — Introduction to Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/data_visualization_with_seaborn.html">
+     Appendix E — Data visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/13_descriptive_statistics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/minireference/noBSstatsnotebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fnotebooks/13_descriptive_statistics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./notebooks/13_descriptive_statistics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Section 1.3 — Descriptive statistics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebooks-setup">
+     Notebooks setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-students-dataset-from-csv">
+     Load the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       students
+      </span>
+     </code>
+     dataset from CSV
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-look-at-the-data">
+     Let’s look at the data…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#describing-numeric-data">
+   Describing numeric data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#min-max-and-median">
+     Min, max, and median
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-variance-and-standard-deviation">
+     Mean, variance, and standard deviation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histograms">
+     Histograms
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quartiles-and-box-plots">
+     Quartiles and box plots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-summary-statistics">
+     All summary statistics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-two-numeric-variables">
+     Comparing two numeric variables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariance-and-correlation">
+       Covariance and correlation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-numerical-variables">
+     Multiple numerical variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorical-data">
+   Categorical data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-two-categodescribeal-variables">
+     Comparing two categodescribeal variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explanations">
+     Explanations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-for-median">
+       Code for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         median
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-for-quantile">
+       Code for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         quantile
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Section 1.3 — Descriptive statistics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Section 1.3 — Descriptive statistics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebooks-setup">
+     Notebooks setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-students-dataset-from-csv">
+     Load the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       students
+      </span>
+     </code>
+     dataset from CSV
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-look-at-the-data">
+     Let’s look at the data…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#describing-numeric-data">
+   Describing numeric data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#min-max-and-median">
+     Min, max, and median
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-variance-and-standard-deviation">
+     Mean, variance, and standard deviation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histograms">
+     Histograms
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quartiles-and-box-plots">
+     Quartiles and box plots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-summary-statistics">
+     All summary statistics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-two-numeric-variables">
+     Comparing two numeric variables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariance-and-correlation">
+       Covariance and correlation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-numerical-variables">
+     Multiple numerical variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorical-data">
+   Categorical data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-two-categodescribeal-variables">
+     Comparing two categodescribeal variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explanations">
+     Explanations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-for-median">
+       Code for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         median
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-for-quantile">
+       Code for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         quantile
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="section-1-3-descriptive-statistics">
+<h1>Section 1.3 — Descriptive statistics<a class="headerlink" href="#section-1-3-descriptive-statistics" title="Permalink to this headline">¶</a></h1>
+<p>This notebook contains all the code from <a class="reference external" href="https://minireference.com/static/excerpts/noBSstats/descriptive_statistics.pdf">Section 1.3 Descriptive Statistics</a> in the <strong>No Bullshit Guide to Statistics</strong>.</p>
+<p>All the data manipulations are done using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library,
+and data visualizations are based on the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> library.</p>
+<p>Code cells containing an <code class="docutils literal notranslate"><span class="pre">ALT</span></code> comment and commented out show alternative way for computing the same quantities or additional details that were not included in the book. It’s up to you if you want to learn about these alternative options—just uncomment the code and execute.</p>
+<div class="section" id="notebooks-setup">
+<h2>Notebooks setup<a class="headerlink" href="#notebooks-setup" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pandas setup</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.precision&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Figures setup</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span>
+    <span class="n">context</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;colorblind&quot;</span><span class="p">,</span>
+    <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">)},</span>
+<span class="p">)</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-the-students-dataset-from-csv">
+<h2>Load the <code class="docutils literal notranslate"><span class="pre">students</span></code> dataset from CSV<a class="headerlink" href="#load-the-students-dataset-from-csv" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;students.csv&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">io</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">student_ID,background,curriculum,effort,score</span>
+<span class="s2">1,arts,debate,10.96,75</span>
+<span class="s2">2,science,lecture,8.69,75</span>
+<span class="s2">3,arts,debate,8.6,67</span>
+<span class="s2">4,arts,lecture,7.92,70.3</span>
+<span class="s2">5,science,debate,9.9,76.1</span>
+<span class="s2">6,business,debate,10.8,79.8</span>
+<span class="s2">7,science,lecture,7.81,72.7</span>
+<span class="s2">8,business,lecture,9.13,75.4</span>
+<span class="s2">9,business,lecture,5.21,57</span>
+<span class="s2">10,science,lecture,7.71,69</span>
+<span class="s2">11,business,debate,9.82,70.4</span>
+<span class="s2">12,arts,debate,11.53,96.2</span>
+<span class="s2">13,science,debate,7.1,62.9</span>
+<span class="s2">14,science,lecture,6.39,57.6</span>
+<span class="s2">15,arts,debate,12,84.3</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;student_ID&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-look-at-the-data">
+<h2>Let’s look at the data…<a class="headerlink" href="#let-s-look-at-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>background</th>
+      <th>curriculum</th>
+      <th>effort</th>
+      <th>score</th>
+    </tr>
+    <tr>
+      <th>student_ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>arts</td>
+      <td>debate</td>
+      <td>10.96</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>science</td>
+      <td>lecture</td>
+      <td>8.69</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>arts</td>
+      <td>debate</td>
+      <td>8.60</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>arts</td>
+      <td>lecture</td>
+      <td>7.92</td>
+      <td>70.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>science</td>
+      <td>debate</td>
+      <td>9.90</td>
+      <td>76.1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>business</td>
+      <td>debate</td>
+      <td>10.80</td>
+      <td>79.8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>science</td>
+      <td>lecture</td>
+      <td>7.81</td>
+      <td>72.7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>business</td>
+      <td>lecture</td>
+      <td>9.13</td>
+      <td>75.4</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>business</td>
+      <td>lecture</td>
+      <td>5.21</td>
+      <td>57.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>science</td>
+      <td>lecture</td>
+      <td>7.71</td>
+      <td>69.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>business</td>
+      <td>debate</td>
+      <td>9.82</td>
+      <td>70.4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>arts</td>
+      <td>debate</td>
+      <td>11.53</td>
+      <td>96.2</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>science</td>
+      <td>debate</td>
+      <td>7.10</td>
+      <td>62.9</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>science</td>
+      <td>lecture</td>
+      <td>6.39</td>
+      <td>57.6</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>arts</td>
+      <td>debate</td>
+      <td>12.00</td>
+      <td>84.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># what type of object is `students`?</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rows</span>
+<span class="n">students</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], dtype=&#39;int64&#39;, name=&#39;student_ID&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># columns</span>
+<span class="n">students</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;background&#39;, &#39;curriculum&#39;, &#39;effort&#39;, &#39;score&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># info about memory and data types of each column</span>
+<span class="n">students</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 15 entries, 1 to 15
+Data columns (total 4 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   background  15 non-null     object 
+ 1   curriculum  15 non-null     object 
+ 2   effort      15 non-null     float64
+ 3   score       15 non-null     float64
+dtypes: float64(2), object(2)
+memory usage: 600.0+ bytes
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="describing-numeric-data">
+<h1>Describing numeric data<a class="headerlink" href="#describing-numeric-data" title="Permalink to this headline">¶</a></h1>
+<p>Let’s look at the <code class="docutils literal notranslate"><span class="pre">score</span></code> variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([57. , 57.6, 62.9, 67. , 69. , 70.3, 70.4, 72.7, 75. , 75. , 75.4,
+       76.1, 79.8, 84.3, 96.2])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT</span>
+<span class="c1"># sorted(students[&#39;score&#39;])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="min-max-and-median">
+<h2>Min, max, and median<a class="headerlink" href="#min-max-and-median" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>96.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>  <span class="c1"># Range</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72.7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">,</span> <span class="n">jitter</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;score&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_24_1.png" src="../_images/13_descriptive_statistics_24_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT  also show mean via https://stackoverflow.com/a/67579487/127114</span>
+<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(7,2)}):</span>
+<span class="c1">#     sns.stripplot(x=&quot;score&quot;, data=students, jitter=0.03, alpha=0.6)</span>
+<span class="c1">#     color0 = sns.color_palette()[0]</span>
+<span class="c1">#     sns.boxplot(showmeans=True,</span>
+<span class="c1">#                 meanline=True,</span>
+<span class="c1">#                 meanprops={&#39;color&#39;: color0, &#39;ls&#39;: &#39;-&#39;, &#39;lw&#39;: 2},</span>
+<span class="c1">#                 medianprops={&#39;visible&#39;: False},</span>
+<span class="c1">#                 whiskerprops={&#39;visible&#39;: False},</span>
+<span class="c1">#                 zorder=10,</span>
+<span class="c1">#                 x=&quot;score&quot;,</span>
+<span class="c1">#                 data=students,</span>
+<span class="c1">#                 showfliers=False,</span>
+<span class="c1">#                 showbox=False,</span>
+<span class="c1">#                 showcaps=False)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mean-variance-and-standard-deviation">
+<h2>Mean, variance, and standard deviation<a class="headerlink" href="#mean-variance-and-standard-deviation" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72.58
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>  <span class="c1"># sample variance, 1/(n-1) EE(x-mean)^2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.58600000000001
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.979278531036199
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT -- calculated using populaiton formulas</span>
+<span class="c1"># students[&quot;score&quot;].var(ddof=0)  # population variance, 1/n EE(x-mean)^2  (no bias-correction)</span>
+<span class="c1"># students[&quot;score&quot;].std(ddof=0)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="histograms">
+<h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(49.999, 60.0]    2
+(60.0, 70.0]      3
+(70.0, 80.0]      8
+(80.0, 90.0]      1
+(90.0, 100.0]     1
+Name: score, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># note mode is the bin 70--80, which contains 8 values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">,</span>
+             <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;score&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_35_1.png" src="../_images/13_descriptive_statistics_35_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT using Pandas plotting capabilities</span>
+<span class="c1"># students[&#39;score&#39;].hist(bins=[50,60,70,80,90,100])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quartiles-and-box-plots">
+<h2>Quartiles and box plots<a class="headerlink" href="#quartiles-and-box-plots" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q1</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">Q1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Q2 = median</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72.7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q3</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">Q3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75.75
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+<span class="n">IQR</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.75
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT use iqr function from scipy</span>
+<span class="c1"># from scipy import stats</span>
+<span class="c1"># stats.iqr(students[&quot;score&quot;])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># box plot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;score&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_44_1.png" src="../_images/13_descriptive_statistics_44_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="all-summary-statistics">
+<h2>All summary statistics<a class="headerlink" href="#all-summary-statistics" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    15.00
+mean     72.58
+std       9.98
+min      57.00
+25%      68.00
+50%      72.70
+75%      75.75
+max      96.20
+Name: score, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[[</span><span class="s2">&quot;score&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>score</th>
+      <td>15.0</td>
+      <td>72.58</td>
+      <td>9.98</td>
+      <td>57.0</td>
+      <td>68.0</td>
+      <td>72.7</td>
+      <td>75.75</td>
+      <td>96.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="comparing-two-numeric-variables">
+<h2>Comparing two numeric variables<a class="headerlink" href="#comparing-two-numeric-variables" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;effort&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;effort&#39;, ylabel=&#39;score&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_49_1.png" src="../_images/13_descriptive_statistics_49_1.png" />
+</div>
+</div>
+<div class="section" id="covariance-and-correlation">
+<h3>Covariance and correlation<a class="headerlink" href="#covariance-and-correlation" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[[</span><span class="s2">&quot;effort&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>effort</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>effort</th>
+      <td>3.8</td>
+      <td>17.10</td>
+    </tr>
+    <tr>
+      <th>score</th>
+      <td>17.1</td>
+      <td>99.59</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[[</span><span class="s2">&quot;effort&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>effort</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>effort</th>
+      <td>1.00</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <th>score</th>
+      <td>0.88</td>
+      <td>1.00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-numerical-variables">
+<h2>Multiple numerical variables<a class="headerlink" href="#multiple-numerical-variables" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;curriculum&quot;</span><span class="p">)[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>curriculum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>debate</th>
+      <td>8.0</td>
+      <td>76.46</td>
+      <td>10.52</td>
+      <td>62.9</td>
+      <td>69.55</td>
+      <td>75.55</td>
+      <td>80.92</td>
+      <td>96.2</td>
+    </tr>
+    <tr>
+      <th>lecture</th>
+      <td>7.0</td>
+      <td>68.14</td>
+      <td>7.76</td>
+      <td>57.0</td>
+      <td>63.30</td>
+      <td>70.30</td>
+      <td>73.85</td>
+      <td>75.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;curriculum&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;score&#39;, ylabel=&#39;curriculum&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_56_1.png" src="../_images/13_descriptive_statistics_56_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;curriculum&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;score&#39;, ylabel=&#39;curriculum&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_57_1.png" src="../_images/13_descriptive_statistics_57_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># histograms</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># prepare data</span>
+<span class="n">dscores</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;curriculum&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;debate&quot;</span><span class="p">]</span>
+<span class="n">lscores</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;curriculum&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;lecture&quot;</span><span class="p">]</span>
+
+<span class="c1"># select colors to use for the two groups  </span>
+<span class="n">blue</span><span class="p">,</span> <span class="n">yellow</span>  <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># plot histograms</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">dscores</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">lscores</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">yellow</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>
+
+<span class="c1"># add labels</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;debate&quot;</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lecture&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd1689ce850&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_58_1.png" src="../_images/13_descriptive_statistics_58_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT grouped bar charts</span>
+<span class="c1"># sns.histplot(x=&quot;score&quot;, hue=&quot;curriculum&quot;, data=students,</span>
+<span class="c1">#              bins=bins, multiple=&quot;dodge&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT use `displot` with curriculum as row-variable</span>
+<span class="c1"># bins = [50, 60, 70, 80, 90, 100]</span>
+<span class="c1"># sns.displot(x=&#39;score&#39;, row=&#39;curriculum&#39;, data=students,</span>
+<span class="c1">#             hue=&#39;curriculum&#39;, alpha=0.8, bins=bins, aspect=3.3, height=2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">mean</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;curriculum&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">,</span>
+            <span class="n">estimator</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;curriculum&#39;, ylabel=&#39;score&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_61_1.png" src="../_images/13_descriptive_statistics_61_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="categorical-data">
+<h1>Categorical data<a class="headerlink" href="#categorical-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>student_ID
+1         arts
+2      science
+3         arts
+4         arts
+5      science
+6     business
+7      science
+8     business
+9     business
+10     science
+11    business
+12        arts
+13     science
+14     science
+15        arts
+Name: background, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count          15
+unique          3
+top       science
+freq            6
+Name: background, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># frequencies</span>
+<span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arts        5
+business    4
+science     6
+Name: background, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># relative frequencies</span>
+<span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>science     0.40
+arts        0.33
+business    0.27
+Name: background, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT</span>
+<span class="c1"># students[&quot;background&quot;].value_counts() / len(students[&quot;background&quot;])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT  combiend table with both frequency and relative frequency</span>
+<span class="c1"># df2 = pd.DataFrame({</span>
+<span class="c1">#     &quot;frequency&quot;: students[&quot;background&quot;].value_counts(),</span>
+<span class="c1">#     &quot;relative frequency&quot;: students[&quot;background&quot;].value_counts(normalize=True)</span>
+<span class="c1"># })</span>
+<span class="c1"># df2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bar chart of counts</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;background&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_70_1.png" src="../_images/13_descriptive_statistics_70_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT bar chart with relative frequencies</span>
+<span class="c1"># df3 = (students[&quot;background&quot;]</span>
+<span class="c1">#  .value_counts(normalize=True)</span>
+<span class="c1">#  .sort_index()</span>
+<span class="c1">#  .rename(&quot;relative frequency&quot;)</span>
+<span class="c1">#  .rename_axis(&quot;background&quot;)</span>
+<span class="c1">#  .reset_index()</span>
+<span class="c1"># )</span>
+<span class="c1"># sns.barplot(x=&quot;background&quot;, y=&quot;relative frequency&quot;, data=df3)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="comparing-two-categodescribeal-variables">
+<h2>Comparing two categodescribeal variables<a class="headerlink" href="#comparing-two-categodescribeal-variables" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[[</span><span class="s2">&quot;background&quot;</span><span class="p">,</span><span class="s2">&quot;curriculum&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>background</th>
+      <th>curriculum</th>
+    </tr>
+    <tr>
+      <th>student_ID</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>arts</td>
+      <td>debate</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>science</td>
+      <td>lecture</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>arts</td>
+      <td>debate</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>arts</td>
+      <td>lecture</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>science</td>
+      <td>debate</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>business</td>
+      <td>debate</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>science</td>
+      <td>lecture</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>business</td>
+      <td>lecture</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>business</td>
+      <td>lecture</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>science</td>
+      <td>lecture</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>business</td>
+      <td>debate</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>arts</td>
+      <td>debate</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>science</td>
+      <td>debate</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>science</td>
+      <td>lecture</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>arts</td>
+      <td>debate</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># joint frequencies</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;curriculum&quot;</span><span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">],</span>
+            <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">margins_name</span><span class="o">=</span><span class="s2">&quot;TOTAL&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>background</th>
+      <th>arts</th>
+      <th>business</th>
+      <th>science</th>
+      <th>TOTAL</th>
+    </tr>
+    <tr>
+      <th>curriculum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>debate</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>lecture</th>
+      <td>1</td>
+      <td>2</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>TOTAL</th>
+      <td>5</td>
+      <td>4</td>
+      <td>6</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># joint relative frequencies</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;curriculum&quot;</span><span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">],</span>
+            <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">margins_name</span><span class="o">=</span><span class="s2">&quot;TOTAL&quot;</span><span class="p">,</span>
+            <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>background</th>
+      <th>arts</th>
+      <th>business</th>
+      <th>science</th>
+      <th>TOTAL</th>
+    </tr>
+    <tr>
+      <th>curriculum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>debate</th>
+      <td>0.27</td>
+      <td>0.13</td>
+      <td>0.13</td>
+      <td>0.53</td>
+    </tr>
+    <tr>
+      <th>lecture</th>
+      <td>0.07</td>
+      <td>0.13</td>
+      <td>0.27</td>
+      <td>0.47</td>
+    </tr>
+    <tr>
+      <th>TOTAL</th>
+      <td>0.33</td>
+      <td>0.27</td>
+      <td>0.40</td>
+      <td>1.00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;curriculum&quot;</span><span class="p">,</span>
+              <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;background&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_78_1.png" src="../_images/13_descriptive_statistics_78_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;curriculum&quot;</span><span class="p">,</span>
+             <span class="n">data</span><span class="o">=</span><span class="n">students</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;background&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_79_1.png" src="../_images/13_descriptive_statistics_79_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT  using displot</span>
+<span class="c1"># sns.displot(data=students, x=&quot;background&quot;, hue=&quot;curriculum&quot;, multiple=&quot;stack&quot;, shrink=0.8)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # ALT2  using Pandas plot function for crosstab</span>
+<span class="c1"># pd.crosstab(</span>
+<span class="c1">#     index=students[&quot;curriculum&quot;],</span>
+<span class="c1">#     columns=students[&quot;background&quot;],</span>
+<span class="c1"># ).T.plot(kind=&quot;bar&quot;, stacked=True, rot=0)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # stacked joint relative frequencies</span>
+<span class="c1"># sns.histplot(x=&quot;background&quot;, hue=&quot;curriculum&quot;,</span>
+<span class="c1">#              data=students, shrink=.7,</span>
+<span class="c1">#              multiple=&quot;stack&quot;, stat=&quot;proportion&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># curriculum relative frequencies conditional on background</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;curriculum&quot;</span><span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">],</span>
+            <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">margins_name</span><span class="o">=</span><span class="s2">&quot;TOTAL&quot;</span><span class="p">,</span>
+            <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>background</th>
+      <th>arts</th>
+      <th>business</th>
+      <th>science</th>
+      <th>TOTAL</th>
+    </tr>
+    <tr>
+      <th>curriculum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>debate</th>
+      <td>0.8</td>
+      <td>0.5</td>
+      <td>0.33</td>
+      <td>0.53</td>
+    </tr>
+    <tr>
+      <th>lecture</th>
+      <td>0.2</td>
+      <td>0.5</td>
+      <td>0.67</td>
+      <td>0.47</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ct1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;curriculum&quot;</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">],</span>
+    <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">axct1</span> <span class="o">=</span> <span class="n">ct1</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.02</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;conditional relative frequency&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;conditional relative frequency&#39;)
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_84_1.png" src="../_images/13_descriptive_statistics_84_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># background relative frequencies conditional on curriculum</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;curriculum&quot;</span><span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">],</span>
+            <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">margins_name</span><span class="o">=</span><span class="s2">&quot;TOTAL&quot;</span><span class="p">,</span>
+            <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>background</th>
+      <th>arts</th>
+      <th>business</th>
+      <th>science</th>
+    </tr>
+    <tr>
+      <th>curriculum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>debate</th>
+      <td>0.50</td>
+      <td>0.25</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>lecture</th>
+      <td>0.14</td>
+      <td>0.29</td>
+      <td>0.57</td>
+    </tr>
+    <tr>
+      <th>TOTAL</th>
+      <td>0.33</td>
+      <td>0.27</td>
+      <td>0.40</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ct2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;curriculum&quot;</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">students</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">],</span>
+    <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">axct2</span> <span class="o">=</span> <span class="n">ct2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;barh&quot;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.02</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;conditional relative frequency&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;conditional relative frequency&#39;)
+</pre></div>
+</div>
+<img alt="../_images/13_descriptive_statistics_86_1.png" src="../_images/13_descriptive_statistics_86_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="explanations">
+<h2>Explanations<a class="headerlink" href="#explanations" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="code-for-median">
+<h3>Code for <code class="docutils literal notranslate"><span class="pre">median</span></code><a class="headerlink" href="#code-for-median" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">median</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">svalues</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>            <span class="c1"># Case A: n is odd</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">svalues</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>                     <span class="c1"># Case B: n is even</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">svalues</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">svalues</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">median</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="code-for-quantile">
+<h3>Code for <code class="docutils literal notranslate"><span class="pre">quantile</span></code><a class="headerlink" href="#code-for-quantile" title="Permalink to this headline">¶</a></h3>
+<p>The function <code class="docutils literal notranslate"><span class="pre">quantile</span></code> below:</p>
+<ul class="simple">
+<li><p>Compute the <code class="docutils literal notranslate"><span class="pre">q</span></code>th quantile of the list <code class="docutils literal notranslate"><span class="pre">values</span></code> using linear interpolation.</p></li>
+<li><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">quantile(values,</span> <span class="pre">q,</span> <span class="pre">method=&quot;linear&quot;)</span></code> in <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
+<li><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">quantile(values,</span> <span class="pre">q,</span> <span class="pre">type=7)</span></code> in R.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="n">svalues</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">q</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">g</span><span class="p">)</span><span class="o">*</span><span class="n">svalues</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">g</span><span class="o">*</span><span class="n">svalues</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">97</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "minireference/noBSstatsnotebooks",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="10_data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 1 — Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../tutorials/appendix.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ivan Savov<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

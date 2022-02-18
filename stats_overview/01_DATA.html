@@ -1,0 +1,1522 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 1: DATA &#8212; No BS Stats Notebooks</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 2: Probability theory" href="02_PROB.html" />
+    <link rel="prev" title="Statistics overview" href="00_Introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">No BS Stats Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   No Bullshit Stats Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00_Introduction.html">
+   Statistics overview
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Chapter 1: DATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_PROB.html">
+     Chapter 2: Probability theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_STATS.html">
+     Chapter 3: Inferential statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_LINEAR_MODELS.html">
+     Chapter 4: Linear models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../notebooks/10_data.html">
+   Chapter 1 — Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/13_descriptive_statistics.html">
+     Section 1.3 — Descriptive statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/appendix.html">
+   Appendix
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/intro_to_python.html">
+     Appendix C — Introduction to Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/intro_to_pandas.html">
+     Appendix D — Introduction to Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/data_visualization_with_seaborn.html">
+     Appendix E — Data visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/stats_overview/01_DATA.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/minireference/noBSstatsnotebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fstats_overview/01_DATA.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./stats_overview/01_DATA.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-data">
+   1.1 Introduction to data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-in-practice">
+   1.2 Data in practice
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebook-setup">
+     Notebook setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extract">
+     Extract
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transform-and-clean-the-raw-data">
+     Transform and clean the raw data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-the-data-as-a-csv-file">
+     Save the data as a CSV file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-sidenote-selecting-subsets">
+     pandas sidenote: selecting subsets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descriptive-statistics">
+   1.3 Descriptive statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizations">
+     Visualizations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#observed-difference-in-means-in-the-data-sample">
+       Observed difference in means in the data sample
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#observed-variability-in-the-data">
+       Observed variability in the data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-step">
+     Next step
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 1: DATA</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-data">
+   1.1 Introduction to data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-in-practice">
+   1.2 Data in practice
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebook-setup">
+     Notebook setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extract">
+     Extract
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transform-and-clean-the-raw-data">
+     Transform and clean the raw data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-the-data-as-a-csv-file">
+     Save the data as a CSV file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-sidenote-selecting-subsets">
+     pandas sidenote: selecting subsets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descriptive-statistics">
+   1.3 Descriptive statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizations">
+     Visualizations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#observed-difference-in-means-in-the-data-sample">
+       Observed difference in means in the data sample
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#observed-variability-in-the-data">
+       Observed variability in the data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-step">
+     Next step
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-1-data">
+<h1>Chapter 1: DATA<a class="headerlink" href="#chapter-1-data" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://docs.google.com/document/d/1fwep23-95U-w1QMPU31nOvUnUXE2X3s_Dbk5JuLlKAY/edit#heading=h.sxp5yrohv0ad">Link to outline</a></p>
+<p>Concept map:
+<img alt="concepts_DATA.png" src="stats_overview/attachment:d5de3de0-4f64-43ff-939a-a1946d522dcb.png" /></p>
+<div class="section" id="introduction-to-data">
+<h2>1.1 Introduction to data<a class="headerlink" href="#introduction-to-data" title="Permalink to this headline">¶</a></h2>
+<p>Data is the fuel for stats (see <a class="reference external" href="https://docs.google.com/document/d/1fwep23-95U-w1QMPU31nOvUnUXE2X3s_Dbk5JuLlKAY/edit#heading=h.bt6jrc2adg0z">section outline</a> for more details).</p>
+</div>
+<div class="section" id="data-in-practice">
+<h2>1.2 Data in practice<a class="headerlink" href="#data-in-practice" title="Permalink to this headline">¶</a></h2>
+<p>Before it can be used in statistical analyses, data often requires pre-processing steps which are can like extract, transform, and load (ETL) as shows below:</p>
+<p><img alt="ETL_block_diagram.png" src="stats_overview/attachment:90dcbac3-1589-4fc3-9120-9e7cd8402451.png" /></p>
+<p>We’ll illustrate these steps based on the data for Amy’s research:</p>
+<ul class="simple">
+<li><p>Extract data from spreadsheet file using <code class="docutils literal notranslate"><span class="pre">read_excel</span></code></p></li>
+<li><p>Transform to tidy format using <code class="docutils literal notranslate"><span class="pre">melt</span></code>, cleanup, then save data as a CSV file</p></li>
+<li><p>Load data again using <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> to make sure all good</p></li>
+</ul>
+<div class="section" id="notebook-setup">
+<h3>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h3>
+<p>We begin by importing some Python modules for data analysis and plotting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>    <span class="c1"># data manipulations</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>  <span class="c1"># plotting and visualizations</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># notebook and figures setup</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">:(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">)})</span>
+<span class="c1"># silence annoying warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span><span class="p">;</span> <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extract">
+<h3>Extract<a class="headerlink" href="#extract" title="Permalink to this headline">¶</a></h3>
+<p>We can use the function <code class="docutils literal notranslate"><span class="pre">read_excel</span></code> in the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module, which have imported as the shorter alias <code class="docutils literal notranslate"><span class="pre">pd</span></code> to extract the data the sheet named “Data” in the spreadhseet file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rawdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;data/employee_lifetime_values_records.ods&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Data&quot;</span><span class="p">)</span>
+
+<span class="c1"># if you get an error on the above line, run `!pip install odfpy` then this:</span>
+<span class="c1"># rawdf = pd.read_excel(&quot;https://github.com/minireference/noBSstatsnotebooks/raw/main/stats_overview/data/employee_lifetime_values_records.ods&quot;, sheet_name=&quot;Data&quot;)</span>
+
+<span class="c1"># the data extracted from the spreadsheet is now stored in rawdf, a pd.DataFrame object</span>
+<span class="n">rawdf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Group NS</th>
+      <th>Group S</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>923.87</td>
+      <td>1297.44</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>751.38</td>
+      <td>776.41</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>432.83</td>
+      <td>1207.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1417.36</td>
+      <td>1203.30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>973.24</td>
+      <td>1127.58</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1000.52</td>
+      <td>1464.32</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1040.38</td>
+      <td>926.94</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1324.41</td>
+      <td>1550.08</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1171.52</td>
+      <td>1111.03</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1195.03</td>
+      <td>1057.69</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>664.63</td>
+      <td>1361.05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>769.31</td>
+      <td>1108.01</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>690.74</td>
+      <td>1054.53</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1284.31</td>
+      <td>1232.11</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>958.96</td>
+      <td>623.06</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>856.65</td>
+      <td>862.36</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1124.43</td>
+      <td>1011.34</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1521.95</td>
+      <td>1088.06</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>987.67</td>
+      <td>1188.16</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1070.90</td>
+      <td>1434.01</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1110.94</td>
+      <td>843.81</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1620.93</td>
+      <td>1716.61</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1251.99</td>
+      <td>987.64</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>860.90</td>
+      <td>1094.02</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>963.01</td>
+      <td>1225.66</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>677.76</td>
+      <td>931.61</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>949.26</td>
+      <td>1329.68</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>990.13</td>
+      <td>1293.03</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1255.27</td>
+      <td>1240.44</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>716.64</td>
+      <td>1105.59</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1013.83</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Note there is a missing value (denoted <code class="docutils literal notranslate"><span class="pre">NaN</span></code>) in the last row of <strong>Group S</strong>. We’ll have to fix that in the data-cleaning step later on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the &quot;shape&quot; of the dataframe is</span>
+<span class="n">rawdf</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(31, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we can quickly see the statistics for the two groups</span>
+<span class="n">rawdf</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Group NS</th>
+      <td>31.0</td>
+      <td>1018.41129</td>
+      <td>265.815869</td>
+      <td>432.83</td>
+      <td>858.7750</td>
+      <td>990.130</td>
+      <td>1183.2750</td>
+      <td>1620.93</td>
+    </tr>
+    <tr>
+      <th>Group S</th>
+      <td>30.0</td>
+      <td>1148.43500</td>
+      <td>233.037704</td>
+      <td>623.06</td>
+      <td>1022.1375</td>
+      <td>1119.305</td>
+      <td>1279.8825</td>
+      <td>1716.61</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The above table contains some useful summary for the two groups in the data. We can confirm we have 31 data points for <strong>Group NS</strong>, 30 data points for <strong>Group S</strong> and see all the descriptive statistics like mean, standard deviation, min/max, and the quartiles (more on that later).</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="transform-and-clean-the-raw-data">
+<h3>Transform and clean the raw data<a class="headerlink" href="#transform-and-clean-the-raw-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Currently data is in a “wide” format (block where each row contains multiple observations)</p></li>
+<li><p>Instead, we prefer all data to be in “tall” format where each row is a single observation</p></li>
+</ul>
+<p><img alt="data-melt-operation.png" src="stats_overview/attachment:89e9c9db-65df-42d6-8b07-19d3aa5db903.png" /></p>
+<p>The operation to convert is called <code class="docutils literal notranslate"><span class="pre">melt</span></code> and there is a Python method for the same name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># before melt...</span>
+<span class="c1"># rawdf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmpdf1</span> <span class="o">=</span> <span class="n">rawdf</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;ELV&quot;</span><span class="p">)</span>
+
+<span class="c1"># ...after melt</span>
+<span class="n">tmpdf1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>group</th>
+      <th>ELV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Group NS</td>
+      <td>923.87</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Group NS</td>
+      <td>751.38</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Group NS</td>
+      <td>432.83</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Group NS</td>
+      <td>1417.36</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Group NS</td>
+      <td>973.24</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Group S</td>
+      <td>1329.68</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Group S</td>
+      <td>1293.03</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Group S</td>
+      <td>1240.44</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>Group S</td>
+      <td>1105.59</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>Group S</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>62 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lets use short labels...</span>
+<span class="n">tmpdf2</span> <span class="o">=</span> <span class="n">tmpdf1</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s2">&quot;Group NS&quot;</span><span class="p">:</span> <span class="s2">&quot;NS&quot;</span><span class="p">,</span> <span class="s2">&quot;Group S&quot;</span><span class="p">:</span> <span class="s2">&quot;S&quot;</span><span class="p">})</span>
+<span class="n">tmpdf2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>group</th>
+      <th>ELV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NS</td>
+      <td>923.87</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NS</td>
+      <td>751.38</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NS</td>
+      <td>432.83</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NS</td>
+      <td>1417.36</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NS</td>
+      <td>973.24</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>S</td>
+      <td>1329.68</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>S</td>
+      <td>1293.03</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>S</td>
+      <td>1240.44</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>S</td>
+      <td>1105.59</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>S</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>62 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clean data (remove NaN values)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">tmpdf2</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>group</th>
+      <th>ELV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NS</td>
+      <td>923.87</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NS</td>
+      <td>751.38</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NS</td>
+      <td>432.83</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NS</td>
+      <td>1417.36</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NS</td>
+      <td>973.24</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>S</td>
+      <td>931.61</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>S</td>
+      <td>1329.68</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>S</td>
+      <td>1293.03</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>S</td>
+      <td>1240.44</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>S</td>
+      <td>1105.59</td>
+    </tr>
+  </tbody>
+</table>
+<p>61 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>Click <a class="reference external" href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Aimport%20io%0A%0Acsv%20%3D%20%27%27%27%0AGroup%20NS,Group%20S%0A923.87,1297.44%0A751.38,776.41%0A432.83,1207.48%0A1040.38,%0A%27%27%27%0A%0Arawdf%20%3D%20pd.read_csv%28io.StringIO%28csv%29%29%0A%0A%28rawdf%0A%20.melt%28var_name%3D%22group%22,%20value_name%3D%22ELV%22%29%0A%20.replace%28%7B%22Group%20NS%22%3A%20%22NS%22,%20%22Group%20S%22%3A%20%22S%22%7D%29%0A%20.dropna%28%29%0A%29&amp;d=2021-12-04&amp;lang=py&amp;v=v1">here</a> to see an online visualization of these three operations on a small sample from the data using <a class="reference external" href="https://pandastutor.com">pandastutor.com</a>.</p>
+</div>
+<div class="section" id="save-the-data-as-a-csv-file">
+<h3>Save the data as a CSV file<a class="headerlink" href="#save-the-data-as-a-csv-file" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/employee_lifetime_values.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !du data/employee_lifetime_values.csv</span>
+<span class="c1"># !head data/employee_lifetime_values.csv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try loading the data to make sure it is the same</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/employee_lifetime_values.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>group</th>
+      <th>ELV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NS</td>
+      <td>923.87</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NS</td>
+      <td>751.38</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NS</td>
+      <td>432.83</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NS</td>
+      <td>1417.36</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NS</td>
+      <td>973.24</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>S</td>
+      <td>931.61</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>S</td>
+      <td>1329.68</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>S</td>
+      <td>1293.03</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>S</td>
+      <td>1240.44</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>S</td>
+      <td>1105.59</td>
+    </tr>
+  </tbody>
+</table>
+<p>61 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>The dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code> is now in long format and this will make doing stats and plotting much easier from now on.</p>
+<p>Data cleaning and data munging are important prerequisites for any statistical analysis. We’ve only touched the surface here, but it’s important for you to know these steps exist, and are often the most time consuming part of any “data job.”</p>
+</div>
+<div class="section" id="pandas-sidenote-selecting-subsets">
+<h3>pandas sidenote: selecting subsets<a class="headerlink" href="#pandas-sidenote-selecting-subsets" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first create a boolean &quot;mask&quot; of rows that match</span>
+<span class="c1"># df[&quot;group&quot;] == &quot;S&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># selects subset that corresponds to the mask</span>
+<span class="c1"># df[df[&quot;group&quot;]==&quot;S&quot;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="descriptive-statistics">
+<h2>1.3 Descriptive statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> to get summary statistics</p></li>
+<li><p>Draw a histogram</p></li>
+<li><p>Draw a boxplot</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;S&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ELV</th>
+      <td>30.0</td>
+      <td>1148.435</td>
+      <td>233.037704</td>
+      <td>623.06</td>
+      <td>1022.1375</td>
+      <td>1119.305</td>
+      <td>1279.8825</td>
+      <td>1716.61</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;NS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ELV</th>
+      <td>31.0</td>
+      <td>1018.41129</td>
+      <td>265.815869</td>
+      <td>432.83</td>
+      <td>858.775</td>
+      <td>990.13</td>
+      <td>1183.275</td>
+      <td>1620.93</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="visualizations">
+<h3>Visualizations<a class="headerlink" href="#visualizations" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;ELV&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;ELV&#39;, ylabel=&#39;group&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/01_DATA_38_1.png" src="../_images/01_DATA_38_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;ELV&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;ELV&#39;, ylabel=&#39;group&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/01_DATA_39_1.png" src="../_images/01_DATA_39_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sns.histplot(data=df, x=&quot;ELV&quot;, hue=&quot;group&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># better histplot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">blue</span><span class="p">,</span> <span class="n">orange</span>  <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;NS&quot;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;ELV&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;NS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;S&quot;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;ELV&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">orange</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;S&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">orange</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f80576c9820&gt;
+</pre></div>
+</div>
+<img alt="../_images/01_DATA_41_1.png" src="../_images/01_DATA_41_1.png" />
+</div>
+</div>
+<div class="section" id="observed-difference-in-means-in-the-data-sample">
+<h4>Observed difference in means in the data sample<a class="headerlink" href="#observed-difference-in-means-in-the-data-sample" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meanS</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;S&quot;</span><span class="p">][</span><span class="s1">&#39;ELV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">meanNS</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;NS&quot;</span><span class="p">][</span><span class="s1">&#39;ELV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># compute d, the difference in ELV means between two groups</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">meanS</span> <span class="o">-</span> <span class="n">meanNS</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The difference between groups means is&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The difference between groups means is 130.02
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="observed-variability-in-the-data">
+<h4>Observed variability in the data<a class="headerlink" href="#observed-variability-in-the-data" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stdS</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;S&quot;</span><span class="p">][</span><span class="s1">&#39;ELV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standard deviation for Group S is&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">stdS</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">stdNS</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;NS&quot;</span><span class="p">][</span><span class="s1">&#39;ELV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standard deviation for Group NS is&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">stdNS</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Standard deviation for Group S is 233.04
+Standard deviation for Group NS is 265.82
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Reminder: goals is to determine if stats training leads to meaningful ELV increase</p></li>
+<li><p>Numerically and visually, we see that employees who received stats training (Group B) have higher ELV,
+but could the observed difference be just a fluke?</p></li>
+<li><p>Facts: the observed difference in means is <code class="docutils literal notranslate"><span class="pre">d</span></code> = <span class="math notranslate nohighlight">\(\overline{x}_S - \overline{x}_{NS} = 130.03\)</span>
+and the standard deviation of the sample is 233 and 266  respectively.
+Is a difference of 130 (signal) significant for data with variability ~250 (noise)?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>the data samples we have collected contain A LOT of variability</p></li>
+<li><p>we <strong>need a language for describing variability</strong> (probability theory)</p></li>
+<li><p>we can use probability theory for modelling data and considering hypothetical scenarios</p></li>
+</ul>
+<p>Learning the language of probability theory will help us rephrase the research questions as precise mathematical problems:</p>
+<ol class="simple">
+<li><p>Does statistical training make a difference in ELV?<br />
+We’ll define a probability model for a hypothetical situation where statistics training
+makes no difference and calculate how likely it is to observe the difference <span class="math notranslate nohighlight">\(d= \overline{x}_S - \overline{x}_{NS} = 130\)</span> between two groups due to chance.</p></li>
+<li><p>How big is the increase in ELV that occurs thanks to stats training?<br />
+We’ll <strong>produce an estimate</strong> of the difference in ELV between groups
+that takes into account the variability of the data.</p></li>
+</ol>
+<div class="section" id="next-step">
+<h3>Next step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h3>
+<p>Ready for an intro to probability theory?
+If so, move on to the next notebook <a class="reference internal" href="02_PROB.html"><span class="doc std std-doc">02_PROB.ipynb</span></a>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "minireference/noBSstatsnotebooks",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./stats_overview"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="00_Introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Statistics overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_PROB.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 2: Probability theory</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ivan Savov<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

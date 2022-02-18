@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics overview &#8212; No BS Stats Notebooks</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">No BS Stats Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   No Bullshit Stats Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="00_Introduction.html">
+   Statistics overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_DATA.html">
+     Chapter 1: DATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_PROB.html">
+     Chapter 2: Probability theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_STATS.html">
+     Chapter 3: Inferential statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_LINEAR_MODELS.html">
+     Chapter 4: Linear models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../notebooks/10_data.html">
+   Chapter 1 — Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/13_descriptive_statistics.html">
+     Section 1.3 — Descriptive statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/appendix.html">
+   Appendix
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/intro_to_python.html">
+     Appendix C — Introduction to Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/intro_to_pandas.html">
+     Appendix D — Introduction to Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/data_visualization_with_seaborn.html">
+     Appendix E — Data visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/stats_overview/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/minireference/noBSstatsnotebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fstats_overview/README.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-and-01-data">
+   Introduction and 01 DATA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prob-probability-theory">
+   02 PROB - Probability theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stats-inferential-statistics">
+   03 STATS - Inferential statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-1-estimators">
+     Part 1: Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2-hypothesis-testing-intro">
+     Part 2: Hypothesis testing intro
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-3-hypothesis-testing-using-the-permutation-test">
+     Part 3: Hypothesis testing using the permutation test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-4-hypothesis-testing-using-analytical-approximations">
+     Part 4: Hypothesis testing using analytical approximations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-5-effect-size-estimation">
+     Part 5: Effect size estimation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-models">
+   04 LINEAR MODELS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further reading
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Statistics overview</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-and-01-data">
+   Introduction and 01 DATA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prob-probability-theory">
+   02 PROB - Probability theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stats-inferential-statistics">
+   03 STATS - Inferential statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-1-estimators">
+     Part 1: Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2-hypothesis-testing-intro">
+     Part 2: Hypothesis testing intro
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-3-hypothesis-testing-using-the-permutation-test">
+     Part 3: Hypothesis testing using the permutation test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-4-hypothesis-testing-using-analytical-approximations">
+     Part 4: Hypothesis testing using analytical approximations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-5-effect-size-estimation">
+     Part 5: Effect size estimation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-models">
+   04 LINEAR MODELS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further reading
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="statistics-overview">
+<h1>Statistics overview<a class="headerlink" href="#statistics-overview" title="Permalink to this headline">¶</a></h1>
+<p>This series of notebooks and video tutorials presents <strong>a complete example of a statistical analysis</strong> that touches all major topics described in the upcoming book <a class="reference external" href="https://docs.google.com/document/d/1fwep23-95U-w1QMPU31nOvUnUXE2X3s_Dbk5JuLlKAY/edit"><strong>No Bullshit Guide to Statistics</strong></a>. We’ll illustrate key statistics concepts using hands-on code demonstrations in Python.</p>
+<p>Click on the video thumbnails to watch the video walkthroughs on youtube and use binder links like this one <a class="reference external" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?labpath=stats_overview%2F00_Introduction.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a> to play with the notebooks interactively. Click <a class="reference external" href="https://www.youtube.com/playlist?list=PLGmu4KtWiH680gMQnSbSADBuLnoyBUVFg">here</a> for see the complete playlist.</p>
+<p>Pro tip: If you find the narrative in the videos is too slow, you can change the playback speed to 1.25x or 1.5x. For more fine-grained control of playback speed, I highly recommend the <a class="reference external" href="https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk">Video Speed Controller plugin</a> for Chrome.</p>
+<div class="section" id="introduction-and-01-data">
+<h2>Introduction and 01 DATA<a class="headerlink" href="#introduction-and-01-data" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=oXy-sZwkn9E"><img alt="" src="https://img.youtube.com/vi/oXy-sZwkn9E/mqdefault.jpg" /></a></p>
+<p>In this video, we’ll introduce the running example we’ll use for the whole video series: Amy’s experiment about providing additional training to her startup employees. In the second half of the video, we’ll illustrate concepts from chapter 01 DATA like extracting data from a spreadsheet, transforming data from “wide” to “tall” format, and viewing descriptive statistics like histograms, box plots, strip plots, and numerical summaries.</p>
+<p>Introduction Notebook: <a class="reference external" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?labpath=stats_overview%2F00_Introduction.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a> <a class="reference external" href="https://colab.research.google.com/github/minireference/noBSstatsnotebooks/blob/main/stats_overview/00_Introduction.ipynb"><img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a><br />
+01 DATA Notebook: <a class="reference external" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?labpath=stats_overview%2F01_DATA.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a> <a class="reference external" href="https://colab.research.google.com/github/minireference/noBSstatsnotebooks/blob/main/stats_overview/01_DATA.ipynb"><img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+</div>
+<div class="section" id="prob-probability-theory">
+<h2>02 PROB - Probability theory<a class="headerlink" href="#prob-probability-theory" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=qG9ouDAWmmU"><img alt="" src="https://img.youtube.com/vi/qG9ouDAWmmU/mqdefault.jpg" /></a></p>
+<p>This video introduces some fundamental topics from probability theory like random events, random variables, and probabilistic models. Understanding probability theory allows us to build mathematical models for the variability in data we observe, and we’re lucky to have the lego pieces in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#probability-distributions"><code class="docutils literal notranslate"><span class="pre">scipy.stats.distributions</span></code></a> at our disposal. Using the code from <code class="docutils literal notranslate"><span class="pre">scipy.stats.distributions</span></code> we can model most common random variables, generate random samples, do calculations using the probability functions and their inverses, etc.</p>
+<p>The second half of the video is concerned with that probability distribution for samples of size n from a probability distribution. We study the properties of certain statistics (quantities computed from a sample) and learn about the Central Limit Theorem which tells us some useful facts about the distribution of the sample mean (usually denoted as overline-x) from any distribution.</p>
+<p>Notebook: <a class="reference external" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?labpath=stats_overview%2F02_PROB.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a> <a class="reference external" href="https://colab.research.google.com/github/minireference/noBSstatsnotebooks/blob/main/stats_overview/02_PROB.ipynb"><img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+</div>
+<div class="section" id="stats-inferential-statistics">
+<h2>03 STATS - Inferential statistics<a class="headerlink" href="#stats-inferential-statistics" title="Permalink to this headline">¶</a></h2>
+<p>In the third notebook, we finally get to work on two fundamental questions of inferential statistics: (1) hypothesis testing and (2) estimation. The statistics notebook contains multiple topics that require detailed explanations, so we’ve split the narrative into five separate videos. See the video links to the five parts below.</p>
+<p>By the end of the statistical inference videos, we’ll have finally answered the Amy’s two research questions about the employee lifetime value (ELV) data:</p>
+<ul class="simple">
+<li><p>Question 1 = Is there a difference between ELV of the two groups? → hypothesis testing</p></li>
+<li><p>Question 2 = How much difference in ELV does stats training provide? → estimation</p></li>
+</ul>
+<div class="section" id="part-1-estimators">
+<h3>Part 1: Estimators<a class="headerlink" href="#part-1-estimators" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=DwjWJcA2Qss"><img alt="" src="https://img.youtube.com/vi/DwjWJcA2Qss/mqdefault.jpg" /></a></p>
+<p>Estimators (functions 𝑓 computed from samples) are a fundamental tool for statistics. The descriptive statistics we saw in the DATA chapter are examples of estimators: the sample mean is an estimator for the population mean, and the sample variance is an estimator for the population variance. We denote by 𝑓(𝐱) value of the estimator computed from a particular sample 𝐱. We denote 𝑓(𝐗) the value of the estimator computed from a random sample 𝐗, and refer to the probability density function of 𝑓(𝐗) as the sampling distribution of the estimator 𝑓.</p>
+<p>This video provides a detailed hands-on discussion about the difference-between-group-means estimator <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">mean(xA)</span> <span class="pre">-</span> <span class="pre">mean(xB)</span></code>, which will is the math building block we’ll need for both hypothesis testing and estimation. We’ll obtain the sampling distribution for the difference-between-group-means estimator using both simulation and mathematical modelling techniques.</p>
+<p>Notebook: <a class="reference external" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?labpath=stats_overview%2F03_STATS.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a> <a class="reference external" href="https://colab.research.google.com/github/minireference/noBSstatsnotebooks/blob/main/stats_overview/03_STATS.ipynb"><img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+</div>
+<div class="section" id="part-2-hypothesis-testing-intro">
+<h3>Part 2: Hypothesis testing intro<a class="headerlink" href="#part-2-hypothesis-testing-intro" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=TxsoL1Tyzw8"><img alt="" src="https://img.youtube.com/vi/TxsoL1Tyzw8/mqdefault.jpg" /></a></p>
+<p>Hypothesis testing is an approach to formulating research questions in the form of yes-or-no decisions. Hypothesis testing is a standardized procedure for doing statistical analysis, and a common tool use din academic research papers. We formulate research question as two competing hypotheses:</p>
+<ul class="simple">
+<li><p>H0, the null hypothesis, which is a baseline, skeptical claim like “no difference” or “zero effect”, and</p></li>
+<li><p>HA, the alternative hypothesis, which usually embodies a theory or model that the researchers want to study.</p></li>
+</ul>
+<p>In order to justify any study or analysis of the alternative hypothesis HA, scientific convention requires us to first “reject the null hypothesis,” which we can do if we can show that the observed data is very unlikely (less than 5% chance) to have occurred by chance under H0. The logic is if the data is unlikely to occur under H0, this lends support to HA and further study is warranted. The alternative is that we “fail to reject the null hypothesis,” which means the data observed is consistent with the “no difference” or “zero effect” data model, so does not require postulating any alternative hypothesis.</p>
+<p>Notebook: see STATS notebook link above, starting at <strong>Hypothesis testing</strong>.</p>
+</div>
+<div class="section" id="part-3-hypothesis-testing-using-the-permutation-test">
+<h3>Part 3: Hypothesis testing using the permutation test<a class="headerlink" href="#part-3-hypothesis-testing-using-the-permutation-test" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=ILa5yledRNA"><img alt="" src="https://img.youtube.com/vi/ILa5yledRNA/mqdefault.jpg" /></a></p>
+<p>The permutation test allows us to obtain the sampling distribution under the null hypothesis H0 by using existing sample data and a clever “shuffling” of the group labels. Using this trick, we obtain the sampling distribution of the difference between group means according to the probability model for H0. We then find where the observed difference between group means d=130 falls within the sampling distribution to obtain the p-value. Since the p-value we obtain is less than 0.05 our conclusion is to reject the null hypothesis, i.e., we conclude that there is a statistically significant difference between the groups means.</p>
+<p>Notebook: see STATS notebook link above, starting at <strong>Approach 1: Permutation test for hypothesis testing</strong>.</p>
+</div>
+<div class="section" id="part-4-hypothesis-testing-using-analytical-approximations">
+<h3>Part 4: Hypothesis testing using analytical approximations<a class="headerlink" href="#part-4-hypothesis-testing-using-analytical-approximations" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=prCTLgkrlOg"><img alt="" src="https://img.youtube.com/vi/prCTLgkrlOg/mqdefault.jpg" /></a></p>
+<p>Analytical approximation methods in statistics provide ready-made formulas for describing the sampling distribution in various statistical analysis scenarios. These formulas are normally taught in STATS 101 courses because they require very few steps and can be applied without needing to understand the math models. For the specific scenario of comparison of two group means, we can use Student’s t-test (so called because it is based on Student’s t-distribution). This video shows how to apply Student’s t test to obtain the p-value 0.047 &lt; 0.05 and reject the null hypothesis.</p>
+<p>Notebook: see STATS notebook link above, starting at <strong>Approach 2: Analytical approximations for hypothesis testing</strong>.</p>
+</div>
+<div class="section" id="part-5-effect-size-estimation">
+<h3>Part 5: Effect size estimation<a class="headerlink" href="#part-5-effect-size-estimation" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=iFmq8mlAIww"><img alt="" src="https://img.youtube.com/vi/iFmq8mlAIww/mqdefault.jpg" /></a></p>
+<p>In this video we’ll learn how to provide rigorous estimates of gains in ELV for employees that complete the stats training, which is called effect size in statistics. We’ll learn two different ways of estimating the effect size: one based on resampling methods (bootstrap) and another based on analytical approximations and Student’s t-distribution. Both approaches give us a confidence interval, which describes the range of values for an effect size we can expect, and we can give a 90% guarantee on the procedure we use to generate the interval.</p>
+<p>Notebook: see STATS notebook link above, starting at <strong>Estimating the effect size</strong>.</p>
+</div>
+</div>
+<div class="section" id="linear-models">
+<h2>04 LINEAR MODELS<a class="headerlink" href="#linear-models" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=1wMgKPwIfuI"><img alt="" src="https://img.youtube.com/vi/1wMgKPwIfuI/mqdefault.jpg" /></a></p>
+<p>Linear models allow us to describe relationships between two continuous quantities x and y. We assume the output Y is distributed according to Y ~ b+m*x, in other words the x-Y relationship is a line of the form y=mx+b. In this video we study the case when each employee receives a variable amount of stats training (anywhere from 0 hours to 100 hours), and the ELV value is modelled by the relationship ELV ∼ 𝛽0+𝛽1*hours, where 𝛽0 is the intercept and 𝛽1 is the slope. The notebook shows several different ways to fit the model (find the best choice of parameters 𝛽0 and 𝛽1), interpret the results, and make predictions.</p>
+<p>Notebook: <a class="reference external" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?labpath=stats_overview%2F04_LINEAR_MODELS.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a> <a class="reference external" href="https://colab.research.google.com/github/minireference/noBSstatsnotebooks/blob/main/stats_overview/04_LINEAR_MODELS.ipynb"><img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The <strong>No Bullshit Guide to Statistics</strong> <a class="reference external" href="https://docs.google.com/document/d/1fwep23-95U-w1QMPU31nOvUnUXE2X3s_Dbk5JuLlKAY/edit">book outline</a></p></li>
+<li><p>The statistics <a class="reference external" href="https://minireference.com/static/excerpts/noBSstats/conceptmaps/BookSubjectsOverview.pdf">concept map</a></p></li>
+<li><p>Read the blog posts about the <a class="reference external" href="https://minireference.com/blog/fixing-the-introductory-statistics-curriculum/">statistics curriculum</a> and the <a class="reference external" href="https://minireference.com/blog/no-bullshit-guide-to-statistics-progress-update/">book proposal</a></p></li>
+<li><p>Sign up for the <a class="reference external" href="https://confirmsubscription.com/h/t/A17516BF2FCB41B2">stats reviewers mailing list</a> to receive chapter drafts as they are being prepared (Nov+Dec 2021, Jan-Feb 2022). The goal is to have the book finished by Spring 2022. Your feedback and “user testing” on the draft chapters and notebooks will be very helpful.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "minireference/noBSstatsnotebooks",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./stats_overview"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ivan Savov<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
