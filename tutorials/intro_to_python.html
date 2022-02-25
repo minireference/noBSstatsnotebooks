@@ -45,15 +45,14 @@
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Appendix D — Introduction to Pandas" href="intro_to_pandas.html" />
@@ -144,6 +143,16 @@
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/11_intro_to_data.html">
+     Section 1.1 — Introduction to data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/12_data_in_practice.html">
+     Section 1.2 — Data in practice
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/13_descriptive_statistics.html">
      Section 1.3 — Descriptive statistics
@@ -850,7 +859,7 @@ just write it’s name in a command line prompt and this is equivalent to
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1928</span><span class="o">/</span><span class="mf">3150626867.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span>
 
 <span class="ne">ZeroDivisionError</span>: division by zero
@@ -1071,7 +1080,7 @@ Hello Julie Tremblay, your score is 98%.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1928</span><span class="o">/</span><span class="mf">3471984828.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">expr4</span><span class="o">=</span><span class="mi">5</span><span class="o">/</span><span class="mi">0</span>
 
 <span class="ne">ZeroDivisionError</span>: division by zero
@@ -1777,9 +1786,7 @@ This is a little weird, but OK because a vector is a special type of matrix.</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61.0
 72.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85.0
+85.0
 92.0
 </pre></div>
 </div>
@@ -1804,7 +1811,7 @@ This is a little weird, but OK because a vector is a special type of matrix.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f0058a31980&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f5004843f80&gt;
 </pre></div>
 </div>
 </div>
@@ -1822,10 +1829,7 @@ This is a little weird, but OK because a vector is a special type of matrix.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing score 61.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> which is at index 0 in the list
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing score 61.0 which is at index 0 in the list
 Processing score 72.0 which is at index 1 in the list
 Processing score 85.0 which is at index 2 in the list
 Processing score 92.0 which is at index 3 in the list
@@ -1849,12 +1853,12 @@ Processing score 92.0 which is at index 3 in the list
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing  value1 = 1  and  value2 =
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing  value1 = 1  and  value2 = 3 val3= 11
+Processing  value1 = 2  and  value2 = 3 val3= 22
+Processing  value1 = 3  and  value2 = 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 3 val3= 11
-Processing  value1 = 2  and  value2 = 3 val3= 22
-Processing  value1 = 3  and  value2 = 5 val3= 33
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 val3= 33
 </pre></div>
 </div>
 </div>
@@ -2105,7 +2109,7 @@ we specify the values for its components <span class="math notranslate nohighlig
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1928</span><span class="o">/</span><span class="mf">2744769052.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [60],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Option 2: vector as a n-by-1 SymPy Matrix (useful for doing math calculations)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">v_sym</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
