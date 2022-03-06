@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Section 1.1 — Introduction to data &#8212; No BS Stats Notebooks</title>
+    <title>Practical data exercises &#8212; No BS Stats Notebooks</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Section 1.2 — Data in practice" href="12_data_in_practice.html" />
-    <link rel="prev" title="Chapter 1 — Data" href="10_data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -98,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../stats_overview/00_Introduction.html">
    Statistics overview
@@ -131,28 +129,28 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="10_data.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../notebooks/10_data.html">
    Chapter 1 — Data
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/11_intro_to_data.html">
      Section 1.1 — Introduction to data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="12_data_in_practice.html">
+    <a class="reference internal" href="../notebooks/12_data_in_practice.html">
      Section 1.2 — Data in practice
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="13_descriptive_statistics.html">
+    <a class="reference internal" href="../notebooks/13_descriptive_statistics.html">
      Section 1.3 — Descriptive statistics
     </a>
    </li>
@@ -226,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/11_intro_to_data.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/exercises/12_practical_data_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -246,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fnotebooks/11_intro_to_data.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fexercises/12_practical_data_exercises.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -267,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./notebooks/11_intro_to_data.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./exercises/12_practical_data_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -292,27 +290,22 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-selection">
-   Random selection
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Practical data exercises
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-assignment">
-   Random assignment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discussion">
-   Discussion
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#random-sampling-alternatives">
-     Random sampling alternatives
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebooks-setup">
+     Notebooks setup
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#e">
+   E?.?
+  </a>
  </li>
 </ul>
 
@@ -324,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Section 1.1 — Introduction to data</h1>
+                <h1>Practical data exercises</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -334,27 +327,22 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-selection">
-   Random selection
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Practical data exercises
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-assignment">
-   Random assignment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discussion">
-   Discussion
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#random-sampling-alternatives">
-     Random sampling alternatives
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebooks-setup">
+     Notebooks setup
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#e">
+   E?.?
+  </a>
  </li>
 </ul>
 
@@ -365,118 +353,195 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="section-1-1-introduction-to-data">
-<h1>Section 1.1 — Introduction to data<a class="headerlink" href="#section-1-1-introduction-to-data" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="practical-data-exercises">
+<h1>Practical data exercises<a class="headerlink" href="#practical-data-exercises" title="Permalink to this headline">¶</a></h1>
+<p>This notebook contains all solutions of the exercises from <strong>Section 1.2 Data in practice</strong> in the <strong>No Bullshit Guide to Statistics</strong>.</p>
+<div class="section" id="notebooks-setup">
+<h2>Notebooks setup<a class="headerlink" href="#notebooks-setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="random-selection">
-<h2>Random selection<a class="headerlink" href="#random-selection" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">samplingframe</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">samplingframe</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pandas setup</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.precision&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="e">
+<h1>E?.?<a class="headerlink" href="#e" title="Permalink to this headline">¶</a></h1>
+<p>Melt wide data in <code class="docutils literal notranslate"><span class="pre">exercises/grades.csv</span></code> into long data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../datasets/exercises/grades.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;student_ID&quot;</span><span class="p">],</span>
+        <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;grade&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 6, 7]
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="random-assignment">
-<h2>Random assignment<a class="headerlink" href="#random-assignment" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flip_coin</span><span class="p">():</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;intervention&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;control&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">flip_coin</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intervention
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="discussion">
-<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="random-sampling-alternatives">
-<h3>Random sampling alternatives<a class="headerlink" href="#random-sampling-alternatives" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select sample of 20 from 100 individuals</span>
-<span class="n">pop1</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">pop1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 7, 11, 16, 18, 23, 24, 30, 32, 35, 41, 45, 58, 71, 77, 79, 84, 88, 90, 95]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5 strata of 20 individuals</span>
-<span class="n">strata</span> <span class="o">=</span> <span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-<span class="k">for</span> <span class="n">statum</span> <span class="ow">in</span> <span class="n">strata</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">statum</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 9, 14]
-[6, 7, 10, 14]
-[2, 4, 17, 19]
-[6, 9, 11, 20]
-[5, 10, 13, 17]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># choose 2 clusters out of 10</span>
-<span class="n">clusters</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">clusters</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 10]
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>student_ID</th>
+      <th>test</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101</td>
+      <td>test1</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>102</td>
+      <td>test1</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>103</td>
+      <td>test1</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>104</td>
+      <td>test1</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>105</td>
+      <td>test1</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>106</td>
+      <td>test1</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>107</td>
+      <td>test1</td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>101</td>
+      <td>test2</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>102</td>
+      <td>test2</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>103</td>
+      <td>test2</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>104</td>
+      <td>test2</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>105</td>
+      <td>test2</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>106</td>
+      <td>test2</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>107</td>
+      <td>test2</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>101</td>
+      <td>test3</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>102</td>
+      <td>test3</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>103</td>
+      <td>test3</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>104</td>
+      <td>test3</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>105</td>
+      <td>test3</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>106</td>
+      <td>test3</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>107</td>
+      <td>test3</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 
@@ -493,7 +558,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./notebooks"
+            path: "./exercises"
         },
         predefinedOutput: true
     }
@@ -504,21 +569,7 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="10_data.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chapter 1 — Data</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="12_data_in_practice.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Section 1.2 — Data in practice</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
