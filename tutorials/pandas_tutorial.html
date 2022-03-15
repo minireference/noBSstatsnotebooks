@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Appendix D — Introduction to Pandas &#8212; No BS Stats Notebooks</title>
+    <title>Appendix D — Pandas tutorial &#8212; No BS Stats Notebooks</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix E — Data visualization with Seaborn" href="seaborn_tutorial.html" />
-    <link rel="prev" title="Appendix C — Introduction to Python" href="python_tutorial.html" />
+    <link rel="next" title="Appendix E — Seaborn tutorial" href="seaborn_tutorial.html" />
+    <link rel="prev" title="Appendix C — Python tutorial" href="python_tutorial.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -170,17 +170,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="python_tutorial.html">
-     Appendix C — Introduction to Python
+     Appendix C — Python tutorial
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Appendix D — Introduction to Pandas
+     Appendix D — Pandas tutorial
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="seaborn_tutorial.html">
-     Appendix E — Data visualization with Seaborn
+     Appendix E — Seaborn tutorial
     </a>
    </li>
   </ul>
@@ -287,6 +287,61 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Appendix D — Pandas tutorial
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wip">
+   WIP
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links">
+   Links
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#music-videos">
+     Music videos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cheatsheets">
+     Cheatsheets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorials">
+     Tutorials
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-cleaning">
+     Data cleaning
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#articles">
+     Articles
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#books">
+     Books
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -294,25 +349,167 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Appendix D — Introduction to Pandas</h1>
+                <h1>Appendix D — Pandas tutorial</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Appendix D — Pandas tutorial
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wip">
+   WIP
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links">
+   Links
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#music-videos">
+     Music videos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cheatsheets">
+     Cheatsheets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorials">
+     Tutorials
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-cleaning">
+     Data cleaning
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#articles">
+     Articles
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#books">
+     Books
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="appendix-d-introduction-to-pandas">
-<h1>Appendix D — Introduction to Pandas<a class="headerlink" href="#appendix-d-introduction-to-pandas" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="appendix-d-pandas-tutorial">
+<h1>Appendix D — Pandas tutorial<a class="headerlink" href="#appendix-d-pandas-tutorial" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="wip">
+<h1>WIP<a class="headerlink" href="#wip" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="links">
+<h1>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h1>
+<p>I’ve collected the best learning resources for Pandas for you.</p>
+<div class="section" id="music-videos">
+<h2>Music videos<a class="headerlink" href="#music-videos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=4NJlUribp3c">https://www.youtube.com/watch?v=4NJlUribp3c</a></p></li>
+</ul>
+</div>
+<div class="section" id="cheatsheets">
+<h2>Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://homepage.univie.ac.at/michael.blaschek/media/Cheatsheet_pandas.pdf">https://homepage.univie.ac.at/michael.blaschek/media/Cheatsheet_pandas.pdf</a></p></li>
+<li><p>Data Wrangling with pandas Cheat Sheet
+<a class="reference external" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></p></li>
+<li><p>Pandas Basics from the Python For Data Science Cheat Sheet collection<br />
+<a class="reference external" href="https://datacamp-community-prod.s3.amazonaws.com/dbed353d-2757-4617-8206-8767ab379ab3">https://datacamp-community-prod.s3.amazonaws.com/dbed353d-2757-4617-8206-8767ab379ab3</a><br />
+see also <a class="reference external" href="https://www.datacamp.com/blog/pandas-cheat-sheet-for-data-science-in-python">https://www.datacamp.com/blog/pandas-cheat-sheet-for-data-science-in-python</a></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame Object<br />
+<a class="reference external" href="https://www.webpages.uidaho.edu/~stevel/cheatsheets/Pandas%20DataFrame%20Notes_12pages.pdf">https://www.webpages.uidaho.edu/~stevel/cheatsheets/Pandas DataFrame Notes_12pages.pdf</a></p></li>
+</ul>
+</div>
+<div class="section" id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Essential basic functionality (very good)<br />
+<a class="reference external" href="https://pandas.pydata.org/docs/user_guide/basics.html">https://pandas.pydata.org/docs/user_guide/basics.html</a></p></li>
+<li><p>10 minutes to Pandas (official tutorial)<br />
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html</a></p></li>
+<li><p>Effective Pandas tutorial by Matt Harrison
+(Use appropriate data types to save memory. Lots of examples of method chaining.)<br />
+<a class="reference external" href="https://www.youtube.com/watch?v=zgbUk90aQ6A&amp;t=526s">https://www.youtube.com/watch?v=zgbUk90aQ6A&amp;t=526s</a></p></li>
+<li><p><a class="reference external" href="https://devopedia.org/pandas-dataframe-operations">https://devopedia.org/pandas-dataframe-operations</a></p></li>
+<li><p>Nice examople dataframe with variety of data types + compact reference of all operations<br />
+<a class="reference external" href="https://dataframes.juliadata.org/stable/man/comparisons/#Comparison-with-the-Python-package-pandas">https://dataframes.juliadata.org/stable/man/comparisons/#Comparison-with-the-Python-package-pandas</a><br />
+see also <a class="reference external" href="https://github.com/bkamins/Julia-DataFrames-Tutorial/">https://github.com/bkamins/Julia-DataFrames-Tutorial/</a></p></li>
+<li><p>Pandas: Python Data Analysis Library<br />
+<a class="reference external" href="https://johnfoster.pge.utexas.edu/numerical-methods-book/ScientificPython_Pandas.html">https://johnfoster.pge.utexas.edu/numerical-methods-book/ScientificPython_Pandas.html</a><br />
+See also <a class="reference external" href="https://github.com/johnfoster-pge-utexas/numerical-methods-book/blob/master/content/ScientificPython_Pandas.ipynb">notebook</a>
+and <a class="reference external" href="https://github.com/johnfoster-pge-utexas/numerical-methods-book/tree/master/content">src</a>.</p></li>
+<li><p>Pandas sections from <em>Python Data Science Handbook</em>
+<a class="reference external" href="https://www.one-tab.com/page/OaSZriUtRg6wb7mppbamag">https://www.one-tab.com/page/OaSZriUtRg6wb7mppbamag</a><br />
+via <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">https://jakevdp.github.io/PythonDataScienceHandbook/</a></p></li>
+<li><p>Pandas tutorials – lots of details<br />
+<a class="reference external" href="https://www.one-tab.com/page/Iw-cytCuTe-FiNZ7F1nrww">https://www.one-tab.com/page/Iw-cytCuTe-FiNZ7F1nrww</a></p></li>
+<li><p>pandas Foundations notebooks from DataCamp<br />
+<a class="reference external" href="https://trenton3983.github.io/files/projects/2019-01-24_pandas_dataframes/2019-01-24_pandas_dataframes.html">https://trenton3983.github.io/files/projects/2019-01-24_pandas_dataframes/2019-01-24_pandas_dataframes.html</a><br />
+<a class="reference external" href="https://trenton3983.github.io/files/projects/2019-02-04_manipulating_dataframes_with_pandas/2019-02-04_manipulating_dataframes_with_pandas.html">https://trenton3983.github.io/files/projects/2019-02-04_manipulating_dataframes_with_pandas/2019-02-04_manipulating_dataframes_with_pandas.html</a></p></li>
+<li><p>Lots of simple tasks
+<a class="reference external" href="https://nbviewer.org/github/justmarkham/pandas-videos/blob/master/pandas.ipynb">https://nbviewer.org/github/justmarkham/pandas-videos/blob/master/pandas.ipynb</a></p></li>
+</ul>
+</div>
+<div class="section" id="data-cleaning">
+<h2>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Tidying Data tutorial by Daniel Chen (Lots of examples of melt operations on real-world datasets)<br />
+<a class="reference external" href="https://www.youtube.com/watch?v=iYie42M1ZyU">https://www.youtube.com/watch?v=iYie42M1ZyU</a>
+<a class="reference external" href="https://github.com/chendaniely/pydatadc_2018-tidy/blob/master/notebooks/tidy.ipynb">https://github.com/chendaniely/pydatadc_2018-tidy/blob/master/notebooks/tidy.ipynb</a></p></li>
+<li><p>Data Cleaning lab from Applied &amp; Computational Mathematics Emphasis (ACME) course<br />
+<a class="reference external" href="https://acme.byu.edu/0000017c-ccff-da17-a5fd-cdff03570000/acmefiles-09-datacleaning-2021-pdf">https://acme.byu.edu/0000017c-ccff-da17-a5fd-cdff03570000/acmefiles-09-datacleaning-2021-pdf</a><br />
+See more <a class="reference external" href="https://acme.byu.edu/2021-2022-materials">materials here</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/hxchua/datadoubleconfirm/blob/master/EuroPython/DataCleaning.ipynb">https://github.com/hxchua/datadoubleconfirm/blob/master/EuroPython/DataCleaning.ipynb</a></p></li>
+<li><p>Nice visualizations for Pandas operations (click on examples)
+<a class="reference external" href="https://pandastutor.com/vis.html">https://pandastutor.com/vis.html</a></p></li>
+</ul>
+</div>
+<div class="section" id="articles">
+<h2>Articles<a class="headerlink" href="#articles" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em>pandas: a Foundational Python Library for Data Analysis and Statistics</em> by Wes McKinney<br />
+<a class="reference external" href="https://www.dlr.de/sc/Portaldata/15/Resources/dokumente/pyhpc2011/submissions/pyhpc2011_submission_9.pdf">https://www.dlr.de/sc/Portaldata/15/Resources/dokumente/pyhpc2011/submissions/pyhpc2011_submission_9.pdf</a></p></li>
+<li><p>More Pandas articles and links<br />
+<a class="reference external" href="https://www.one-tab.com/page/-EZFbibXRq2xZRYM9iUVDg">https://www.one-tab.com/page/-EZFbibXRq2xZRYM9iUVDg</a></p></li>
+<li><p>Good tips about <code class="docutils literal notranslate"><span class="pre">loc</span></code> vs. <code class="docutils literal notranslate"><span class="pre">[]</span></code><br />
+<a class="reference external" href="https://stackoverflow.com/a/48411543/127114">https://stackoverflow.com/a/48411543/127114</a></p></li>
+</ul>
+</div>
+<div class="section" id="books">
+<h2>Books<a class="headerlink" href="#books" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://store.metasnake.com/effective-pandas-book">https://store.metasnake.com/effective-pandas-book</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -345,13 +542,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Appendix C — Introduction to Python</p>
+            <p class="prev-next-title">Appendix C — Python tutorial</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="seaborn_tutorial.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix E — Data visualization with Seaborn</p>
+        <p class="prev-next-title">Appendix E — Seaborn tutorial</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
