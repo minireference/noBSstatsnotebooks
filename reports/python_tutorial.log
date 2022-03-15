@@ -17,44 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# TEST CODE (run this code to test you solution)
-
-def random_list(n=10, min=0.0, max=100.0):
-    """Returns a list of length `n` of random floats between `min` and `max`."""
-    import random
-    values = []
-    for i in range(n):
-        r = random.random()
-        value = min + r*(max-min)
-        values.append(value)
-    return values
-
-
-def test_compute_mean(function):
-    """
-    Run a few lists to check if value returned by `function` matches expected.
-    """
-    import math, statistics
-    assert function([1,1,1]) == 1
-    assert function([61,72,85,92]) == 77.5
-    list10 = random_list(n=10)
-    assert math.isclose(function(list10), statistics.mean(list10))
-    list100 = random_list(n=100)
-    assert math.isclose(function(list100), statistics.mean(list100))
-    print("All tests passed. Good job y'all!")
-
-
-# RUN TESTS
-test_compute_mean(compute_mean)
+lines = open("story.txt").readlines()
+lines
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [44][0m, in [0;36m<cell line: 29>[0;34m()[0m
-[1;32m     25[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mAll tests passed. Good job y[39m[38;5;124m'[39m[38;5;124mall![39m[38;5;124m"[39m)
-[1;32m     28[0m [38;5;66;03m# RUN TESTS[39;00m
-[0;32m---> 29[0m test_compute_mean([43mcompute_mean[49m)
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Input [0;32mIn [45][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m lines [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mstory.txt[39;49m[38;5;124;43m"[39;49m[43m)[49m[38;5;241m.[39mreadlines()
+[1;32m      2[0m lines
 
-[0;31mNameError[0m: name 'compute_mean' is not defined
-NameError: name 'compute_mean' is not defined
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'story.txt'
+FileNotFoundError: [Errno 2] No such file or directory: 'story.txt'
 
