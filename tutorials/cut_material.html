@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; No BS Stats Notebooks</title>
+    <title>Useful anything-to-int conversions &#8212; No BS Stats Notebooks</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -271,7 +271,110 @@ const thebe_selector_output = ".output, .cell_output"
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Useful anything-to-int conversions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-int">
+   str –&gt; int
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#float-int">
+   float –&gt; int
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bool-int">
+   bool –&gt; int
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-anything-to-float-conversions">
+     Useful anything-to-float conversions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-float">
+   str –&gt; float
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#int-int-float-autoconversion">
+   int/int –&gt; float autoconversion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-anything-to-str-conversions">
+     Common anything-to-str conversions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-str-function">
+   use the str function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#float-str">
+   float -&gt; str
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-precision-and-print-formatting-using-format-for-more-info-see">
+   control precision and print formatting using format. For more info, see
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#https-python-reference-readthedocs-io-en-latest-docs-functions-format-html">
+   https://python-reference.readthedocs.io/en/latest/docs/functions/format.html
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-anything-to-boolean-conversions">
+     Common anything-to-boolean conversions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#int-bool">
+   int –&gt; bool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#float-bool">
+   float –&gt; bool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-bool">
+   str –&gt; bool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-bool">
+   list –&gt; bool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dict-bool">
+   dict –&gt; bool
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-topics">
+     Bonus topics
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -282,7 +385,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Useful anything-to-int conversions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -291,7 +394,110 @@ const thebe_selector_output = ".output, .cell_output"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Useful anything-to-int conversions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-int">
+   str –&gt; int
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#float-int">
+   float –&gt; int
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bool-int">
+   bool –&gt; int
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-anything-to-float-conversions">
+     Useful anything-to-float conversions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-float">
+   str –&gt; float
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#int-int-float-autoconversion">
+   int/int –&gt; float autoconversion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-anything-to-str-conversions">
+     Common anything-to-str conversions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-str-function">
+   use the str function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#float-str">
+   float -&gt; str
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-precision-and-print-formatting-using-format-for-more-info-see">
+   control precision and print formatting using format. For more info, see
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#https-python-reference-readthedocs-io-en-latest-docs-functions-format-html">
+   https://python-reference.readthedocs.io/en/latest/docs/functions/format.html
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-anything-to-boolean-conversions">
+     Common anything-to-boolean conversions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#int-bool">
+   int –&gt; bool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#float-bool">
+   float –&gt; bool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-bool">
+   str –&gt; bool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-bool">
+   list –&gt; bool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dict-bool">
+   dict –&gt; bool
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-topics">
+     Bonus topics
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -301,7 +507,124 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p>This notebook contains some exercises to get you familiar with basic Python programming notions.</p>
+  <div class="section" id="useful-anything-to-int-conversions">
+<h1>Useful anything-to-int conversions<a class="headerlink" href="#useful-anything-to-int-conversions" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="str-int">
+<h1>str –&gt; int<a class="headerlink" href="#str-int" title="Permalink to this headline">¶</a></h1>
+<p>number_as_str = ‘65’
+print(number_as_str, ‘has type’, type(number_as_str))
+number = int(number_as_str)
+print(number, ‘has type’, type(number))</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="float-int">
+<h1>float –&gt; int<a class="headerlink" href="#float-int" title="Permalink to this headline">¶</a></h1>
+<p>precise_number_as_float = 3.2
+print(precise_number_as_float, ‘has type’, type(precise_number_as_float))
+rounded_number = int(precise_number_as_float)
+print(rounded_number, ‘has type’, type(rounded_number))</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="bool-int">
+<h1>bool –&gt; int<a class="headerlink" href="#bool-int" title="Permalink to this headline">¶</a></h1>
+<p>true_value = True
+false_value = False
+print(‘When converted to an int, True is’, int(True), ‘and False is’, int(False))</p>
+<div class="section" id="useful-anything-to-float-conversions">
+<h2>Useful anything-to-float conversions<a class="headerlink" href="#useful-anything-to-float-conversions" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="str-float">
+<h1>str –&gt; float<a class="headerlink" href="#str-float" title="Permalink to this headline">¶</a></h1>
+<p>print(float(‘1.2’))  # note using decimal dot . not decimal , as in Europe
+print(float(‘1e6’))  # one million = 1000000 = 1x10^6. The e is shorthand for x10^
+print(float(‘4’))</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="int-int-float-autoconversion">
+<h1>int/int –&gt; float autoconversion<a class="headerlink" href="#int-int-float-autoconversion" title="Permalink to this headline">¶</a></h1>
+<p>print(‘If you divide an integrer by an integer in Python using the / operator…’)
+print(‘…you get a float number’, 6/5, ‘has type’, type(6/5))</p>
+<p>print(‘There is also an divistion without autoconversion operator // which …’)
+print(‘…you get an integer’, 6//5, ‘has type’, type(6//5))</p>
+<div class="section" id="common-anything-to-str-conversions">
+<h2>Common anything-to-str conversions<a class="headerlink" href="#common-anything-to-str-conversions" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="use-the-str-function">
+<h1>use the str function<a class="headerlink" href="#use-the-str-function" title="Permalink to this headline">¶</a></h1>
+<p>str1 = str(42)
+str2 = str(4.2)
+str3 = str(True)
+str4 = ‘a string’
+print(‘string representations’, str1, str2, str3, str4)</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="float-str">
+<h1>float -&gt; str<a class="headerlink" href="#float-str" title="Permalink to this headline">¶</a></h1>
+<p>import math
+pi = math.pi  # constant equal to ratio of circumference to diameter of a circle
+print(‘str(math.pi) =’, str(math.pi))  # defaults to max precision</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="control-precision-and-print-formatting-using-format-for-more-info-see">
+<h1>control precision and print formatting using format. For more info, see<a class="headerlink" href="#control-precision-and-print-formatting-using-format-for-more-info-see" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="https-python-reference-readthedocs-io-en-latest-docs-functions-format-html">
+<h1><a class="reference external" href="https://python-reference.readthedocs.io/en/latest/docs/functions/format.html">https://python-reference.readthedocs.io/en/latest/docs/functions/format.html</a><a class="headerlink" href="#https-python-reference-readthedocs-io-en-latest-docs-functions-format-html" title="Permalink to this headline">¶</a></h1>
+<p>print(‘pi to two decimals’, ‘{:.2f}’.format(pi))
+print(‘pi to seven decimals’, ‘{:.7f}’.format(pi))</p>
+<div class="section" id="common-anything-to-boolean-conversions">
+<h2>Common anything-to-boolean conversions<a class="headerlink" href="#common-anything-to-boolean-conversions" title="Permalink to this headline">¶</a></h2>
+<p>Up until now we were in the land of math and text manipulation of numbers, which all make sense intuitively.</p>
+<p>Next we’ll talk about the boolean values of Python expressions. This will feel a little weird at first since we’re forcing some arbitray Python object (could be a number, a string, a list, a dictionary, etc) and asking the questions is the value <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> ?</p>
+<p>There is a specific convention about which values are considered “truthy” (i.e. get converted to <code class="docutils literal notranslate"><span class="pre">True</span></code> when converted to boolean using <code class="docutils literal notranslate"><span class="pre">bool</span></code>) and which expressions are falsy (i.e. get converted to <code class="docutils literal notranslate"><span class="pre">False</span></code> when passed through <code class="docutils literal notranslate"><span class="pre">bool</span></code>).</p>
+<p>I know this seems like boring details, but please read the next example carefully because “truthyness” and “falsyness” will play a big role in coding: every time you use an if or elif statement in Python, we are implicitly calling <code class="docutils literal notranslate"><span class="pre">bool</span></code> on an expression so it’s a good idea to get to know what <code class="docutils literal notranslate"><span class="pre">bool</span></code> does to different types of variables.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="int-bool">
+<h1>int –&gt; bool<a class="headerlink" href="#int-bool" title="Permalink to this headline">¶</a></h1>
+<p>print(‘Any non-zero integer is considered as True’)
+print(bool(1), bool(-2), bool(10000))
+print(‘Zero is False’)
+print(bool(0), bool(-0), bool(int(‘0’)))</p>
+<p>print(‘\n’)</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="float-bool">
+<h1>float –&gt; bool<a class="headerlink" href="#float-bool" title="Permalink to this headline">¶</a></h1>
+<p>print(‘Any non-zero float is considered as True’)
+print(bool(1.0), bool(-2.0), bool(10000.0))
+print(‘Zero is False’)
+print(bool(0.0), bool(-0.0), bool(float(‘0.0’)))</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="str-bool">
+<h1>str –&gt; bool<a class="headerlink" href="#str-bool" title="Permalink to this headline">¶</a></h1>
+<p>print(‘Any non-empty string is considered True’)
+print(bool(‘as’), bool(‘’))</p>
+<p>print(‘\n’)</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="list-bool">
+<h1>list –&gt; bool<a class="headerlink" href="#list-bool" title="Permalink to this headline">¶</a></h1>
+<p>print(‘Any non-empty list is considered True’)
+print(bool([1]), bool([1,2]), bool(range(0,10000)))
+print(‘Empty list is considered False’)
+print(bool([]), bool(list()), bool(list(‘[]’)))</p>
+<p>print(‘\n’)</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="dict-bool">
+<h1>dict –&gt; bool<a class="headerlink" href="#dict-bool" title="Permalink to this headline">¶</a></h1>
+<p>print(‘Any non-empty dict is considered True’)
+print(bool({1:11}), bool({1:11,-2:22}))
+print(‘Empty dict is considered False’)
+print(bool({}), bool(dict()))</p>
+<div class="section" id="bonus-topics">
+<h2>Bonus topics<a class="headerlink" href="#bonus-topics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Command line basics: similar to how in computing user interfaces click (or  double click) means “run <program>”, a command line interface allows us to run programs by simply typing out their name, as in    program    and pressing. Enter. This is where the notion of “calling a program/function” comes from, you   just write it’s name in a command line prompt and this is equivalent to “calling it” (making it run, just click clicking on it)</p></li>
+<li><p>Command line scripts: run any python code on command line using  python
+<a class="reference external" href="http://myscript.py">myscript.py</a> (or if configured as an executable script, simply ./myscript.py)</p></li>
+<li><p>Documentation: READMEs, <strong>doc</strong> strings, and other technical altruism basics</p></li>
+<li><p>Debugging (intro to JupyterLab debugger)</p></li>
+<li><p>Code Testing (e.g. test_fun: a function that checks that <code class="docutils literal notranslate"><span class="pre">fun</span></code> returns the expected outputs on some set of inputs)</p></li>
+<li><p>Algorithms: different approaches for solving computational problem</p></li>
+</ul>
+<p>This notebook contains some exercises to get you familiar with basic Python programming notions.</p>
 <p>There are multiple data types in Python
 Similar to the notion of number sets in math <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> etc., computers variables also come in different types</p>
 <p>Just enough to be dangerous with numbers and for loops.
@@ -327,6 +650,8 @@ array([3, 5, 7])
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; s[0:3].values
 array([3, 5, 7])
 </pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
