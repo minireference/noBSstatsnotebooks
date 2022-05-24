@@ -1,0 +1,2566 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 2.1 — Probability theory &#8212; No BS Stats Notebooks</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">No BS Stats Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   No Bullshit Stats Notebooks
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../stats_overview/00_Introduction.html">
+   Statistics overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats_overview/01_DATA.html">
+     Chapter 1: DATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats_overview/02_PROB.html">
+     Chapter 2: Probability theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats_overview/03_STATS.html">
+     Chapter 3: Inferential statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats_overview/04_LINEAR_MODELS.html">
+     Chapter 4: Linear models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="10_data.html">
+   Chapter 1 — Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11_intro_to_data.html">
+     Section 1.1 — Introduction to data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_data_in_practice.html">
+     Section 1.2 — Data in practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13_descriptive_statistics.html">
+     Section 1.3 — Descriptive statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/appendix.html">
+   Appendix
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/python_tutorial.html">
+     Appendix C — Python tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/pandas_tutorial.html">
+     Appendix D — Pandas tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/seaborn_tutorial.html">
+     Appendix E — Seaborn tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/21_prob_theory.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/minireference/noBSstatsnotebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fnotebooks/21_prob_theory.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./notebooks/21_prob_theory.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Section 2.1 — Probability theory
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebook-setup">
+     Notebook setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-learn-probability-theory">
+     Why learn probability theory?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-do-we-need-probability-theory-in-statistics">
+       Why do we need probability theory in statistics?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions">
+     Definitions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-uniform-distribution">
+       Example 1: Uniform distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-normal-distribution">
+       Example 2: Normal distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-3-coin-flip">
+       Example 3: Coin flip
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-4-rolling-a-six-sided-die">
+       Example 4: Rolling a six-sided die
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculus-prerequisites">
+     Calculus prerequisites
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sets">
+       Sets
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#functions">
+       Functions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-integrals-geometrically">
+       Computing integrals geometrically
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-integrals-numerically-using-scipy-integrate-quad">
+       Computing integrals numerically using SciPy
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         integrate.quad
+        </span>
+       </code>
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#uniform">
+         Uniform
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#normal">
+         Normal
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     <span class="math notranslate nohighlight">
+      \( \)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-integrals-symbolically-using-sympy-integrate">
+       Computing integrals symbolically using SymPy
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         integrate
+        </span>
+       </code>
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#constant-function-f-x-c">
+         Constant function
+         <span class="math notranslate nohighlight">
+          \(f(x)=c\)
+         </span>
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#line-g-x-mx">
+         Line
+         <span class="math notranslate nohighlight">
+          \(g(x)=mx\)
+         </span>
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculations-with-random-variables">
+     Calculations with random variables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-mean-and-variance-of-the-uniform-distribution">
+       Example: Mean and variance of the uniform distribution
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#alt">
+         Alt
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-mean-and-variance-of-a-normal-distribution">
+       Example: Mean and variance of a normal distribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability-models">
+     Probability models
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computer-models-for-random-variables">
+     Computer models for random variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uexpectorm-distribution">
+     Uexpectorm distribution
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normal-probability-distribution">
+     Normal probability distribution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-probability-calculation">
+       Example probability calculation
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cumulative-density-function-cdf">
+       Cumulative density function (CDF)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-inverse-cdf-function">
+       The inverse-CDF function
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion">
+     Discussion
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bulk-of-the-distribution">
+       Bulk of the distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tails-of-the-distribution">
+       Tails of the distribution
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figures-gen">
+   FIGURES GEN
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cut-material">
+   CUT MATERIAL
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-process-examples-using-python-bonus-material">
+     Random process examples using Python (bonus material)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#coin-flip-example">
+       Coin flip example
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#flipping-a-coin-many-times">
+         Flipping a coin many times
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#six-sided-die-example">
+       Six-sided die example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Section 2.1 — Probability theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Section 2.1 — Probability theory
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebook-setup">
+     Notebook setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-learn-probability-theory">
+     Why learn probability theory?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-do-we-need-probability-theory-in-statistics">
+       Why do we need probability theory in statistics?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions">
+     Definitions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-uniform-distribution">
+       Example 1: Uniform distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-normal-distribution">
+       Example 2: Normal distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-3-coin-flip">
+       Example 3: Coin flip
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-4-rolling-a-six-sided-die">
+       Example 4: Rolling a six-sided die
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculus-prerequisites">
+     Calculus prerequisites
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sets">
+       Sets
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#functions">
+       Functions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-integrals-geometrically">
+       Computing integrals geometrically
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-integrals-numerically-using-scipy-integrate-quad">
+       Computing integrals numerically using SciPy
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         integrate.quad
+        </span>
+       </code>
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#uniform">
+         Uniform
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#normal">
+         Normal
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     <span class="math notranslate nohighlight">
+      \( \)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-integrals-symbolically-using-sympy-integrate">
+       Computing integrals symbolically using SymPy
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         integrate
+        </span>
+       </code>
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#constant-function-f-x-c">
+         Constant function
+         <span class="math notranslate nohighlight">
+          \(f(x)=c\)
+         </span>
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#line-g-x-mx">
+         Line
+         <span class="math notranslate nohighlight">
+          \(g(x)=mx\)
+         </span>
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculations-with-random-variables">
+     Calculations with random variables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-mean-and-variance-of-the-uniform-distribution">
+       Example: Mean and variance of the uniform distribution
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#alt">
+         Alt
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-mean-and-variance-of-a-normal-distribution">
+       Example: Mean and variance of a normal distribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability-models">
+     Probability models
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computer-models-for-random-variables">
+     Computer models for random variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uexpectorm-distribution">
+     Uexpectorm distribution
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normal-probability-distribution">
+     Normal probability distribution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-probability-calculation">
+       Example probability calculation
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cumulative-density-function-cdf">
+       Cumulative density function (CDF)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-inverse-cdf-function">
+       The inverse-CDF function
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion">
+     Discussion
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bulk-of-the-distribution">
+       Bulk of the distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tails-of-the-distribution">
+       Tails of the distribution
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figures-gen">
+   FIGURES GEN
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cut-material">
+   CUT MATERIAL
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-process-examples-using-python-bonus-material">
+     Random process examples using Python (bonus material)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#coin-flip-example">
+       Coin flip example
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#flipping-a-coin-many-times">
+         Flipping a coin many times
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#six-sided-die-example">
+       Six-sided die example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="section-2-1-probability-theory">
+<h1>Section 2.1 — Probability theory<a class="headerlink" href="#section-2-1-probability-theory" title="Permalink to this headline">¶</a></h1>
+<p>This notebook contains all the code examples from <span class="xref myst">Section 2.1 Probability theory</span> of the <strong>No Bullshit Guide to Statistics</strong>.</p>
+<p>Topics include:</p>
+<ul class="simple">
+<li><p>Examples of random variables</p></li>
+<li><p>Calculus review</p>
+<ul>
+<li><p>Math definitions</p></li>
+<li><p>Numerical integration using <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> function <code class="docutils literal notranslate"><span class="pre">quad</span></code></p></li>
+<li><p>Symbolic integration using <code class="docutils literal notranslate"><span class="pre">sympy</span></code> function <code class="docutils literal notranslate"><span class="pre">integrate</span></code></p></li>
+</ul>
+</li>
+<li><p>Probability calculations</p></li>
+<li><p>Probability models</p>
+<ul>
+<li><p>Overview of <code class="docutils literal notranslate"><span class="pre">scipy.stats.distributions</span></code> methods</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="notebook-setup">
+<h2>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load Python modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Figures setup</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span>
+    <span class="n">context</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;colorblind&quot;</span><span class="p">,</span>
+    <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">)},</span>
+<span class="p">)</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+
+<span class="c1"># # silence annoying warnings</span>
+<span class="c1"># import warnings; warnings.filterwarnings(&#39;ignore&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set random seed for repeatability</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="why-learn-probability-theory">
+<h2>Why learn probability theory?<a class="headerlink" href="#why-learn-probability-theory" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>definition: <strong>probability theory is a language for describing uncertainty, variability, and randomness</strong></p></li>
+<li><p>Originally the study of “randomness” and “expectations” started to quantify random events in gambling.</p></li>
+<li><p>Later extended to as a general purpose tool to model any process that contains uncertainty:</p>
+<ul>
+<li><p>random variables = described by probability distribution (CDF, pmf/pdf) modelled as a math function with parameters <span class="math notranslate nohighlight">\(\theta\)</span></p></li>
+<li><p>noise = can be modelled as a random variable</p></li>
+<li><p>sampling = variations due to random selection of a subset from the population</p></li>
+<li><p>beliefs = can be described as probability distributions</p></li>
+</ul>
+</li>
+<li><p>Probability theory is an essential tool for statistics.</p></li>
+<li><p>Probability theory is also a foundational subject that used in physics, machine learning, biology, optimization, algorithms, etc. (side note: in terms of usefulness, I’d say probability theory is up there with linear algebra—you need to know this shit!)</p></li>
+</ul>
+<div class="section" id="why-do-we-need-probability-theory-in-statistics">
+<h3>Why do we need probability theory in statistics?<a class="headerlink" href="#why-do-we-need-probability-theory-in-statistics" title="Permalink to this headline">¶</a></h3>
+<p>Probability theory provides us with some essential tools needed for statistics:</p>
+<ul class="simple">
+<li><p>modelling: describe a population as a probability distribution</p></li>
+<li><p>sampling distributions: distributions obtained for random samples from a population</p></li>
+</ul>
+<p>Additionally, artificially introduced randomness is the basis for two of the most important statistics “kung fu” techniques:</p>
+<ul class="simple">
+<li><p><strong>random selection</strong> = if you collect a sample of size n randomly selected from a population, then compute statistics from the sample, you can then make inferences about the whole population.</p></li>
+<li><p><strong>random assignment</strong> = create two roughly equivalent groups by randomly assigning participants into group A or group B. This random split is the basis for a statistical experiment that compares an intervention group and a control group. Given the participants were randomly assigned to the two groups, we can hope they are roughly equally distributed on all dimensions (similar distribution of all confounding variables), so that any differences observed between groups can be attributed to the intervention. Calculating the difference statistic intervention-control give an estimate of the effect size of this intervention.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-uniform-distribution">
+<h3>Example 1: Uniform distribution<a class="headerlink" href="#example-1-uniform-distribution" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">quad</span><span class="p">(</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-2-normal-distribution">
+<h3>Example 2: Normal distribution<a class="headerlink" href="#example-2-normal-distribution" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="n">quad</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">900</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13590512198327784
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-3-coin-flip">
+<h3>Example 3: Coin flip<a class="headerlink" href="#example-3-coin-flip" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">rvC</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">rvC</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-4-rolling-a-six-sided-die">
+<h3>Example 4: Rolling a six-sided die<a class="headerlink" href="#example-4-rolling-a-six-sided-die" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvD</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="n">rvD</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 5, 2, 4, 6, 6, 2, 4, 5, 1, 4, 2, 6, 5, 4, 1, 1, 3, 3, 2])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculus-prerequisites">
+<h2>Calculus prerequisites<a class="headerlink" href="#calculus-prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>(see formulas and definitions in the book)</p>
+<div class="section" id="sets">
+<h3>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">T</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S ∪ T =&quot;</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S ∩ T =&quot;</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S \ T =&quot;</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S ∪ T = {1, 2, 3, 4, 5, 6}
+S ∩ T = {3}
+S \ T = {1, 2}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p>In Python, we define functions using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword.
+For example, the code cell below shows how to define the function <span class="math notranslate nohighlight">\(g(x)=3x\)</span>,
+then evaluate it for the input <span class="math notranslate nohighlight">\(x=4\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">gx</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">gx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Graph of the f(x)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_28_1.png" src="../_images/21_prob_theory_28_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import matplotlib.pyplot as plt</span>
+<span class="c1"># filename = &quot;figures/graph_of_function_g_3x.pdf&quot;</span>
+
+<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(4,3)}):</span>
+<span class="c1">#     ax = sns.lineplot(x=x, y=gx, label=&quot;Graph of the g(x)&quot;)</span>
+<span class="c1">#     ax.figure.tight_layout()</span>
+<span class="c1">#     ax.set_xlabel(&#39;x&#39;)</span>
+<span class="c1">#     ax.set_ylabel(&#39;g(x)&#39;)</span>
+<span class="c1">#     ax.figure.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
+
+<span class="n">log</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.3862943611198906
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">fN</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">fN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_31_1.png" src="../_images/21_prob_theory_31_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import matplotlib.pyplot as plt</span>
+<span class="c1"># filename = &quot;figures/graph_of_pdf_of_rvN.pdf&quot;</span>
+
+<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(7,3)}):</span>
+<span class="c1">#     x = np.linspace(0, 2000, 10000)</span>
+<span class="c1">#     fN = rvN.pdf(x)</span>
+<span class="c1">#     ax = sns.lineplot(x=x, y=fN)</span>
+<span class="c1">#     ax.figure.tight_layout()</span>
+<span class="c1">#     ax.set_title(&quot;Probability density function for the distribution $\mathcal{N}(1000,100)$&quot;)</span>
+<span class="c1">#     ax.set_xlabel(&#39;$x$&#39;)</span>
+<span class="c1">#     ax.set_ylabel(&#39;$f_N(x)$&#39;)</span>
+<span class="c1">#     ax.figure.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="computing-integrals-geometrically">
+<h3>Computing integrals geometrically<a class="headerlink" href="#computing-integrals-geometrically" title="Permalink to this headline">¶</a></h3>
+<p>FIG 1: integral under <span class="math notranslate nohighlight">\(f(x)  = c \)</span></p>
+<p>FIG 2: integral under <span class="math notranslate nohighlight">\(g(x)  = mx\)</span></p>
+</div>
+<div class="section" id="computing-integrals-numerically-using-scipy-integrate-quad">
+<h3>Computing integrals numerically using SciPy <code class="docutils literal notranslate"><span class="pre">integrate.quad</span></code><a class="headerlink" href="#computing-integrals-numerically-using-scipy-integrate-quad" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span><span class="p">,</span> <span class="n">quad</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the constant function f(x) = c</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">333</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10.0, 1.1102230246251565e-13)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # define the function g(x) = mx (line with slope m)</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.50000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">trapz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a preview of calculations with probability distributions…</p>
+<div class="section" id="uniform">
+<h4>Uniform<a class="headerlink" href="#uniform" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9999999999999999
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quad</span><span class="p">(</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="normal">
+<h4>Normal<a class="headerlink" href="#normal" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’re using 10**4 = 10000 because <a class="reference external" href="https://stackoverflow.com/questions/63673369/while-using-scipy-integrate-quad-increasing-bound-of-a-positive-function-decrea">quad needs reasonable limits</a> to work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quad</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">900</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13590512198327784
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">900</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">yN</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">trapz</span><span class="p">(</span><span class="n">yN</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13590513317137634
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><span class="math notranslate nohighlight">\( \)</span><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\( \)</span></p>
+<div class="section" id="computing-integrals-symbolically-using-sympy-integrate">
+<h3>Computing integrals symbolically using SymPy <code class="docutils literal notranslate"><span class="pre">integrate</span></code><a class="headerlink" href="#computing-integrals-symbolically-using-sympy-integrate" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">integrate</span>
+
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">init_printing</span>
+<span class="n">init_printing</span><span class="p">(</span><span class="n">pretty_print</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_latex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define symbolic variables</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x a b c m&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="constant-function-f-x-c">
+<h4>Constant function <span class="math notranslate nohighlight">\(f(x)=c\)</span><a class="headerlink" href="#constant-function-f-x-c" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fx</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">fx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>  <span class="c1"># = A_f(a,b)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-a*c + b*c
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from sympy import simplify</span>
+<span class="c1"># simplify(integrate(fx, (x,a,b)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">c</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="mi">5</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>  <span class="c1"># = F_0(b)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b*c
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="line-g-x-mx">
+<h4>Line <span class="math notranslate nohighlight">\(g(x)=mx\)</span><a class="headerlink" href="#line-g-x-mx" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gx</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span>
+<span class="n">gx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m*x
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>  <span class="c1"># = A_g(a,b)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-a**2*m/2 + b**2*m/2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">m</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="mi">5</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75/2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">m</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="mi">5</span><span class="p">})</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.5000000000000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>  <span class="c1"># = G_0(b)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b**2*m/2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculations-with-random-variables">
+<h2>Calculations with random variables<a class="headerlink" href="#calculations-with-random-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-mean-and-variance-of-the-uniform-distribution">
+<h3>Example: Mean and variance of the uniform distribution<a class="headerlink" href="#example-mean-and-variance-of-the-uniform-distribution" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span>
+
+<span class="c1"># mean</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">mu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># variance</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">sigma2</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">sigma2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08333350033383399
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvU</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08333333333333333
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="alt">
+<h4>Alt<a class="headerlink" href="#alt" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">xpU</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">xpU</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">xpU</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">muX</span> <span class="o">=</span> <span class="n">rvU</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">xpU</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simpson</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">simpson</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">dx</span>
+
+<span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">dx</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.49949949949949957, 0.5005005005005005)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-mean-and-variance-of-a-normal-distribution">
+<h3>Example: Mean and variance of a normal distribution<a class="headerlink" href="#example-mean-and-variance-of-a-normal-distribution" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="probability-models">
+<h2>Probability models<a class="headerlink" href="#probability-models" title="Permalink to this headline">¶</a></h2>
+<p>In probability theory, we model data as instances of a <strong>random variable</strong> <span class="math notranslate nohighlight">\(X\)</span> described by a <strong>probability distribution</strong> <span class="math notranslate nohighlight">\(p_X\)</span> (a math function) with particular parameters (usually denoted with Greek letters like <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span>, etc.).</p>
+<p>Multiple different ways to specify and interact with probability distributions:</p>
+<ul class="simple">
+<li><p>exact math model function (CDF from which we can extract pdf density function or pmf mass function). Math models allow us the most options: <code class="docutils literal notranslate"><span class="pre">rvs</span></code>, <code class="docutils literal notranslate"><span class="pre">cdf</span></code>, <code class="docutils literal notranslate"><span class="pre">pdf/pmf</span></code>, and stats like <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">median</span></code>, <code class="docutils literal notranslate"><span class="pre">var/std</span></code>, <code class="docutils literal notranslate"><span class="pre">quartiles</span></code>.</p></li>
+<li><p>random draws form a generative process</p></li>
+<li><p>random draws from a real world process</p></li>
+<li><p>data for an entire population (census)</p></li>
+<li><p>sample data from a population</p></li>
+<li><p>synthetic data obtained by resampling</p>
+<ul>
+<li><p>bootstrap estimation for any distribution</p></li>
+<li><p>permutation test for no-difference-between-groups hypotheses</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="computer-models-for-random-variables">
+<h2>Computer models for random variables<a class="headerlink" href="#computer-models-for-random-variables" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># create a normal random variable with mean 1000 and std 100</span>
+<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">rvN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scipy.stats._distn_infrastructure.rv_frozen
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## see all attributes and methods:</span>
+<span class="c1"># [attr for attr in dir(rvN) if &quot;__&quot; not in attr] </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">support</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-inf, inf)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># 1. choose the parameters:</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="mi">1000</span>   <span class="c1"># 𝜇 (mu)    = where is its center?</span>
+<span class="n">std</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># 𝜎 (sigma) = how spread out is it?</span>
+
+<span class="c1"># 2. create a normal random variable</span>
+<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
+
+<span class="c1"># 3. plot it&#39;s probability density function (pdf)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.999</span><span class="p">),</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Probability density for the normal distribution $\mathcal</span><span class="si">{N}</span><span class="s1">(&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">std</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)$&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">1700</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">1700</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.006</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/21_prob_theory_102_0.png" src="../_images/21_prob_theory_102_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pr({800 &lt; N &lt; 900}) = integral of f_N between 800 and 900</span>
+<span class="n">quad</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">900</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13590512198327784
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pr({800 &lt; N &lt; 900}) = F_N(900) - F_N(800)</span>
+<span class="n">rvN</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">900</span><span class="p">)</span> <span class="o">-</span> <span class="n">rvN</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13590512198327787
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first quartile</span>
+<span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>932.5510249803918
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># second quartile (median)</span>
+<span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># third quartile</span>
+<span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1067.4489750196083
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">),</span> <span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(835.5146373048527, 1164.4853626951472)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="mf">0.90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(835.5146373048527, 1164.4853626951472)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">w</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">rvN</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000.0000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">rvN</span><span class="o">.</span><span class="n">var</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">moment</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># = rvN.mean()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get paid $2 for each bottle that is according to spec</span>
+<span class="k">def</span> <span class="nf">payment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">800</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1200</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">payment</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ys</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;payment(x)&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">*</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_121_1.png" src="../_images/21_prob_theory_121_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">payment</span><span class="p">,</span> <span class="n">lb</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ub</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9089994722069916
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rvN.expect(lambda x: x)</span>
+<span class="c1"># rvN.expect(lambda x: 1, lb=0, ub=2000)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">poisson</span>
+
+<span class="n">rvP</span> <span class="o">=</span> <span class="n">poisson</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">rvP</span><span class="o">.</span><span class="n">support</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, inf)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="uexpectorm-distribution">
+<h2>Uexpectorm distribution<a class="headerlink" href="#uexpectorm-distribution" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Continuous_uniform_distribution">uniform distribution</a> <span class="math notranslate nohighlight">\(U(0,1)\)</span> is described by the following probability density function:
+$<span class="math notranslate nohighlight">\( \Large
+  p_X(x)=\begin{cases}
+  1 &amp; \mathrm{for}\ 0 \le x \le 1, \\
+  0 &amp; \mathrm{for}\ x&lt;0\ \mathrm{or}\ x&gt;1
+  \end{cases}
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>X<span class="math notranslate nohighlight">\( is the name of the random variable and \)</span>x$ are particular values it can take on.</p>
+<p>The above equation describes tells you how likely it is to observe <span class="math notranslate nohighlight">\(X=x\)</span>.
+For a uniform distribution <span class="math notranslate nohighlight">\(U(0,1)\)</span>, each <span class="math notranslate nohighlight">\(x\)</span> between 0 and 1 is equally likely to occur,
+and values of <span class="math notranslate nohighlight">\(x\)</span> outside this range have zero probability of occurring.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+
+<span class="c1"># create a uniform random variable U(0,1)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;scipy.stats._distn_infrastructure.rv_frozen at 0x7fe167bf58b0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># draw 10 random samples from X</span>
+<span class="n">X</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.04666566, 0.97375552, 0.23277134, 0.09060643, 0.61838601,
+       0.38246199, 0.98323089, 0.46676289, 0.85994041, 0.68030754])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the probability density function (pdf) of the random variable X</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pX</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">pX</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Probability density function $p_X$ for the uniform distribution between 0 and 1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/21_prob_theory_132_0.png" src="../_images/21_prob_theory_132_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="normal-probability-distribution">
+<h2>Normal probability distribution<a class="headerlink" href="#normal-probability-distribution" title="Permalink to this headline">¶</a></h2>
+<p>A random variable <span class="math notranslate nohighlight">\(X\)</span> with a <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a> is described by the probability density function:
+$<span class="math notranslate nohighlight">\( \Large
+    p_X(x) = \tfrac{1}{\sigma\sqrt{2\pi}} e^{\small -\tfrac{(x-\mu)^2}{2\sigma^2}}
+\)</span><span class="math notranslate nohighlight">\(
+where the mean \)</span>\mu<span class="math notranslate nohighlight">\( and standard deviation \)</span>\sigma<span class="math notranslate nohighlight">\( are called the parmeters of the distribution. The math notation \)</span>\mathcal{N}(\mu, \sigma^2)$ is used to describe this probability distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># 1. choose the parameters:</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="mi">1000</span>   <span class="c1"># 𝜇 (mu)    = where is its center?</span>
+<span class="n">std</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># 𝜎 (sigma) = how spread out is it?</span>
+
+<span class="c1"># 2. create a normal random variable</span>
+<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
+
+<span class="c1"># 3. plot it&#39;s probability density function (pdf)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.999</span><span class="p">),</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Probability density for the normal distribution $\mathcal</span><span class="si">{N}</span><span class="s1">(&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">std</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)$&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">1700</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">1700</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.006</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/21_prob_theory_134_0.png" src="../_images/21_prob_theory_134_0.png" />
+</div>
+</div>
+<div class="section" id="example-probability-calculation">
+<h3>Example probability calculation<a class="headerlink" href="#example-probability-calculation" title="Permalink to this headline">¶</a></h3>
+<p>What is the probability of observing a value between 800 and 900.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># highlight the area under the curve </span>
+<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">800</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">900</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">figure</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/21_prob_theory_136_0.png" src="../_images/21_prob_theory_136_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+
+<span class="c1"># Pr(800 &lt; X &lt; 900) = integral of f_X between 800 and 900</span>
+<span class="n">quad</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">900</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13590512198327784
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">calc_prob_and_plot</span><span class="p">(</span><span class="n">rv</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">xlims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the probability random variable `rv` falls between a and b,</span>
+<span class="sd">    and plot the area-under-the-curve visualization ofr this calculation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># 1. calculate Pr(a&lt;X&lt;b) == integral of rv.pdf between x=a and x=b</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">rv</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># 2. plot the probability density function (pdf)</span>
+    <span class="k">if</span> <span class="n">xlims</span><span class="p">:</span>
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">xlims</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">rv</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.999</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">pX</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">pX</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Probability density for the random variable &#39;</span> <span class="o">+</span> <span class="n">rv</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rv</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> \
+             <span class="o">+</span> <span class="s1">&#39; between &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; and &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="c1"># 3. highlight the area under pX between x=a and x=b</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="n">pX</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+    <span class="c1"># return prob and figure axes</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calc_prob_and_plot</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.49996832875816705,
+ &lt;AxesSubplot:title={&#39;center&#39;:&#39;Probability density for the random variable norm(1000, 100) between 600 and 1000&#39;}&gt;)
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_139_1.png" src="../_images/21_prob_theory_139_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">args</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000, 100)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cumulative-density-function-cdf">
+<h3>Cumulative density function (CDF)<a class="headerlink" href="#cumulative-density-function-cdf" title="Permalink to this headline">¶</a></h3>
+<p>The cumulative distribution is the integral (summation) of the probability density function:
+$<span class="math notranslate nohighlight">\(\large
+   F_X(x) = \textrm{Pr}(X \leq x) = \int_{-\infty}^x f_X(t) \, dt
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pr(800 &lt; X &lt; 900) = F(900) - F(800)</span>
+<span class="n">rvN</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">900</span><span class="p">)</span> <span class="o">-</span> <span class="n">rvN</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13590512198327787
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-inverse-cdf-function">
+<h3>The inverse-CDF function<a class="headerlink" href="#the-inverse-cdf-function" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1025.33471031358
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvN</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mf">1025.33471031358</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6000000000000001
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bulk-of-the-distribution">
+<h3>Bulk of the distribution<a class="headerlink" href="#bulk-of-the-distribution" title="Permalink to this headline">¶</a></h3>
+<p>How much of the total probability “weight” lies within two standard deviations of the mean?</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{Pr}(\mu - 2\sigma \leq X \leq \mu + 2\sigma) \ = \ ?
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>    <span class="c1"># mean of the random variable</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c1"># standard deviaiton of the random variable</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>             <span class="c1"># number of standard deviations around the mean</span>
+
+<span class="c1"># highlight the selected area around the mean</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.999</span><span class="p">),</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pN</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">pN</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># values of x in the interval  𝜇 ± 2𝜎 = [𝜇-2𝜎, 𝜇+2𝜎]</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">mu</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">mu</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="n">pN</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># calculate the probability of Pr{𝜇-2𝜎 &lt; x &lt; 𝜇+2𝜎}</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">pN</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">pN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9564320296354867
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_152_1.png" src="../_images/21_prob_theory_152_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="tails-of-the-distribution">
+<h3>Tails of the distribution<a class="headerlink" href="#tails-of-the-distribution" title="Permalink to this headline">¶</a></h3>
+<p>We’re often interested in tail ends of the distribution, which contain the unlikely events. For example, the two-sigma tail ends of the distribution contain less than 5% of the weight.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># highlight the tails of the distribution</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">pN</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">mask_l</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">mu</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">sigma</span>
+<span class="n">mask_u</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">n</span><span class="o">*</span><span class="n">sigma</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mask_l</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="n">pN</span><span class="p">[</span><span class="n">mask_l</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mask_u</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="n">pN</span><span class="p">[</span><span class="n">mask_u</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="c1"># calculate the probability of Pr{x &lt; 𝜇-n𝜎  OR  x &gt; 𝜇+n𝜎}</span>
+<span class="n">tail_prob</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">pN</span><span class="p">[</span><span class="n">mask_l</span><span class="p">])</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pN</span><span class="p">[</span><span class="n">mask_u</span><span class="p">])</span> <span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">pN</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Probability of observing value x &lt;&quot;</span><span class="p">,</span>
+      <span class="nb">round</span><span class="p">(</span><span class="n">mu</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;or x &gt;&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">mu</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+      <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tail_prob</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability of observing value x &lt; 800.0 or x &gt; 1200.0 is 0.0436
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_154_1.png" src="../_images/21_prob_theory_154_1.png" />
+</div>
+</div>
+<p>The above calculations leads us to an important rule of thumb: the values of the 5% tail of the distribution are <span class="math notranslate nohighlight">\(n=2\)</span> standard deviations away from the mean (more precisely, we should use <span class="math notranslate nohighlight">\(n = 1.96\)</span> to get exactly 5%).</p>
+<p>We’ll use this facts later in STATS to define a <em>cutoff value</em> for events that are unlikely to occur by chance.</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="figures-gen">
+<h1>FIGURES GEN<a class="headerlink" href="#figures-gen" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">plot_pdf_and_cdf</span><span class="p">(</span><span class="n">rv</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">xlims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rv_name</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot side-by-side figure that shows pdf and CDF of random variable `rv`.</span>
+<span class="sd">    Left plot shows area-under-the-curve visualization until x=b.</span>
+<span class="sd">    Right plot higlights point at (b, F_X(b)).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">axs</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Probability distributions of the random variable &#39;</span> \
+        <span class="o">+</span> <span class="s2">&quot;$&quot;</span> <span class="o">+</span> <span class="n">rv_name</span> <span class="o">+</span> <span class="s2">&quot;$&quot;</span> <span class="o">+</span> <span class="s2">&quot; ~ &quot;</span> \
+        <span class="o">+</span> <span class="n">rv</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rv</span><span class="o">.</span><span class="n">args</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="c1"># + &#39; between &#39; + str(a) + &#39; and &#39; + str(b)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="c1"># 1. plot the probability density function (pdf)</span>
+    <span class="k">if</span> <span class="n">xlims</span><span class="p">:</span>
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">xlims</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">rv</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.999</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">pX</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">pX</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax0</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Probability density function&quot;</span><span class="p">)</span>
+
+    <span class="c1"># highlight the area under pX between x=a and x=b</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="n">pX</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="n">b</span><span class="p">],</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">rv</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$b$&quot;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">rv</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mf">2.5</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;Pr$(\{&quot;</span> <span class="o">+</span> <span class="n">rv_name</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot; \leq b \})$    &quot;</span><span class="p">,</span>
+             <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+    <span class="c1"># 2. plot the CDF</span>
+    <span class="n">FX</span> <span class="o">=</span> <span class="n">rv</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">FX</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Cumulative distribution function&quot;</span><span class="p">)</span>
+
+    <span class="c1"># highlight the point x=b</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="n">b</span><span class="p">],</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">rv</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$b$&quot;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">rv</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="s1">&#39;$(b, F_{&#39;</span> <span class="o">+</span> <span class="n">rv_name</span> <span class="o">+</span> <span class="s1">&#39;}(b))$&#39;</span><span class="p">,</span>
+             <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+
+    <span class="c1"># return figure and axes</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plot_pdf_and_cdf</span><span class="p">(</span><span class="n">rvU</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">rv_name</span><span class="o">=</span><span class="s2">&quot;U&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 432x288 with 2 Axes&gt;,
+ array([&lt;AxesSubplot:title={&#39;center&#39;:&#39;Probability density function&#39;}&gt;,
+        &lt;AxesSubplot:title={&#39;center&#39;:&#39;Cumulative distribution function&#39;}&gt;],
+       dtype=object))
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_159_1.png" src="../_images/21_prob_theory_159_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename = &quot;figures/uniform_pdf_and_CDF_until_b.pdf&quot;</span>
+
+<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(10,5)}):</span>
+<span class="c1">#     fig, axs = plot_pdf_and_cdf(rvU, 0.7, rv_name=&quot;U&quot;)</span>
+<span class="c1">#     fig.tight_layout()</span>
+<span class="c1">#     fig.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">std</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
+
+<span class="n">plot_pdf_and_cdf</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="mi">1100</span><span class="p">,</span> <span class="n">rv_name</span><span class="o">=</span><span class="s2">&quot;N&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 432x288 with 2 Axes&gt;,
+ array([&lt;AxesSubplot:title={&#39;center&#39;:&#39;Probability density function&#39;}&gt;,
+        &lt;AxesSubplot:title={&#39;center&#39;:&#39;Cumulative distribution function&#39;}&gt;],
+       dtype=object))
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_161_1.png" src="../_images/21_prob_theory_161_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename = &quot;figures/normal_pdf_and_CDF_until_b.pdf&quot;</span>
+
+<span class="c1"># from scipy.stats.distributions import norm</span>
+<span class="c1"># mean = 1000</span>
+<span class="c1"># std = 100</span>
+<span class="c1"># rvN = norm(mean, std)</span>
+
+<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(10,5)}):</span>
+<span class="c1">#     fig, axs = plot_pdf_and_cdf(rvN, 1100, rv_name=&quot;N&quot;)</span>
+<span class="c1">#     fig.tight_layout()</span>
+<span class="c1">#     fig.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cut-material">
+<h1>CUT MATERIAL<a class="headerlink" href="#cut-material" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uniform distribution U(0,1)</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">Integral</span><span class="p">,</span> <span class="n">simplify</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x a b&#39;</span><span class="p">)</span>
+<span class="n">fU</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">simplify</span><span class="p">(</span> <span class="n">integrate</span><span class="p">(</span><span class="n">fU</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-a + b
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Integral</span><span class="p">(</span><span class="n">fU</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral(1, x)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Integral</span><span class="p">(</span><span class="n">fU</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="random-process-examples-using-python-bonus-material">
+<h2>Random process examples using Python (bonus material)<a class="headerlink" href="#random-process-examples-using-python-bonus-material" title="Permalink to this headline">¶</a></h2>
+<p>Let’s look at some simple examples of two random events: a coin flip and a die roll.
+We’ll use the Python module <code class="docutils literal notranslate"><span class="pre">random</span></code> to generate random numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="c1"># random number between 0 (inclusive) and 1 (non-inclusive)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3137611597880041
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="coin-flip-example">
+<h3>Coin flip example<a class="headerlink" href="#coin-flip-example" title="Permalink to this headline">¶</a></h3>
+<p>The code example below shows a function that performs the equivalent of a coin flip.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flip_coin</span><span class="p">():</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  <span class="c1"># a number in the range [0,1)</span>
+    <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;heads&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;tails&quot;</span>
+
+<span class="n">flip_coin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;tails&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="flipping-a-coin-many-times">
+<h4>Flipping a coin many times<a class="headerlink" href="#flipping-a-coin-many-times" title="Permalink to this headline">¶</a></h4>
+<p>Let’s see what happens if we flip the coin many times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flips</span> <span class="o">=</span> <span class="p">[</span><span class="n">flip_coin</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)]</span>
+<span class="n">heads</span> <span class="o">=</span> <span class="p">[</span><span class="n">flip</span> <span class="k">for</span> <span class="n">flip</span> <span class="ow">in</span> <span class="n">flips</span> <span class="k">if</span> <span class="n">flip</span> <span class="o">==</span> <span class="s2">&quot;heads&quot;</span><span class="p">]</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">heads</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">flips</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5195
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot a horizontal bar chart of the number of outcomes</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">flips</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">())</span>
+<span class="n">s</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;barh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>heads    1039
+tails     961
+dtype: int64
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_175_2.png" src="../_images/21_prob_theory_175_2.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="six-sided-die-example">
+<h3>Six-sided die example<a class="headerlink" href="#six-sided-die-example" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">roll_die</span><span class="p">():</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">6</span>  <span class="c1"># a number in the range [0,6)</span>
+    <span class="n">rint</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>          <span class="c1"># convert to integer in {0,1,2,3,4,5}</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">rint</span> <span class="o">+</span> <span class="mi">1</span>       <span class="c1"># convert to integer in {1,2,3,4,5,6}</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="n">roll_die</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see what happens if we roll the die many times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rolls</span> <span class="o">=</span> <span class="p">[</span><span class="n">roll_die</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">)]</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">rolls</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">())</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1     992
+2    1005
+3    1039
+4     976
+5     990
+6     998
+dtype: int64
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/21_prob_theory_180_2.png" src="../_images/21_prob_theory_180_2.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "minireference/noBSstatsnotebooks",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ivan Savov<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
