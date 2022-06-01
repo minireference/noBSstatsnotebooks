@@ -17,14 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-lines = open("story.txt").readlines()
+lines = open("story.txt").read().splitlines()
 lines
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Input [0;32mIn [70][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m lines [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mstory.txt[39;49m[38;5;124;43m"[39;49m[43m)[49m[38;5;241m.[39mreadlines()
+Input [0;32mIn [71][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m lines [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mstory.txt[39;49m[38;5;124;43m"[39;49m[43m)[49m[38;5;241m.[39mread()[38;5;241m.[39msplitlines()
 [1;32m      2[0m lines
 
 [0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'story.txt'

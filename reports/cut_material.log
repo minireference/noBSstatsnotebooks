@@ -17,26 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-flips = [flip_coin() for _ in range(0, 2000)]
-heads = [flip for flip in flips if flip == "heads"]
-
-len(heads)/len(flips)
-
-# plot a horizontal bar chart of the number of outcomes
-s = pd.Series(flips)
-print(s.value_counts().sort_index())
-s.value_counts().sort_index().plot(kind="barh")
+rvN.moment(1)  # = rvN.mean()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [6][0m, in [0;36m<cell line: 7>[0;34m()[0m
-[1;32m      4[0m [38;5;28mlen[39m(heads)[38;5;241m/[39m[38;5;28mlen[39m(flips)
-[1;32m      6[0m [38;5;66;03m# plot a horizontal bar chart of the number of outcomes[39;00m
-[0;32m----> 7[0m s [38;5;241m=[39m [43mpd[49m[38;5;241m.[39mSeries(flips)
-[1;32m      8[0m [38;5;28mprint[39m(s[38;5;241m.[39mvalue_counts()[38;5;241m.[39msort_index())
-[1;32m      9[0m s[38;5;241m.[39mvalue_counts()[38;5;241m.[39msort_index()[38;5;241m.[39mplot(kind[38;5;241m=[39m[38;5;124m"[39m[38;5;124mbarh[39m[38;5;124m"[39m)
+Input [0;32mIn [21][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [43mrvN[49m[38;5;241m.[39mmoment([38;5;241m1[39m)
 
-[0;31mNameError[0m: name 'pd' is not defined
-NameError: name 'pd' is not defined
+[0;31mNameError[0m: name 'rvN' is not defined
+NameError: name 'rvN' is not defined
 
