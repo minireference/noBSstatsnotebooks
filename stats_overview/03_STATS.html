@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Chapter 3: Inferential statistics &#8212; No BS Stats Notebooks</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +107,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   No Bullshit Stats Notebooks
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    No Bullshit Stats Notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="00_Introduction.html">
    Statistics overview
@@ -210,110 +225,227 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/stats_overview/03_STATS.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/minireference/noBSstatsnotebooks"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fstats_overview/03_STATS.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./stats_overview/03_STATS.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./stats_overview/03_STATS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/minireference/noBSstatsnotebooks"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fstats_overview/03_STATS.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/stats_overview/03_STATS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notebook-setup">
    Notebook setup
@@ -543,12 +675,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Chapter 3: Inferential statistics</h1>
@@ -794,16 +925,17 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-3-inferential-statistics">
-<h1>Chapter 3: Inferential statistics<a class="headerlink" href="#chapter-3-inferential-statistics" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-inferential-statistics">
+<h1>Chapter 3: Inferential statistics<a class="headerlink" href="#chapter-3-inferential-statistics" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://docs.google.com/document/d/1fwep23-95U-w1QMPU31nOvUnUXE2X3s_Dbk5JuLlKAY/edit#heading=h.uutryzqeo2av">Link to outline</a></p>
 <p>Concept map:
 <img alt="concepts_STATS.png" src="stats_overview/attachment:09eb3a54-abf3-4e54-bf16-6a6399de6438.png" /></p>
-<div class="section" id="notebook-setup">
-<h2>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h2>
+<section id="notebook-setup">
+<h2>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loading Python modules</span>
@@ -829,9 +961,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Main idea = learn about a population based on a sample</p></li>
 <li><p>Recall Amy’s two research questions about the employee lifetime value (ELV) data:</p>
@@ -842,16 +974,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>Inferential statistics provides us with tools to answer both of these questions</p></li>
 </ul>
-</div>
-<div class="section" id="estimators">
-<h2>Estimators<a class="headerlink" href="#estimators" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="estimators">
+<h2>Estimators<a class="headerlink" href="#estimators" title="Permalink to this headline">#</a></h2>
 <p>We’ll begin our study of inferential statistics by introducing <strong>estimators</strong>,
 which are used for both <strong>hypothesis testing</strong> and <strong>estimation</strong>.</p>
 <p><img alt="high level stats for overview.png" src="stats_overview/attachment:8837c882-ebf7-4203-b625-c8f01f84a55b.png" /></p>
 <p><span class="math notranslate nohighlight">\(\def\stderr#1{\mathbf{se}_{#1}}\)</span>
 <span class="math notranslate nohighlight">\(\def\stderrhat#1{\hat{\mathbf{se}}_{#1}}\)</span></p>
-<div class="section" id="definitions">
-<h3>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h3>
+<section id="definitions">
+<h3>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>We use the term “estimator” to describe a function <span class="math notranslate nohighlight">\(f\)</span> that takes samples as inputs,
 which is written mathematically as:
@@ -896,9 +1028,9 @@ where <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is a rand
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="difference-between-group-means">
-<h3>Difference between group means<a class="headerlink" href="#difference-between-group-means" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="difference-between-group-means">
+<h3>Difference between group means<a class="headerlink" href="#difference-between-group-means" title="Permalink to this headline">#</a></h3>
 <p>Consider two random variables <span class="math notranslate nohighlight">\(X_A\)</span> and <span class="math notranslate nohighlight">\(X_B\)</span>:
 $<span class="math notranslate nohighlight">\( \large
 X_A \sim \mathcal{N}\!\left(\mu_A, \sigma^2_A \right)
@@ -940,8 +1072,8 @@ and <span class="math notranslate nohighlight">\(\overline{x}_{B} = \texttt{mean
 </div>
 </div>
 </div>
-<div class="section" id="particular-value-of-the-estimator-dmeans">
-<h4>Particular value of the estimator <code class="docutils literal notranslate"><span class="pre">dmeans</span></code><a class="headerlink" href="#particular-value-of-the-estimator-dmeans" title="Permalink to this headline">¶</a></h4>
+<section id="particular-value-of-the-estimator-dmeans">
+<h4>Particular value of the estimator <code class="docutils literal notranslate"><span class="pre">dmeans</span></code><a class="headerlink" href="#particular-value-of-the-estimator-dmeans" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xA</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">muA</span><span class="p">,</span> <span class="n">sigmaA</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">nA</span><span class="p">)</span>  <span class="c1"># random sample from Group A</span>
@@ -959,9 +1091,9 @@ and <span class="math notranslate nohighlight">\(\overline{x}_{B} = \texttt{mean
 </div>
 </div>
 <p>The value of <span class="math notranslate nohighlight">\(d\)</span> computed from the samples is an estimate for the difference between means of two groups: <span class="math notranslate nohighlight">\(\Delta =  \mu_A - \mu_{B}\)</span> (which we know is <span class="math notranslate nohighlight">\(100\)</span> in this example).</p>
-</div>
-<div class="section" id="sampling-distribution-of-the-estimator-dmeans">
-<h4>Sampling distribution of the estimator <code class="docutils literal notranslate"><span class="pre">dmeans</span></code><a class="headerlink" href="#sampling-distribution-of-the-estimator-dmeans" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="sampling-distribution-of-the-estimator-dmeans">
+<h4>Sampling distribution of the estimator <code class="docutils literal notranslate"><span class="pre">dmeans</span></code><a class="headerlink" href="#sampling-distribution-of-the-estimator-dmeans" title="Permalink to this headline">#</a></h4>
 <p>How well does the estimate <span class="math notranslate nohighlight">\(d\)</span> approximate the true value <span class="math notranslate nohighlight">\(\Delta\)</span>?
 <strong>What is the accuracy and variability of the estimates we can expect?</strong></p>
 <p>To answer these questions, consider the random samples
@@ -1020,9 +1152,9 @@ then compute the <strong>sampling distribution</strong>: <span class="math notra
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-the-sampling-distribution-of-dmeans">
-<h4>Plot the sampling distribution of <code class="docutils literal notranslate"><span class="pre">dmeans</span></code><a class="headerlink" href="#plot-the-sampling-distribution-of-dmeans" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="plot-the-sampling-distribution-of-dmeans">
+<h4>Plot the sampling distribution of <code class="docutils literal notranslate"><span class="pre">dmeans</span></code><a class="headerlink" href="#plot-the-sampling-distribution-of-dmeans" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig3</span><span class="p">,</span> <span class="n">ax3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -1040,9 +1172,9 @@ then compute the <strong>sampling distribution</strong>: <span class="math notra
 <img alt="../_images/03_STATS_22_0.png" src="../_images/03_STATS_22_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="theoretical-model-for-the-sampling-distribution-of-dmeans">
-<h4>Theoretical model for the sampling distribution of <code class="docutils literal notranslate"><span class="pre">dmeans</span></code><a class="headerlink" href="#theoretical-model-for-the-sampling-distribution-of-dmeans" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="theoretical-model-for-the-sampling-distribution-of-dmeans">
+<h4>Theoretical model for the sampling distribution of <code class="docutils literal notranslate"><span class="pre">dmeans</span></code><a class="headerlink" href="#theoretical-model-for-the-sampling-distribution-of-dmeans" title="Permalink to this headline">#</a></h4>
 <p>Let’s use probability theory to build a theoretical model for the sampling distribution of the difference-between-means estimator <code class="docutils literal notranslate"><span class="pre">dmeans</span></code>.</p>
 <ul class="simple">
 <li><p>The central limit theorem</p></li>
@@ -1091,10 +1223,10 @@ $<span class="math notranslate nohighlight">\( \large
 <img alt="../_images/03_STATS_25_1.png" src="../_images/03_STATS_25_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="regroup-and-reality-check">
-<h3>Regroup and reality check<a class="headerlink" href="#regroup-and-reality-check" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="regroup-and-reality-check">
+<h3>Regroup and reality check<a class="headerlink" href="#regroup-and-reality-check" title="Permalink to this headline">#</a></h3>
 <p>How are you doing, dear readers?
 I know this was a lot of math and a lot of code, but the good news is we’re done now!
 The key things to remember is that we have two ways to compute sampling distribution for any estimator:</p>
@@ -1102,8 +1234,8 @@ The key things to remember is that we have two ways to compute sampling distribu
 <li><p>Repeatedly generate random samples from model and compute the estimator values (histogram)</p></li>
 <li><p>Use probability theory to obtain a analytical formula</p></li>
 </ul>
-<div class="section" id="why-are-we-doing-all-this-modelling">
-<h4>Why are we doing all this modelling?<a class="headerlink" href="#why-are-we-doing-all-this-modelling" title="Permalink to this headline">¶</a></h4>
+<section id="why-are-we-doing-all-this-modelling">
+<h4>Why are we doing all this modelling?<a class="headerlink" href="#why-are-we-doing-all-this-modelling" title="Permalink to this headline">#</a></h4>
 <p>The estimator <code class="docutils literal notranslate"><span class="pre">dmeans</span></code> we defined above measures the quantity we’re interested in:
 the difference between the means of two groups (<strong>Group S</strong> and <strong>Group NS</strong> in Amy’s statistical analysis of ELV data).</p>
 <p>Using the functions we developed above, we now have the ability to simulate the data from any two groups by simply choosing the appropriate parameters. In particular if we choose <code class="docutils literal notranslate"><span class="pre">stdS=266</span></code>, <code class="docutils literal notranslate"><span class="pre">nS=30</span></code>; and <code class="docutils literal notranslate"><span class="pre">stdNS=233</span></code>, <code class="docutils literal notranslate"><span class="pre">nNS=31</span></code>,
@@ -1117,11 +1249,11 @@ Don’t worry about it though, since you have all the prerequisites needed to ge
 <hr class="docutils" />
 <p>Recall Amy’s research Question 1:</p>
 <p>Is there a difference between ELV of the employees in <strong>Group S</strong> and the employees in <strong>Group NS</strong>?</p>
-</div>
-</div>
-</div>
-<div class="section" id="hypothesis-testing">
-<h2>Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="hypothesis-testing">
+<h2>Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>An approach to formulating research questions as <strong>yes-no decisions</strong> and a <strong>procedure for making these decisions</strong></p></li>
 <li><p>Hypothesis testing is a standardized procedure for doing statistical analysis<br />
@@ -1150,8 +1282,8 @@ $<span class="math notranslate nohighlight">\(
 we observed (<span class="math notranslate nohighlight">\(d = \overline{x}_{S} - \overline{x}_{NS} = 130\)</span>) is <strong>unlikely to have occurred by chance</strong></p></li>
 <li><p>NEW CONCEPT: <span class="math notranslate nohighlight">\(p\)</span>-value is the probability of observing <span class="math notranslate nohighlight">\(d\)</span> or more extreme under the null hypothesis.</p></li>
 </ul>
-<div class="section" id="overview-of-the-hypothesis-testing-procedure">
-<h3>Overview of the hypothesis testing procedure<a class="headerlink" href="#overview-of-the-hypothesis-testing-procedure" title="Permalink to this headline">¶</a></h3>
+<section id="overview-of-the-hypothesis-testing-procedure">
+<h3>Overview of the hypothesis testing procedure<a class="headerlink" href="#overview-of-the-hypothesis-testing-procedure" title="Permalink to this headline">#</a></h3>
 <p>Here is the high-level overview of the hypothesis testing procedure:</p>
 <ul class="simple">
 <li><p><strong>inputs</strong>: sample statistics computed from the observed data
@@ -1163,9 +1295,9 @@ and our estimates of the noise <span class="math notranslate nohighlight">\(s^2_
 <p>We’ll now look at two different approaches for computing the sampling distribution of
 the difference between group means statistic, <span class="math notranslate nohighlight">\(D = \overline{X}_S - \overline{X}_{NS}\)</span>:
 permutation tests and analytical approximations.</p>
-</div>
-<div class="section" id="interpreting-the-results-of-hypothesis-testing-optional">
-<h3>Interpreting the results of hypothesis testing (optional)<a class="headerlink" href="#interpreting-the-results-of-hypothesis-testing-optional" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="interpreting-the-results-of-hypothesis-testing-optional">
+<h3>Interpreting the results of hypothesis testing (optional)<a class="headerlink" href="#interpreting-the-results-of-hypothesis-testing-optional" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The implication of rejecting the null hypothesis (no difference) is that there must is a difference between the group means.
 In other words, the ELV data for employees who took the statistics training (<strong>Group S</strong>) is different form
@@ -1196,9 +1328,9 @@ In fact, the alternative hypothesis didn’t play any role in the calculations w
 <p>I know all this sounds super complicated and roundabout (an it is!),
 but you will get a hang of it in no time with some practice.
 Trust me, you need to know this shit.</p>
-</div>
-<div class="section" id="start-by-load-data-again">
-<h3>Start by load data again…<a class="headerlink" href="#start-by-load-data-again" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="start-by-load-data-again">
+<h3>Start by load data again…<a class="headerlink" href="#start-by-load-data-again" title="Permalink to this headline">#</a></h3>
 <p>First things first, let’s reload the data which we prepared back in the DATA where we left off back in the <a class="reference internal" href="01_DATA.html"><span class="doc std std-doc">01_DATA.ipynb</span></a> notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1397,10 +1529,10 @@ Trust me, you need to know this shit.</p>
 </div>
 <p>Our goal is to determine how likely or unlikely this observed value is under the null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
 <p>In the next two sections, we’ll look at two different approaches for obtaining the sampling distribution of <span class="math notranslate nohighlight">\(D\)</span> under <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
-</div>
-</div>
-<div class="section" id="approach-1-permutation-test-for-hypothesis-testing">
-<h2>Approach 1: Permutation test for hypothesis testing<a class="headerlink" href="#approach-1-permutation-test-for-hypothesis-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="approach-1-permutation-test-for-hypothesis-testing">
+<h2>Approach 1: Permutation test for hypothesis testing<a class="headerlink" href="#approach-1-permutation-test-for-hypothesis-testing" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The permutation test allow us to reject <span class="math notranslate nohighlight">\(H_0\)</span> using existing sample <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> that we have,
 treating the sample as if it were a population.</p></li>
@@ -1539,8 +1671,8 @@ each value is input is randomly reassigned to a new random place in the output.<
 </div>
 </div>
 <p>The steps in the above code cell give us a simple way to generate samples from the null hypothesis and compute the value of <code class="docutils literal notranslate"><span class="pre">dmeans</span></code> statistic for these samples. We used the assumption of “no difference” under the null hypothesis, and translated this to the “forget the labels” interpretation.</p>
-<div class="section" id="running-a-permutation-test">
-<h3>Running a permutation test<a class="headerlink" href="#running-a-permutation-test" title="Permalink to this headline">¶</a></h3>
+<section id="running-a-permutation-test">
+<h3>Running a permutation test<a class="headerlink" href="#running-a-permutation-test" title="Permalink to this headline">#</a></h3>
 <p>We can repeat the resampling procedure <code class="docutils literal notranslate"><span class="pre">10000</span></code> times to get the sampling distribution of <span class="math notranslate nohighlight">\(D\)</span> under <span class="math notranslate nohighlight">\(H_0\)</span>,
 as illustrated in the code procedure below.</p>
 <div class="cell docutils container">
@@ -1635,9 +1767,9 @@ we conclude that we have “failed to reject the null hypothesis.”</p></li>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="permutations-test-using-scipy">
-<h3>Permutations test using SciPy<a class="headerlink" href="#permutations-test-using-scipy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="permutations-test-using-scipy">
+<h3>Permutations test using SciPy<a class="headerlink" href="#permutations-test-using-scipy" title="Permalink to this headline">#</a></h3>
 <p>The above code was given only for illustrative purposes.
 In practice, you can use the SciPy implementation of permutation test,
 by calling <code class="docutils literal notranslate"><span class="pre">ttest_ind(...,</span> <span class="pre">permutations=10000)</span></code> to perform a permutation test, then obtain the <span class="math notranslate nohighlight">\(p\)</span>-value.</p>
@@ -1658,9 +1790,9 @@ by calling <code class="docutils literal notranslate"><span class="pre">ttest_in
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="discussion">
-<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="discussion">
+<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The procedure we used is called a <strong>permutations test</strong> for comparison of group means.</p></li>
 <li><p>The permutation test takes it’s name from the action of mixing up the group-membership labels
@@ -1669,10 +1801,10 @@ in situations where we’re comparing two groups.</p></li>
 <li><p>Permutation tests are very versatile since we can use them for any estimator <span class="math notranslate nohighlight">\(h(\mathbf{x})\)</span>.
 For example, we could have used difference in medians by specifying the <code class="docutils literal notranslate"><span class="pre">median</span></code> as the input <code class="docutils literal notranslate"><span class="pre">statfunc</span></code>.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="approach-2-analytical-approximations-for-hypothesis-testing">
-<h2>Approach 2: Analytical approximations for hypothesis testing<a class="headerlink" href="#approach-2-analytical-approximations-for-hypothesis-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="approach-2-analytical-approximations-for-hypothesis-testing">
+<h2>Approach 2: Analytical approximations for hypothesis testing<a class="headerlink" href="#approach-2-analytical-approximations-for-hypothesis-testing" title="Permalink to this headline">#</a></h2>
 <p>We’ll now look at another approach for answering Question 1:
 using and analytical approximation,
 which is the way normally taught in STATS 101 courses.
@@ -1717,12 +1849,12 @@ we are using <span class="math notranslate nohighlight">\(s_S^2\)</span> and <sp
 <li><p>NEW CONCEPT: <strong>degrees of freedom</strong>, denoted <code class="docutils literal notranslate"><span class="pre">dof</span></code> in code or <span class="math notranslate nohighlight">\(\nu\)</span> (Greek letter <em>nu</em>) in equations,
 is the parameter Student’s <span class="math notranslate nohighlight">\(t\)</span> distribution related to the sample size used to estimate quantities.</p></li>
 </ul>
-<div class="section" id="student-s-t-test-pooled-variance">
-<h3>Student’s t-test (pooled variance)<a class="headerlink" href="#student-s-t-test-pooled-variance" title="Permalink to this headline">¶</a></h3>
+<section id="student-s-t-test-pooled-variance">
+<h3>Student’s t-test (pooled variance)<a class="headerlink" href="#student-s-t-test-pooled-variance" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://statkat.com/stattest.php?&amp;t=9">Student’s t-test for comparison of difference between groups means</a>,
 is a procedure that makes use of the pooled variance <span class="math notranslate nohighlight">\(s^2_p\)</span>.</p>
-<div class="section" id="black-box-approach">
-<h4>Black-box approach<a class="headerlink" href="#black-box-approach" title="Permalink to this headline">¶</a></h4>
+<section id="black-box-approach">
+<h4>Black-box approach<a class="headerlink" href="#black-box-approach" title="Permalink to this headline">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> function <code class="docutils literal notranslate"><span class="pre">ttest_ind</span></code> will perform all the steps of the <span class="math notranslate nohighlight">\(t\)</span>-test procedure,
 without the need for us to understand the details.</p>
 <div class="cell docutils container">
@@ -1746,9 +1878,9 @@ without the need for us to understand the details.</p>
 </div>
 </div>
 <p>The <span class="math notranslate nohighlight">\(p\)</span>-value is less than 0.05 so our decision is to <strong>reject the null hypothesis</strong>.</p>
-</div>
-<div class="section" id="student-s-t-test-under-the-hood">
-<h4>Student’s t-test under the hood<a class="headerlink" href="#student-s-t-test-under-the-hood" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="student-s-t-test-under-the-hood">
+<h4>Student’s t-test under the hood<a class="headerlink" href="#student-s-t-test-under-the-hood" title="Permalink to this headline">#</a></h4>
 <p>The computations hidden behind the function <code class="docutils literal notranslate"><span class="pre">ttest_ind</span></code> involve a six step procedure that makes use of the pooled variance <span class="math notranslate nohighlight">\(s^2_p\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1788,9 +1920,9 @@ without the need for us to understand the details.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="welch-s-t-test-unpooled-variances">
-<h4>Welch’s t-test (unpooled variances)<a class="headerlink" href="#welch-s-t-test-unpooled-variances" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="welch-s-t-test-unpooled-variances">
+<h4>Welch’s t-test (unpooled variances)<a class="headerlink" href="#welch-s-t-test-unpooled-variances" title="Permalink to this headline">#</a></h4>
 <p>An <a class="reference external" href="https://statkat.com/stattest.php?&amp;t=9">alternative t-test procedure</a> that doesn’t assume the variances in groups are equal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1830,10 +1962,10 @@ without the need for us to understand the details.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="summary-of-question-1">
-<h3>Summary of Question 1<a class="headerlink" href="#summary-of-question-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="summary-of-question-1">
+<h3>Summary of Question 1<a class="headerlink" href="#summary-of-question-1" title="Permalink to this headline">#</a></h3>
 <p>We saw two ways to answer Question 1 (is there a difference between group means) and obtain the p-value.
 We interpreted the small p-values as evidence that the observed difference, <span class="math notranslate nohighlight">\(d=130\)</span>, is unlikely to be due to chance,
 i.e. we rejected the null hypothesis.
@@ -1841,10 +1973,10 @@ Note this whole procedure is just a sanity check—we haven’t touched the alte
 and for all we know the stats training could have the effect of decreasing ELV!</p>
 <hr class="docutils" />
 <p>It’s time to study Question 2, which is to estimate the magnitude of the change in ELV obtained from completing the stats training, which is called <em>effect size</em> in statistics.</p>
-</div>
-</div>
-<div class="section" id="estimating-the-effect-size">
-<h2>Estimating the effect size<a class="headerlink" href="#estimating-the-effect-size" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="estimating-the-effect-size">
+<h2>Estimating the effect size<a class="headerlink" href="#estimating-the-effect-size" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Question 2 of statistical analysis is to estimate the difference in ELV gained by stats training.</p></li>
 <li><p>NEW CONCEPT: <strong>effect size</strong> is a measure of difference between intervention and control groups.</p></li>
@@ -1860,8 +1992,8 @@ us a range of values where we believe the true value of <span class="math notran
 <li><p>Similar to how we showed to approaches for hypothesis testing,
 we’ll work on effect size estimation using two approaches: resampling methods and analytical approximations.</p></li>
 </ul>
-<div class="section" id="approach-1-estimate-the-effect-size-using-bootstrap-method">
-<h3>Approach 1: estimate the effect size using bootstrap method<a class="headerlink" href="#approach-1-estimate-the-effect-size-using-bootstrap-method" title="Permalink to this headline">¶</a></h3>
+<section id="approach-1-estimate-the-effect-size-using-bootstrap-method">
+<h3>Approach 1: estimate the effect size using bootstrap method<a class="headerlink" href="#approach-1-estimate-the-effect-size-using-bootstrap-method" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>We want to estimate the distribution of ELV values for the two groups,
 and compute the difference between the means of these distributions.</p></li>
@@ -1918,7 +2050,7 @@ the confidence interval for the difference between population means.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f3adeda0d00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f6998a431f0&gt;
 </pre></div>
 </div>
 <img alt="../_images/03_STATS_80_1.png" src="../_images/03_STATS_80_1.png" />
@@ -1938,8 +2070,8 @@ the confidence interval for the difference between population means.</p></li>
 </div>
 </div>
 </div>
-<div class="section" id="scipy-bootstrap-method">
-<h4>SciPy bootstrap method<a class="headerlink" href="#scipy-bootstrap-method" title="Permalink to this headline">¶</a></h4>
+<section id="scipy-bootstrap-method">
+<h4>SciPy bootstrap method<a class="headerlink" href="#scipy-bootstrap-method" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">bootstrap</span>
@@ -1961,10 +2093,10 @@ the confidence interval for the difference between population means.</p></li>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="approach-2-estimates-using-analytical-approximation-method">
-<h3>Approach 2: Estimates using analytical approximation method<a class="headerlink" href="#approach-2-estimates-using-analytical-approximation-method" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="approach-2-estimates-using-analytical-approximation-method">
+<h3>Approach 2: Estimates using analytical approximation method<a class="headerlink" href="#approach-2-estimates-using-analytical-approximation-method" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Assumption 1: populations for <strong>Group S</strong> and <strong>Group NS</strong> are normally distributed</p></li>
 <li><p>Assumption 2: the variance of the two populations is the same (or approximately equal)</p></li>
@@ -1991,8 +2123,8 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 </ul>
 </li>
 </ul>
-<div class="section" id="using-pooled-variance">
-<h4>Using pooled variance<a class="headerlink" href="#using-pooled-variance" title="Permalink to this headline">¶</a></h4>
+<section id="using-pooled-variance">
+<h4>Using pooled variance<a class="headerlink" href="#using-pooled-variance" title="Permalink to this headline">#</a></h4>
 <p>The calculations are similar to Student’s t-test for hypothesis testing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2025,9 +2157,9 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="using-unpooled-variance">
-<h4>Using unpooled variance<a class="headerlink" href="#using-unpooled-variance" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="using-unpooled-variance">
+<h4>Using unpooled variance<a class="headerlink" href="#using-unpooled-variance" title="Permalink to this headline">#</a></h4>
 <p>The calculations are similar to the Welch’s t-test for hypothesis testing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2057,9 +2189,9 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="summary-of-question-2-results">
-<h4>Summary of Question 2 results<a class="headerlink" href="#summary-of-question-2-results" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="summary-of-question-2-results">
+<h4>Summary of Question 2 results<a class="headerlink" href="#summary-of-question-2-results" title="Permalink to this headline">#</a></h4>
 <p>We now have all the information we need to give a precise and nuanced answer to Question 2: “How big is the increase in ELV produced by stats training?”.</p>
 <p>The basic estimate of the difference is <span class="math notranslate nohighlight">\(130\)</span> can be reported, and additionally can can report the 90% confidence interval for the difference between group means, that takes into account the variability in the data we have observed.</p>
 <p>Note the CIs obtained using different approaches are all similar (+/- 5 ELV points), so it doesn’t matter much which approach we use:</p>
@@ -2078,10 +2210,10 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="standardized-effect-size-optional">
-<h3>Standardized effect size (optional)<a class="headerlink" href="#standardized-effect-size-optional" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="standardized-effect-size-optional">
+<h3>Standardized effect size (optional)<a class="headerlink" href="#standardized-effect-size-optional" title="Permalink to this headline">#</a></h3>
 <p>It is sometimes useful to report the effect size using a “standardized” measure for effect sizes.
 <em>Cohen’s <span class="math notranslate nohighlight">\(d\)</span></em> one such measure, and it is defined as the difference between two means divided by the pooled  standard deviation.</p>
 <div class="cell docutils container">
@@ -2133,10 +2265,10 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 </tbody>
 </table>
 <p>We can therefore say the effect size of offering statistics training for employees has an <strong>medium</strong> effect size.</p>
-</div>
-</div>
-<div class="section" id="conclusion-of-amy-s-statistical-analysis">
-<h2>Conclusion of Amy’s statistical analysis<a class="headerlink" href="#conclusion-of-amy-s-statistical-analysis" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="conclusion-of-amy-s-statistical-analysis">
+<h2>Conclusion of Amy’s statistical analysis<a class="headerlink" href="#conclusion-of-amy-s-statistical-analysis" title="Permalink to this headline">#</a></h2>
 <p>Recall the two research questions that Amy set out to answer in the beginning of this video series:</p>
 <ul class="simple">
 <li><p>Question 1: Is there a difference between the means in the two groups?</p></li>
@@ -2148,8 +2280,8 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 <li><p>Answer 2: The estimated improvement in ELV is 130 points, which is corresponds to Cohen’s d value of 0.52 (medium effect size). A 90% confidence interval for the true effect size is [25.9, 234.2].</p></li>
 </ul>
 <p>Note: we used the numerical results obtained from resampling methods (Approach 1), but conclusions would be qualitatively the same if we reported results obtained from analytical approximations (Approach 2).</p>
-<div class="section" id="using-statistics-for-convincing-others">
-<h3>Using statistics for convincing others<a class="headerlink" href="#using-statistics-for-convincing-others" title="Permalink to this headline">¶</a></h3>
+<section id="using-statistics-for-convincing-others">
+<h3>Using statistics for convincing others<a class="headerlink" href="#using-statistics-for-convincing-others" title="Permalink to this headline">#</a></h3>
 <p>You may be wondering if all this probabilistic modelling and complicated statistical analysis was worth it to reach a conclusion that seems obvious in retrospect. Was all this work worth it? The purpose of all this work is to obtains something close to an objective conclusion. Without statistics it is very easy to fool ourselves and interpret patterns in data the way we want to, or alternatively, not see patterns that are present. By following the standard statistical procedures, we’re less likely to fool ourselves, and more likely to be able to convince others.</p>
 <p>It can very useful to imagine Amy explaining the results to a skeptical colleague. Suppose the colleague is very much against the idea of statistical training, and sees it as a distraction, saying things like “We hire employees to do a job, not to play with Python.” and “I don’t know any statistics and I’m doing my job just fine!” You get the picture.</p>
 <p>Imagine Amy presenting her findings about how 100 hours of statistical training improves employee lifetime value (ELV) results after one year, and suggesting the statistical training be implemented for all new hires from now on. The skeptical colleague immediately rejects the idea and questions Amy’s recommendation using emotional arguments like about necessity, time wasting, and how statistics is a specialty topic that is not required for all employees. Instead of arguing based on opinions and emotions with her colleague, Amy explains her recommendation is based on a statistical experiment she conducted, and shows the results.</p>
@@ -2158,17 +2290,17 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 <li><p>The skeptical colleague is forced to concede that statistical training does improve ELV, but then asks about the effect size of the improvement: “How much more ELV can we expect if we provide statistics training?” Amy is ready to answer quoting the observed difference of <span class="math notranslate nohighlight">\(130\)</span> ELV points, and further specifies the 90% confidence interval of [25.9, 234.2] for the improvement, meaning in the worst case there is 25 ELV points improvement.</p></li>
 </ul>
 <p>The skeptic is forced to back down from their objections, and the “stats training for all” program is adopted in the company. Not only was Amy able to win the argument using statistics, but she was also able to set appropriate expectations for the results. In other words, she hasn’t promised a guaranteed +130 ELV improvement, but a realistic range of values that can be expected.</p>
-</div>
-</div>
-<div class="section" id="comparison-of-resampling-methods-and-analytical-approximations">
-<h2>Comparison of resampling methods and analytical approximations<a class="headerlink" href="#comparison-of-resampling-methods-and-analytical-approximations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="comparison-of-resampling-methods-and-analytical-approximations">
+<h2>Comparison of resampling methods and analytical approximations<a class="headerlink" href="#comparison-of-resampling-methods-and-analytical-approximations" title="Permalink to this headline">#</a></h2>
 <p>In this notebook we saw two different approaches for doing statistical analysis: resampling methods and analytical approximations. This is a general pattern in statistics where there is not only one correct answer: multiple approaches to data analysis are valid, and you need to think about the specifics of each data analysis situation. You’ll learn about both approaches in the book.</p>
 <p>Analytical approximations currently taught in most stats courses (STAT 101). Historically, analytical approximations have been used more widely because they require only simple arithmetic calculations: statistic practitioners (scientists, engineers, etc.) simply need to compute sample statistics, plug them into a formula, and obtain a <span class="math notranslate nohighlight">\(p\)</span>-value. This convenience is at the cost of numerous assumptions about the data distribution, which often don’t hold in practice (e.g. assuming population is normal, when it is isn’t).</p>
 <p>In recent years, resampling methods like the permutation test and bootstrap estimation are becoming more popular and widely in industry, and increasingly also taught at to university students (<em>modern statistics</em>). <strong>The main advantage so resampling methods is that they require less modelling assumptions.</strong> Procedures like the permutation test can be applied broadly to any scenarios where two groups are compared, and don’t require developing specific formulas for different cases. Resampling methods are easier to understand since the statistical procedure they require are directly related to the sampling distribution, and there are no formulas to memorize.</p>
 <p>Understanding resampling methods requires some basic familiarity with programming, but the skills required are not advanced: knowledge of variables, expressions, and basic <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is sufficient. If you were able to follow the code examples described above (see <code class="docutils literal notranslate"><span class="pre">resample_under_H0</span></code>, <code class="docutils literal notranslate"><span class="pre">permutation_test</span></code>, and <code class="docutils literal notranslate"><span class="pre">bootstrap_stat</span></code>), then you’ve already <strong>seen all the code you will need for the entire book!</strong></p>
-</div>
-<div class="section" id="other-statistics-topics-in-the-book">
-<h2>Other statistics topics in the book<a class="headerlink" href="#other-statistics-topics-in-the-book" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="other-statistics-topics-in-the-book">
+<h2>Other statistics topics in the book<a class="headerlink" href="#other-statistics-topics-in-the-book" title="Permalink to this headline">#</a></h2>
 <p>The goal of this notebook was to focus on the two main ideas of inferential statistics (<a class="reference external" href="https://docs.google.com/document/d/1fwep23-95U-w1QMPU31nOvUnUXE2X3s_Dbk5JuLlKAY/edit#heading=h.uutryzqeo2av">Chapter 3</a>): hypothesis testing and estimation. We didn’t have time to cover many of the other important topics in statistics, which will be covered in the book (and in future notebooks). Here is a list of some of these topics:</p>
 <ul class="simple">
 <li><p>Null Hypothesis Significance Testing (NHST) procedure in full details (Type I and Type II error, power, sample size calculations)</p></li>
@@ -2189,8 +2321,8 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2214,9 +2346,11 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="02_PROB.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2232,24 +2366,28 @@ and <code class="docutils literal notranslate"><span class="pre">dof</span></cod
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ivan Savov<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ivan Savov<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

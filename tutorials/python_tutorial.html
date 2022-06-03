@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Appendix C — Python tutorial &#8212; No BS Stats Notebooks</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +107,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   No Bullshit Stats Notebooks
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    No Bullshit Stats Notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../stats_overview/00_Introduction.html">
    Statistics overview
@@ -210,110 +225,227 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/tutorials/python_tutorial.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/minireference/noBSstatsnotebooks"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Ftutorials/python_tutorial.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./tutorials/python_tutorial.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./tutorials/python_tutorial.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/minireference/noBSstatsnotebooks"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Ftutorials/python_tutorial.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutorials/python_tutorial.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Appendix C — Python tutorial
@@ -767,12 +899,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Appendix C — Python tutorial</h1>
@@ -1242,14 +1373,15 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="appendix-c-python-tutorial">
-<h1>Appendix C — Python tutorial<a class="headerlink" href="#appendix-c-python-tutorial" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="appendix-c-python-tutorial">
+<h1>Appendix C — Python tutorial<a class="headerlink" href="#appendix-c-python-tutorial" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
 <p>In this tutorial you’ll learn the basics of Python.
 Don’t freak out, this is not a big deal.
 You’re not becoming a programmer or anything,
@@ -1264,8 +1396,8 @@ the Python prompt accepts entire “paragraphs” of commands allowing you to wr
 This is what people call “coding” or “programming.”</p>
 <p>Just like knowing how to use a calculator is helpful for doing lots of arithmetic operations,
 learning Python is helpful when you need to deal with repetitive operations and procedures.</p>
-<div class="section" id="why-learn-python">
-<h2>Why learn Python?<a class="headerlink" href="#why-learn-python" title="Permalink to this headline">¶</a></h2>
+<section id="why-learn-python">
+<h2>Why learn Python?<a class="headerlink" href="#why-learn-python" title="Permalink to this headline">#</a></h2>
 <p>First off, Python is a really good calculator.</p>
 <ul class="simple">
 <li><p>expressions</p></li>
@@ -1285,8 +1417,8 @@ learning Python is helpful when you need to deal with repetitive operations and 
 </ul>
 <p>You can also use Python for spreadsheet-like functionality,
 manipulate tabular data, compute totals, etc.</p>
-<div class="section" id="python-for-statistics">
-<h3>Python for statistics<a class="headerlink" href="#python-for-statistics" title="Permalink to this headline">¶</a></h3>
+<section id="python-for-statistics">
+<h3>Python for statistics<a class="headerlink" href="#python-for-statistics" title="Permalink to this headline">#</a></h3>
 <p>Once you learn the basics of Python syntax,
 you’ll have access to the best-in-class Python libraries for
 data management (Pandas, see <a class="reference internal" href="pandas_tutorial.html"><span class="doc std std-doc">pandas_tutorial.ipynb</span></a>)
@@ -1309,10 +1441,10 @@ You see, it’s nothing fancy.</p>
 <p>Yes, there will be a lot of code (paragraphs of Python commands) in this tutorial,
 but you can totally handle this.</p>
 <p>If you ever start to freak out an think “OMG this is too complicated!” remember that Python is just a fancy calculator.</p>
-</div>
-</div>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>TODO: redo as sentences</p>
 <ol class="simple">
 <li><p>Introduction</p></li>
@@ -1333,19 +1465,19 @@ but you can totally handle this.</p>
 <li><p>Pandas (see <a class="reference internal" href="pandas_tutorial.html"><span class="doc std std-doc">pandas_tutorial.ipynb</span></a>)</p></li>
 <li><p>Seaborn (see <a class="reference internal" href="seaborn_tutorial.html"><span class="doc std std-doc">seaborn_tutorial.ipynb</span></a>)</p></li>
 </ul>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="installing-jupyterlab-desktop">
-<h2>Installing JupyterLab Desktop<a class="headerlink" href="#installing-jupyterlab-desktop" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h1>
+<section id="installing-jupyterlab-desktop">
+<h2>Installing JupyterLab Desktop<a class="headerlink" href="#installing-jupyterlab-desktop" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>TODO: Import screenshots from Sec 1.2</p></li>
 <li><p>JupyterLab UI: file browser, notebooks, code cells, Markdown cells</p></li>
 <li><p>Alternative: run JupyterLab instance in the cloud via mybinder</p></li>
 </ul>
-<div class="section" id="code-cells-contain-python-commands">
-<h3>Code cells contain Python commands<a class="headerlink" href="#code-cells-contain-python-commands" title="Permalink to this headline">¶</a></h3>
+<section id="code-cells-contain-python-commands">
+<h3>Code cells contain Python commands<a class="headerlink" href="#code-cells-contain-python-commands" title="Permalink to this headline">#</a></h3>
 <p>The Python command prompt (each of the code cells in this notebook)
 allows you to enter Python commands and “run” them by pressing SHIFT + ENTER,
 or by clicking the play button in the toolbar.</p>
@@ -1388,13 +1520,13 @@ and print the result of the final value computed in that cell.</p>
 <p>Running a code cell is similar to using the EQUALS button on the calculator: whatever math expression you entered, the calculator will compute its value and display it as the output. The process is identical when you execute some Python code, but you’re allowed to input multiple lines of commands at once. The computer will execute the lines of code one by one in the order it sees them.</p>
 <p>The result of final calculations in the cell gets automatically printed in the output cell right below the input cell. This feature allows you to skip the print statements, since the last output gets printed automatically for you. This makes it easy and fun to explore and “poke around” each example given in this notebook.</p>
 <p><a id="vars_and_expr"></a></p>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="variables-and-expressions">
-<h1>Variables and expressions<a class="headerlink" href="#variables-and-expressions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="variables-and-expressions">
+<h1>Variables and expressions<a class="headerlink" href="#variables-and-expressions" title="Permalink to this headline">#</a></h1>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
 <p>Similar to variables in math, a variable in Python is a convenient name we use to refer to any value: a constant, the input to a function <code class="docutils literal notranslate"><span class="pre">x</span></code>, the output of a function <code class="docutils literal notranslate"><span class="pre">y</span></code>, or any other intermediate value.</p>
 <p>To assign a value to a variable, you use the symbol <code class="docutils literal notranslate"><span class="pre">=</span></code> as follows, from left to right:</p>
 <ul class="simple">
@@ -1429,8 +1561,8 @@ and print the result of the final value computed in that cell.</p>
 </div>
 </div>
 </div>
-<div class="section" id="variables-types">
-<h3>Variables types<a class="headerlink" href="#variables-types" title="Permalink to this headline">¶</a></h3>
+<section id="variables-types">
+<h3>Variables types<a class="headerlink" href="#variables-types" title="Permalink to this headline">#</a></h3>
 <p>There are multiple types of variables in Python:</p>
 <ul class="simple">
 <li><p><strong>int</strong> - integers ex: <code class="docutils literal notranslate"><span class="pre">34</span></code>,<code class="docutils literal notranslate"><span class="pre">65</span></code>, <code class="docutils literal notranslate"><span class="pre">78</span></code>, <code class="docutils literal notranslate"><span class="pre">-4</span></code>, etc. (rougly equivalent to <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>)</p></li>
@@ -1493,10 +1625,10 @@ a list, and a <code class="docutils literal notranslate"><span class="pre">dict<
 </div>
 </div>
 <p>You can explore the different methods available on any python object <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, etc.  by starting to type the dot <code class="docutils literal notranslate"><span class="pre">.</span></code> after the name, e.g., <code class="docutils literal notranslate"><span class="pre">message.</span></code> then pressing the TAB button to get an “autocomplete” dropdown of all the methods available on the variable <code class="docutils literal notranslate"><span class="pre">message</span></code>. Most of these methods are common to all strings in Python.</p>
-</div>
-</div>
-<div class="section" id="expressions">
-<h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="expressions">
+<h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">#</a></h2>
 <p>Similar to expresisons in algebra, a Python expression is can be any combination of variables and operations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1591,8 +1723,8 @@ It usually means you made a typo (symbol not defined error),
 forgot a syntax element (e.g. <code class="docutils literal notranslate"><span class="pre">(</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code>, <code class="docutils literal notranslate"><span class="pre">[</span></code>, <code class="docutils literal notranslate"><span class="pre">:</span></code>, etc.),
 or tried to compute something impossible like the <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> in the above example.</p>
 <p>The way to read these red messages is to focus on the name of the exception and the message that gets printed on the last line. This should tell you what you need to fix. The solution will be obvious for typos and syntax errors, but for more complicated situations requires googling and searching on stack overflow.</p>
-<div class="section" id="integration-exercise">
-<h3>Integration exercise<a class="headerlink" href="#integration-exercise" title="Permalink to this headline">¶</a></h3>
+<section id="integration-exercise">
+<h3>Integration exercise<a class="headerlink" href="#integration-exercise" title="Permalink to this headline">#</a></h3>
 <p>Expression for converting a temperature in Celsius to temperature in Fahrenheit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1610,9 +1742,9 @@ or tried to compute something impossible like the <code class="docutils literal 
 </div>
 </div>
 <p>Test: if temp_C = 100 then value of expression should be temp_F = 212.</p>
-</div>
-<div class="section" id="string-expressions">
-<h3>String expressions<a class="headerlink" href="#string-expressions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="string-expressions">
+<h3>String expressions<a class="headerlink" href="#string-expressions" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message3</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;world&quot;</span>  <span class="c1"># + means concatenate</span>
@@ -1630,9 +1762,9 @@ Ai Ai Ai Caramba!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="boolean-expressions">
-<h3>Boolean expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="boolean-expressions">
+<h3>Boolean expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this headline">#</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">bool</span></code> variables and the logical operations <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, etc. to build more complicated boolean expressions (disjunctions, conjunctions, negations, etc.).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1656,10 +1788,10 @@ False or False == False
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="types-and-type-conversions">
-<h2>Types and type conversions<a class="headerlink" href="#types-and-type-conversions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="types-and-type-conversions">
+<h2>Types and type conversions<a class="headerlink" href="#types-and-type-conversions" title="Permalink to this headline">#</a></h2>
 <p>The function <code class="docutils literal notranslate"><span class="pre">type</span></code> tells you the type of any variable, meaning what kind of number or object it is.
 Look back to the list above—the Python types are shown in <strong>bold</strong>.</p>
 <div class="cell docutils container">
@@ -1777,8 +1909,8 @@ Look back to the list above—the Python types are shown in <strong>bold</strong
 </div>
 </div>
 </div>
-<div class="section" id="example-converting-to-float-to-compute-sum">
-<h3>Example: converting to <code class="docutils literal notranslate"><span class="pre">float</span></code> to compute sum<a class="headerlink" href="#example-converting-to-float-to-compute-sum" title="Permalink to this headline">¶</a></h3>
+<section id="example-converting-to-float-to-compute-sum">
+<h3>Example: converting to <code class="docutils literal notranslate"><span class="pre">float</span></code> to compute sum<a class="headerlink" href="#example-converting-to-float-to-compute-sum" title="Permalink to this headline">#</a></h3>
 <p>Suppose we’re given two numbers <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> and we want to compute their sum <span class="math notranslate nohighlight">\(m+n\)</span>.
 The two numbers are given to use given expressed as strings.</p>
 <div class="cell docutils container">
@@ -1859,9 +1991,9 @@ The variable nfloat has value 3.4 and type &lt;class &#39;float&#39;&gt;
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="anything-to-str-conversions">
-<h3>Anything-to-str conversions<a class="headerlink" href="#anything-to-str-conversions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="anything-to-str-conversions">
+<h3>Anything-to-str conversions<a class="headerlink" href="#anything-to-str-conversions" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1898,14 +2030,14 @@ The variable nfloat has value 3.4 and type &lt;class &#39;float&#39;&gt;
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="your-turn-to-try-this">
-<h2>Your turn to try this…<a class="headerlink" href="#your-turn-to-try-this" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="your-turn-to-try-this">
+<h2>Your turn to try this…<a class="headerlink" href="#your-turn-to-try-this" title="Permalink to this headline">#</a></h2>
 <p>Try typing in some Python code in this cell. If you’ve been simply reading until now, this is your chance to switch to “active” mode: use the rocket-button in the top right of the menu at the top, and choose the <code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Code</span></code> option to make all the cells in this notebook interactive, then try entering some Python commands in this code cell below:</p>
-</div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Review Python syntax cheatsheet <a class="reference external" href="https://blog.finxter.com/wp-content/uploads/2020/07/Finxter_WorldsMostDensePythonCheatSheet.pdf">https://blog.finxter.com/wp-content/uploads/2020/07/Finxter_WorldsMostDensePythonCheatSheet.pdf</a></p>
 <ul>
@@ -1928,15 +2060,15 @@ The for loop is important because it allows you to do operations for each elemen
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="getting-to-know-python">
-<h1>Getting to know Python<a class="headerlink" href="#getting-to-know-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="getting-help">
-<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="getting-to-know-python">
+<h1>Getting to know Python<a class="headerlink" href="#getting-to-know-python" title="Permalink to this headline">#</a></h1>
+<section id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">#</a></h2>
 <p>There are multiple ways to obtain helpful information Python modules, functions, and objects.</p>
-<div class="section" id="python-doc-string">
-<h3>Python doc-string<a class="headerlink" href="#python-doc-string" title="Permalink to this headline">¶</a></h3>
+<section id="python-doc-string">
+<h3>Python doc-string<a class="headerlink" href="#python-doc-string" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">?</span></code></p></li>
 <li><p>SHIFT + TAB while cursor on top of Python function</p></li>
@@ -1945,9 +2077,9 @@ The for loop is important because it allows you to do operations for each elemen
 <li><p><code class="docutils literal notranslate"><span class="pre">%psource</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%pdef</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="auto-complete-with-attributes">
-<h3>Auto complete with attributes<a class="headerlink" href="#auto-complete-with-attributes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="auto-complete-with-attributes">
+<h3>Auto complete with attributes<a class="headerlink" href="#auto-complete-with-attributes" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TAB</span></code> button</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dir()</span></code></p></li>
@@ -2050,10 +2182,10 @@ Others are <code class="docutils literal notranslate"><span class="pre">%pdef</s
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="errors">
-<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">#</a></h2>
 <p>Sometimes the executed commands will encounter an error,
 and Python will give an error message describing the problem encountered.
 Get psychologically ready for those, because they can be very discouraging.
@@ -2085,10 +2217,10 @@ The error message literally describes the problem!</p>
 <p>Here we get an error since we’re trying to compute an expression that contains a divide by zero error:
 Python tell us a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError:</span> <span class="pre">division</span> <span class="pre">by</span> <span class="pre">zero</span></code> has occurred.
 Indeed it’s not possible to divide by zero.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="boolean-variables-and-conditional-statements">
-<h1>Boolean variables and conditional statements<a class="headerlink" href="#boolean-variables-and-conditional-statements" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="boolean-variables-and-conditional-statements">
+<h1>Boolean variables and conditional statements<a class="headerlink" href="#boolean-variables-and-conditional-statements" title="Permalink to this headline">#</a></h1>
 <p>Let’s talk about boolean variables, which can take on one of two values: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>We obtain boolean values from various comparisons.</p>
 <div class="cell docutils container">
@@ -2182,8 +2314,8 @@ Indeed it’s not possible to divide by zero.</p>
 </div>
 </div>
 <p>Boolean expressions are important to understand because they are used in conditional statements.</p>
-<div class="section" id="conditional-statements">
-<h2>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">¶</a></h2>
+<section id="conditional-statements">
+<h2>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">#</a></h2>
 <p>Conditional control flow between code block alternatives</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2253,9 +2385,9 @@ Indeed it’s not possible to divide by zero.</p>
 </div>
 </div>
 <p>Exercise: add another condition to the above code to print <code class="docutils literal notranslate"><span class="pre">It's</span> <span class="pre">hot</span></code> if the temperature is above 25.</p>
-</div>
-<div class="section" id="inline-if-statements">
-<h2>Inline if statements<a class="headerlink" href="#inline-if-statements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="inline-if-statements">
+<h2>Inline if statements<a class="headerlink" href="#inline-if-statements" title="Permalink to this headline">#</a></h2>
 <p>We can also use if-else keywords to compute conditional expressions.
 The general syntax for these is:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;</span> <span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="k">else</span> <span class="o">&lt;</span><span class="n">value2</span><span class="o">&gt;</span>
@@ -2263,12 +2395,12 @@ The general syntax for these is:</p>
 </div>
 <p>This expressions evaluates to <code class="docutils literal notranslate"><span class="pre">&lt;value1&gt;</span></code> if the <code class="docutils literal notranslate"><span class="pre">&lt;condition&gt;</span></code> is true,
 and to <code class="docutils literal notranslate"><span class="pre">&lt;value2&gt;</span></code> if <code class="docutils literal notranslate"><span class="pre">&lt;condition&gt;</span></code> is False.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="lists-and-for-loops">
-<h1>Lists and for loops<a class="headerlink" href="#lists-and-for-loops" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="lists">
-<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lists-and-for-loops">
+<h1>Lists and for loops<a class="headerlink" href="#lists-and-for-loops" title="Permalink to this headline">#</a></h1>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
 <p>To create a list of two values:</p>
 <ul class="simple">
 <li><p>start with an opening square bracket <code class="docutils literal notranslate"><span class="pre">[</span></code> ,</p></li>
@@ -2468,9 +2600,9 @@ and to <code class="docutils literal notranslate"><span class="pre">&lt;value2&g
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="for-loops">
-<h2>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="for-loops">
+<h2>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h2>
 <p>repeat a code block multiple times for each element in an iterable
 code blocks (via indentation) with multiple expressions (these are indicated based on the text indentation of the code instructions)</p>
 <p>The “for loop” is a Python code construct of the form:</p>
@@ -2546,8 +2678,8 @@ code blocks (via indentation) with multiple expressions (these are indicated bas
 </div>
 </div>
 </div>
-<div class="section" id="list-comprehension">
-<h3>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">¶</a></h3>
+<section id="list-comprehension">
+<h3>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">score</span><span class="o">/</span><span class="mi">100</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
@@ -2560,9 +2692,9 @@ code blocks (via indentation) with multiple expressions (these are indicated bas
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="example-file-open-and-readlines">
-<h3>Example: file open and readlines<a class="headerlink" href="#example-file-open-and-readlines" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-file-open-and-readlines">
+<h3>Example: file open and readlines<a class="headerlink" href="#example-file-open-and-readlines" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;story.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
@@ -2599,9 +2731,9 @@ code blocks (via indentation) with multiple expressions (these are indicated bas
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="list-like-iterable-objects">
-<h3>List-like iterable objects<a class="headerlink" href="#list-like-iterable-objects" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="list-like-iterable-objects">
+<h3>List-like iterable objects<a class="headerlink" href="#list-like-iterable-objects" title="Permalink to this headline">#</a></h3>
 <p>The term “iterable” is used in Python to refer to all objects that are list-like,
 and can be iterated using for loops.</p>
 <ul class="simple">
@@ -2635,8 +2767,8 @@ and can be iterated using for loops.</p>
 </div>
 </div>
 </div>
-<div class="section" id="iterating-over-dictionaries">
-<h4>Iterating over dictionaries<a class="headerlink" href="#iterating-over-dictionaries" title="Permalink to this headline">¶</a></h4>
+<section id="iterating-over-dictionaries">
+<h4>Iterating over dictionaries<a class="headerlink" href="#iterating-over-dictionaries" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Julie&quot;</span><span class="p">,</span> <span class="s2">&quot;level&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;team&quot;</span><span class="p">:</span><span class="s2">&quot;a&quot;</span><span class="p">}</span>
@@ -2683,9 +2815,9 @@ and can be iterated using for loops.</p>
 </div>
 </div>
 <p>We’ll talk more about dictionaries <a class="reference external" href="#Dictionaries-and-other-data-structures">later on</a>.</p>
-</div>
-<div class="section" id="strings-are-lists-of-characters">
-<h4>Strings are lists of characters<a class="headerlink" href="#strings-are-lists-of-characters" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="strings-are-lists-of-characters">
+<h4>Strings are lists of characters<a class="headerlink" href="#strings-are-lists-of-characters" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a str of length 26 that contains all the lowercase Latin letters</span>
@@ -2737,9 +2869,9 @@ The first four letters of the alphabet are: abcd
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="tricks-for-lists">
-<h4>Tricks for lists<a class="headerlink" href="#tricks-for-lists" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="tricks-for-lists">
+<h4>Tricks for lists<a class="headerlink" href="#tricks-for-lists" title="Permalink to this headline">#</a></h4>
 <p>Tricks:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">enumerate</span></code></p></li>
@@ -2816,12 +2948,12 @@ Processing values 3 and 6
 </div>
 </div>
 <p><a name="funcs"></a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
 <p>Functions are one of the most important concepts in math and programming.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>y = f(x)  # common convention in math to call function inputs x, and outputs y
 </pre></div>
@@ -2853,8 +2985,8 @@ in stats we talk about functions computed from samples (estimators)</p></li>
 <li><p>In ML we learn about probabilistic models and use them to predict y from given input x</p></li>
 </ul>
 <p>see also <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html">https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html</a></p>
-<div class="section" id="python-functions">
-<h2>Python functions<a class="headerlink" href="#python-functions" title="Permalink to this headline">¶</a></h2>
+<section id="python-functions">
+<h2>Python functions<a class="headerlink" href="#python-functions" title="Permalink to this headline">#</a></h2>
 <p>reusable chunks of code that can be def-ined once, and used multiple times by “calling” them with different arguments</p>
 <p>Functions in Python are similar to functions in math: a transformation that takes certain inputs and produces certain outputs. The math functions you’re familiar with take numbers as inputs and produce numebrs as outputs, but a Python function can take on any type of input and produce any type of output.</p>
 <p>Functions allow us to build chunks of reusable code that we can later reuse in other programs.</p>
@@ -2872,8 +3004,8 @@ in stats we talk about functions computed from samples (estimators)</p></li>
 </div>
 <p>We enter the name of the function, then define the functions arguments inside parentheses—the names of the variables that the function receives as inputs. Then the function body is written as an indented block of code (all lines start with four spaces indentation). The output of the function is specified using the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword. The return statement is usually the last line in the function body.</p>
 <p>Certain functions do not return a value (we call these <em>procedures</em>) and they consist of sequences of commands we want to execute, that don’t have any outputs. FunctIons can also be attached to objects, in which case they are called <em>methods</em>. We’ll talk about these layer on, for now let’s focus on simple math-like functions that receive some input and produce output:</p>
-<div class="section" id="example-1">
-<h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<section id="example-1">
+<h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h3>
 <p>A first example of a simple math-like function. The function is called <code class="docutils literal notranslate"><span class="pre">f</span></code>,
 takes numbers as inputs, and produces numbers as outputs:</p>
 <div class="cell docutils container">
@@ -2891,9 +3023,9 @@ takes numbers as inputs, and produces numbers as outputs:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="example-2">
-<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-2">
+<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example from Session 1</span>
@@ -2916,9 +3048,9 @@ takes numbers as inputs, and produces numbers as outputs:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="example-3">
-<h3>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-3">
+<h3>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">#</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">water_phase(temp)</span></code> that takes input temperature <code class="docutils literal notranslate"><span class="pre">temp</span></code> in Celcius,
 uses if/else statements to find what state water is in (assume pressure is 1atm).
 The function returns a string, which is one of “Solid”, “Liquid”, “Gas”.</p>
@@ -3006,12 +3138,12 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="list-functions">
-<h3>List functions<a class="headerlink" href="#list-functions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="list-functions">
+<h3>List functions<a class="headerlink" href="#list-functions" title="Permalink to this headline">#</a></h3>
 <p>Your turn to play with lists now! Complete the code required to implement the functions <code class="docutils literal notranslate"><span class="pre">compute_mean</span></code> and <code class="docutils literal notranslate"><span class="pre">compute_std</span></code> below.</p>
-<div class="section" id="question-1-mean">
-<h4>Question 1: Mean<a class="headerlink" href="#question-1-mean" title="Permalink to this headline">¶</a></h4>
+<section id="question-1-mean">
+<h4>Question 1: Mean<a class="headerlink" href="#question-1-mean" title="Permalink to this headline">#</a></h4>
 <p>The formula for the mean of a list of numbers <span class="math notranslate nohighlight">\([x_1, x_2, \ldots, x_n]\)</span> is:
 $<span class="math notranslate nohighlight">\(
     \text{mean} = \overline{x}
@@ -3106,9 +3238,9 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-2-sample-standard-deviation">
-<h4>Question 2: Sample standard deviation<a class="headerlink" href="#question-2-sample-standard-deviation" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="question-2-sample-standard-deviation">
+<h4>Question 2: Sample standard deviation<a class="headerlink" href="#question-2-sample-standard-deviation" title="Permalink to this headline">#</a></h4>
 <p>The formula for the sample standard seviation of a list of numbers is:
 $<span class="math notranslate nohighlight">\(
     \text{std}(\textbf{x}) = s
@@ -3187,9 +3319,9 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-2">
-<h4>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="exercise-2">
+<h4>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h4>
 <p>Write a Python function called <code class="docutils literal notranslate"><span class="pre">temp_convert</span></code> that converts C to F</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3203,10 +3335,10 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -3238,35 +3370,35 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="example-function-head">
-<h2>Example function <code class="docutils literal notranslate"><span class="pre">head</span></code><a class="headerlink" href="#example-function-head" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="example-function-head">
+<h2>Example function <code class="docutils literal notranslate"><span class="pre">head</span></code><a class="headerlink" href="#example-function-head" title="Permalink to this headline">#</a></h2>
 <p>We often want to print first few lines from a file to see what data it contains.</p>
-</div>
-<div class="section" id="lambda-functions">
-<h2>Lambda functions<a class="headerlink" href="#lambda-functions" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="dictionaries-and-other-data-structures">
-<h1>Dictionaries and other data structures<a class="headerlink" href="#dictionaries-and-other-data-structures" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="lambda-functions">
+<h2>Lambda functions<a class="headerlink" href="#lambda-functions" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dictionaries-and-other-data-structures">
+<h1>Dictionaries and other data structures<a class="headerlink" href="#dictionaries-and-other-data-structures" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Dictionaries</p></li>
 <li><p>Sets</p></li>
 <li><p>Tuples (use for swap operation)</p></li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="objects-and-classes">
-<h1>Objects and classes<a class="headerlink" href="#objects-and-classes" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="objects-and-classes">
+<h1>Objects and classes<a class="headerlink" href="#objects-and-classes" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>object = general purpose data structure</p></li>
 <li><p>attributes</p></li>
 <li><p>methods</p></li>
 <li><p>Application: custom interval class</p></li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="python-syntax-review">
-<h1>Python syntax review<a class="headerlink" href="#python-syntax-review" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="python-syntax-review">
+<h1>Python syntax review<a class="headerlink" href="#python-syntax-review" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> are used for:</p>
 <ul>
@@ -3354,8 +3486,8 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </li>
 </ul>
-<div class="section" id="python-keywords">
-<h2>Python keywords<a class="headerlink" href="#python-keywords" title="Permalink to this headline">¶</a></h2>
+<section id="python-keywords">
+<h2>Python keywords<a class="headerlink" href="#python-keywords" title="Permalink to this headline">#</a></h2>
 <p>Here is a list of reserved keywords in Python:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False      class      finally    is         return
 None       continue   for        lambda     try
@@ -3366,19 +3498,19 @@ assert     else       import     pass
 break      except     in         raise
 </pre></div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="bonus-topics">
-<h1>Bonus topics<a class="headerlink" href="#bonus-topics" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bonus-topics">
+<h1>Bonus topics<a class="headerlink" href="#bonus-topics" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>writing standalone scripts (<code class="docutils literal notranslate"><span class="pre">argparse</span></code>, example: turn <code class="docutils literal notranslate"><span class="pre">head</span></code> into script)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">functools.partial</span></code> for currying functions (e.g sample-generator callables)</p></li>
 <li><p>???generic functions <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></p></li>
 <li><p>Reading and writing files <a class="reference external" href="https://python-textbok.readthedocs.io/en/1.0/Python_Basics.html#files">https://python-textbok.readthedocs.io/en/1.0/Python_Basics.html#files</a></p></li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="python-libraries-and-modules">
-<h1>Python libraries and modules<a class="headerlink" href="#python-libraries-and-modules" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="python-libraries-and-modules">
+<h1>Python libraries and modules<a class="headerlink" href="#python-libraries-and-modules" title="Permalink to this headline">#</a></h1>
 <p>Everything we discussed so far was using the Python built-in functions and data types,
 but that is only a small subset of all the functionality available when using Python.
 There are hundreds of Python libraries and modules that provide additional functions and data types
@@ -3386,8 +3518,8 @@ for all kinds of applications.
 There are Python modules for processing different data files, making web requests, performing computations, etc.
 The list is almost endless,
 and the vast number of libraries and frameworks is all available to you behind a simple <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
-<div class="section" id="the-import-statement">
-<h2>The <code class="docutils literal notranslate"><span class="pre">import</span></code> statement<a class="headerlink" href="#the-import-statement" title="Permalink to this headline">¶</a></h2>
+<section id="the-import-statement">
+<h2>The <code class="docutils literal notranslate"><span class="pre">import</span></code> statement<a class="headerlink" href="#the-import-statement" title="Permalink to this headline">#</a></h2>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement to load a python module and make it available in the current context.
 The code below shows how to import the module <code class="docutils literal notranslate"><span class="pre">&lt;mod&gt;</span></code> in the current notebook.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="o">&lt;</span><span class="n">mod</span><span class="o">&gt;</span>
@@ -3437,9 +3569,9 @@ if you’re writing some Python code that requires calling a lot of statistics c
 you’ll appreciate the alias-import statement,
 since you call <code class="docutils literal notranslate"><span class="pre">stats.mean</span></code> and <code class="docutils literal notranslate"><span class="pre">stats.median</span></code> instead of having to type the
 full module name each time, <code class="docutils literal notranslate"><span class="pre">statistics.mean</span></code> and <code class="docutils literal notranslate"><span class="pre">statistics.median</span></code>.</p>
-</div>
-<div class="section" id="the-standard-library">
-<h2>The standard library<a class="headerlink" href="#the-standard-library" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-standard-library">
+<h2>The standard library<a class="headerlink" href="#the-standard-library" title="Permalink to this headline">#</a></h2>
 <p>The <a class="reference external" href="https://docs.python.org/3/library/">Python standard library</a> consists of several dozens of Python modules that come bundled with every Python installation.</p>
 <p>Here are some modules that come in handy.</p>
 <ul class="simple">
@@ -3457,44 +3589,44 @@ but almost as important:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">requests</span></code> download stuff from the web</p></li>
 </ul>
-</div>
-<div class="section" id="installing-python-packages-with-pip">
-<h2>Installing Python packages with <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#installing-python-packages-with-pip" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="installing-python-packages-with-pip">
+<h2>Installing Python packages with <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#installing-python-packages-with-pip" title="Permalink to this headline">#</a></h2>
 <p>TODO</p>
-</div>
-<div class="section" id="scientific-computing-libraries">
-<h2>Scientific computing libraries<a class="headerlink" href="#scientific-computing-libraries" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="numpy">
-<h3>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scientific-computing-libraries">
+<h2>Scientific computing libraries<a class="headerlink" href="#scientific-computing-libraries" title="Permalink to this headline">#</a></h2>
+<section id="numpy">
+<h3>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h3>
 <p>Numerical Python (NumPy) is a library that provides high-performance arrays and matrices. NumPy arrays allow mathematical operations to run very fast, which is important when working with medium- and large- datasets.</p>
-<div class="section" id="example-linspace-and-other-numerical-calculations">
-<h4>Example: <code class="docutils literal notranslate"><span class="pre">linspace</span></code> and other numerical calculations<a class="headerlink" href="#example-linspace-and-other-numerical-calculations" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="scipy">
-<h3>SciPy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h3>
+<section id="example-linspace-and-other-numerical-calculations">
+<h4>Example: <code class="docutils literal notranslate"><span class="pre">linspace</span></code> and other numerical calculations<a class="headerlink" href="#example-linspace-and-other-numerical-calculations" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+<section id="scipy">
+<h3>SciPy<a class="headerlink" href="#scipy" title="Permalink to this headline">#</a></h3>
 <p>Scientific Python (SciPy) is a library that provides most common algorithms and special functions used by scientists and engineers. See <a class="reference external" href="https://scipy-lectures.org/">https://scipy-lectures.org/</a></p>
-</div>
-<div class="section" id="sympy">
-<h3>SymPy<a class="headerlink" href="#sympy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sympy">
+<h3>SymPy<a class="headerlink" href="#sympy" title="Permalink to this headline">#</a></h3>
 <p>Symbolic math expressions.
 See <a class="reference external" href="https://minireference.com/static/tutorials/sympy_tutorial.pdf">sympy_tutorial.pdf</a>.</p>
-</div>
-<div class="section" id="matplotlib">
-<h3>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="matplotlib">
+<h3>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h3>
 <p>Powerful library for plotting points, lines, and other graphs.</p>
-<div class="section" id="examples-how-to-create-reusable-functions-for-plotting-probability-distributions">
-<h4>Examples: how to create reusable functions for plotting probability distributions<a class="headerlink" href="#examples-how-to-create-reusable-functions-for-plotting-probability-distributions" title="Permalink to this headline">¶</a></h4>
+<section id="examples-how-to-create-reusable-functions-for-plotting-probability-distributions">
+<h4>Examples: how to create reusable functions for plotting probability distributions<a class="headerlink" href="#examples-how-to-create-reusable-functions-for-plotting-probability-distributions" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">plot_pdf_and_cdf</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">calc_prob_and_plot</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">calc_prob_and_plot_tails</span></code></p></li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="data-science-libraries">
-<h2>Data science libraries<a class="headerlink" href="#data-science-libraries" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="data-science-libraries">
+<h2>Data science libraries<a class="headerlink" href="#data-science-libraries" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> library for tabular data (See <a class="reference internal" href="pandas_tutorial.html"><span class="doc std std-doc">pandas_tutorial.ipynb</span></a> notebook)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> models for linear regression and other</p></li>
@@ -3502,10 +3634,10 @@ See <a class="reference external" href="https://minireference.com/static/tutoria
 <li><p><code class="docutils literal notranslate"><span class="pre">plotnine</span></code> another high-level library for data visualization base don the grammar of graphics principles</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> tools and algorithms for machine learning</p></li>
 </ul>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="discussion">
-<h1>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="discussion">
+<h1>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h1>
 <p>Let’s go over some of the things we skipped in the tutorial,
 because they were not essential for getting started.
 Now that you know a little bit about Python,
@@ -3513,8 +3645,8 @@ it’s worth mentioning some of these details,
 since it’s useful context to see how this “Python calculator” business works.
 I also want to tell you about some of the cool Python applications
 you can look forward to if you choose to develop your Python skills further.</p>
-<div class="section" id="running-python-code-interactively">
-<h2>Running Python code interactively<a class="headerlink" href="#running-python-code-interactively" title="Permalink to this headline">¶</a></h2>
+<section id="running-python-code-interactively">
+<h2>Running Python code interactively<a class="headerlink" href="#running-python-code-interactively" title="Permalink to this headline">#</a></h2>
 <p>Notebooks are an example of “interactive” use of the Python interpreter.
 You enter some commands <code class="docutils literal notranslate"><span class="pre">2+3</span></code> in a code cell,
 press SHIFT+ENTER to run the code,
@@ -3586,9 +3718,9 @@ let’s briefly mention the other ways Python applications can operate.
 This is completely out of scope for the remainder of the discussion in this tutorial,
 since we’re just using Python as a fancy calculator,
 but I though I’d mention some of the other uses of Python codes.</p>
-</div>
-<div class="section" id="python-applications">
-<h2>Python applications<a class="headerlink" href="#python-applications" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="python-applications">
+<h2>Python applications<a class="headerlink" href="#python-applications" title="Permalink to this headline">#</a></h2>
 <p>Python is not just a calculator.
 Python can also be used for non-interactive programs and services.
 Python is a general-purpose programming language so it enables a lot of applications. The list below talks about some areas where Python programming is currently being used.</p>
@@ -3614,9 +3746,9 @@ Many of the websites you access every day have as server component written in Py
 beyond the basic “use Python interactively like a calculator” code examples
 that you’ll show in the rest of this tutorial.
 There is a lot of useful stuff</p>
-</div>
-<div class="section" id="python-programming">
-<h2>Python programming<a class="headerlink" href="#python-programming" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="python-programming">
+<h2>Python programming<a class="headerlink" href="#python-programming" title="Permalink to this headline">#</a></h2>
 <p>Coding a.k.a. programming, software engineering, or software development is a broad topic,
 which is out of scope for this short tutorial.
 If you’re interested to learn more about coding,
@@ -3627,14 +3759,14 @@ it’s almost like reading and writing skills.</p>
 <p>Learning programming usually takes several years,
 but you don’t need to become a professional coder to start using Python for simple tasks,
 the same way you don’t need to become a professional author to use writing for everyday tasks.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="links">
-<h1>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="links">
+<h1>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h1>
 <p>I’ve collected the best learning resources for Python,
 which you can use to learn more about Python.</p>
-<div class="section" id="python-cheatsheets">
-<h2>Python cheatsheets<a class="headerlink" href="#python-cheatsheets" title="Permalink to this headline">¶</a></h2>
+<section id="python-cheatsheets">
+<h2>Python cheatsheets<a class="headerlink" href="#python-cheatsheets" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Good quick reference<br />
 <a class="reference external" href="https://gto76.github.io/python-cheatsheet/">https://gto76.github.io/python-cheatsheet/</a></p></li>
@@ -3646,9 +3778,9 @@ which you can use to learn more about Python.</p>
 <li><p><a class="reference external" href="https://homepage.univie.ac.at/michael.blaschek/media/Cheatsheet_python.pdf">https://homepage.univie.ac.at/michael.blaschek/media/Cheatsheet_python.pdf</a></p></li>
 <li><p><a class="reference external" href="https://cheatsheets.quantecon.org/">https://cheatsheets.quantecon.org/</a></p></li>
 </ul>
-</div>
-<div class="section" id="introductions-and-tutorials">
-<h2>Introductions and tutorials<a class="headerlink" href="#introductions-and-tutorials" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="introductions-and-tutorials">
+<h2>Introductions and tutorials<a class="headerlink" href="#introductions-and-tutorials" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Python tutorial by Russell A. Poldrack<br />
 <a class="reference external" href="https://statsthinking21.github.io/statsthinking21-python/01-IntroductionToPython.html">https://statsthinking21.github.io/statsthinking21-python/01-IntroductionToPython.html</a></p></li>
@@ -3671,9 +3803,9 @@ which you can use to learn more about Python.</p>
 <a class="reference external" href="https://treyhunner.com/2019/05/python-builtins-worth-learning/">https://treyhunner.com/2019/05/python-builtins-worth-learning/</a><br />
 via <a class="reference external" href="https://news.ycombinator.com/item?id=30621552">https://news.ycombinator.com/item?id=30621552</a></p></li>
 </ul>
-</div>
-<div class="section" id="special-topics">
-<h2>Special topics<a class="headerlink" href="#special-topics" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="special-topics">
+<h2>Special topics<a class="headerlink" href="#special-topics" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Stats-related python functions<br />
 <a class="reference external" href="https://www.statology.org/python-guides/">https://www.statology.org/python-guides/</a></p></li>
@@ -3687,9 +3819,9 @@ via <a class="reference external" href="https://news.ycombinator.com/item?id=306
 <li><p>about NaNs
 <a class="reference external" href="https://news.ycombinator.com/item?id=30558690">https://news.ycombinator.com/item?id=30558690</a></p></li>
 </ul>
-</div>
-<div class="section" id="books">
-<h2>Books<a class="headerlink" href="#books" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="books">
+<h2>Books<a class="headerlink" href="#books" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Python book for beginners (<a class="reference external" href="https://news.ycombinator.com/item?id=27141644">discussed here</a>)<br />
 <a class="reference external" href="https://learnpythontherightway.com/">https://learnpythontherightway.com/</a></p></li>
@@ -3697,8 +3829,8 @@ via <a class="reference external" href="https://news.ycombinator.com/item?id=306
 <li><p>Object-Oriented Programming in Python<br />
 <a class="reference external" href="https://python-textbok.readthedocs.io/en/1.0/index.html">https://python-textbok.readthedocs.io/en/1.0/index.html</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3722,9 +3854,11 @@ via <a class="reference external" href="https://news.ycombinator.com/item?id=306
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="appendix.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -3740,24 +3874,28 @@ via <a class="reference external" href="https://news.ycombinator.com/item?id=306
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ivan Savov<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ivan Savov<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
