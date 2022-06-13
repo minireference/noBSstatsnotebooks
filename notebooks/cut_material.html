@@ -535,7 +535,22 @@ title="Print to PDF"
          Intentionally skipped
         </a>
        </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#early-attempts-at-expectations-calculations">
+         EARLY ATTEMPTS AT EXPECTATIONS CALCULATIONS
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#alt">
+         Alt
+        </a>
+       </li>
       </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-probability-calculation">
+       Example probability calculation
+      </a>
      </li>
     </ul>
    </li>
@@ -624,7 +639,22 @@ title="Print to PDF"
          Intentionally skipped
         </a>
        </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#early-attempts-at-expectations-calculations">
+         EARLY ATTEMPTS AT EXPECTATIONS CALCULATIONS
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#alt">
+         Alt
+        </a>
+       </li>
       </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-probability-calculation">
+       Example probability calculation
+      </a>
      </li>
     </ul>
    </li>
@@ -868,7 +898,7 @@ We’ll use the Python module <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3679309248669098
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1947081672108859
 </pre></div>
 </div>
 </div>
@@ -890,7 +920,7 @@ We’ll use the Python module <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;tails&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;heads&#39;
 </pre></div>
 </div>
 </div>
@@ -913,8 +943,8 @@ We’ll use the Python module <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>heads     982
-tails    1018
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>heads     993
+tails    1007
 dtype: int64
 </pre></div>
 </div>
@@ -957,12 +987,12 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1     982
-2    1020
-3     998
-4    1003
-5     986
-6    1011
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1     952
+2    1010
+3    1042
+4     953
+5    1023
+6    1020
 dtype: int64
 </pre></div>
 </div>
@@ -1040,6 +1070,175 @@ dtype: int64
 </div>
 </div>
 </section>
+<section id="early-attempts-at-expectations-calculations">
+<h4>EARLY ATTEMPTS AT EXPECTATIONS CALCULATIONS<a class="headerlink" href="#early-attempts-at-expectations-calculations" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Rational</span>
+<span class="n">integrate</span><span class="p">(</span> <span class="p">(</span><span class="n">u</span><span class="o">-</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{12}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span>
+
+<span class="c1"># mean</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">xs</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">xs</span><span class="p">)</span>
+<span class="n">mu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># variance</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">(</span><span class="n">xs</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+<span class="n">sigma2</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">xs</span><span class="p">)</span>
+<span class="n">sigma2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08333350033383399
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvU</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08333333333333333
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="alt">
+<h4>Alt<a class="headerlink" href="#alt" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">xpU</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">xpU</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">xpU</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">muX</span> <span class="o">=</span> <span class="n">rvU</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">xpU</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simpson</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">simpson</span><span class="p">(</span><span class="n">xs</span><span class="o">*</span><span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">xs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="example-probability-calculation">
+<h3>Example probability calculation<a class="headerlink" href="#example-probability-calculation" title="Permalink to this headline">#</a></h3>
+<p>What is the probability of observing a value between 800 and 900.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">plot_helpers</span> <span class="kn">import</span> <span class="n">calc_prob_and_plot</span>
+
+<span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+
+<span class="c1"># Pr(800 &lt; X &lt; 900) = integral of f_X between 800 and 900</span>
+<span class="n">quad</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">900</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13590512198327784
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calc_prob_and_plot</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.49996832875816705,
+ &lt;AxesSubplot:title={&#39;center&#39;:&#39;Probability density for the random variable norm(1000, 100) between 600 and 1000&#39;}&gt;)
+</pre></div>
+</div>
+<img alt="../_images/cut_material_67_1.png" src="../_images/cut_material_67_1.png" />
+</div>
+</div>
 </section>
 </section>
 </section>
