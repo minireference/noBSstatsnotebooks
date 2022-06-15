@@ -473,290 +473,266 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Section 2.1 — Probability theory
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebook-setup">
+   Notebook setup
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notebook-setup">
-     Notebook setup
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-probability-theory">
-     What is probability theory?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definitions">
-     Definitions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#random-variables">
-       Random variables
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-1-uniform-distribution">
-         Example 1: Uniform distribution
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-2-normal-distribution">
-         Example 2: Normal distribution
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-3-coin-flip">
-         Example 3: Coin flip
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-4-rolling-a-six-sided-die">
-         Example 4: Rolling a six-sided die
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculus-prerequisites">
-     Calculus prerequisites
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-probability-theory">
+   What is probability theory?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions">
+   Definitions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-variables">
+     Random variables
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sets">
-       Sets
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-uniform-distribution">
+       Example 1: Uniform distribution
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#functions">
-       Functions
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#plotting-the-graph-of-the-function-g-x">
-         Plotting the graph of the function
-         <span class="math notranslate nohighlight">
-          \(g(x)\)
-         </span>
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-integrals-geometrically">
-       Computing integrals geometrically
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-normal-distribution">
+       Example 2: Normal distribution
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-integrals-numerically-using-scipy-integrate-methods">
-       Computing integrals numerically using SciPy
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         integrate
-        </span>
-       </code>
-       methods
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#trapezoid-approximation">
-         Trapezoid approximation
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-integrals-symbolically-using-sympy-integrate">
-       Computing integrals symbolically using SymPy
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         integrate
-        </span>
-       </code>
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#constant-function-f-x-c">
-         Constant function
-         <span class="math notranslate nohighlight">
-          \(f(x)=c\)
-         </span>
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#line-g-x-x">
-         Line
-         <span class="math notranslate nohighlight">
-          \(g(x)=x\)
-         </span>
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculations-with-random-variables">
-     Calculations with random variables
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-1-mean-and-variance-of-the-uniform-distribution">
-       Example 1: mean and variance of the uniform distribution
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#mean">
-         Mean
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#variance">
-         Variance
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-2-mean-and-variance-of-a-normal-distribution">
-       Example 2: mean and variance of a normal distribution
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-3-coin-flip">
+       Example 3: Coin flip
       </a>
      </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#probability-models">
-     Probability models
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#computer-models-for-random-variables">
-     Computer models for random variables
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plotting-the-probability-functions">
-       Plotting the probability functions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#properties-of-the-distribution">
-       Properties of the distribution
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-probabilities">
-       Computing probabilities
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-quantiles">
-       Computing quantiles
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#left-tail">
-         Left tail
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#right-tail">
-         Right tail
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#computing-confidence-intervals">
-         Computing confidence intervals
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#generating-random-observations">
-       Generating random observations
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-expectations">
-       Computing expectations
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion">
-     Discussion
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#theoretical-calculus-topics">
-       Theoretical calculus topics
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#limits">
-         Limits
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#derivatives">
-         Derivatives
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#optimization-algorithms">
-         Optimization algorithms
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#using-scipy-optimization-functions">
-         Using SciPy optimization functions
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#riemann-sums">
-         Riemann sums
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#fundamental-theorem-of-calculus">
-         Fundamental theorem of calculus
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#bulk-of-the-normal-distribution">
-       Bulk of the normal distribution
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tails-of-the-normal-distribution">
-       Tails of the normal distribution
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-4-rolling-a-six-sided-die">
+       Example 4: Rolling a six-sided die
       </a>
      </li>
     </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#figures-gen">
-   FIGURES GEN
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculus-prerequisites">
+   Calculus prerequisites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sets">
+     Sets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-the-graph-of-the-function-g-x">
+       Plotting the graph of the function
+       <span class="math notranslate nohighlight">
+        \(g(x)\)
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-integrals-geometrically">
+     Computing integrals geometrically
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-integrals-numerically-using-scipy-integrate-methods">
+     Computing integrals numerically using SciPy
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       integrate
+      </span>
+     </code>
+     methods
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trapezoid-approximation">
+       Trapezoid approximation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-integrals-symbolically-using-sympy-integrate">
+     Computing integrals symbolically using SymPy
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       integrate
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constant-function-f-x-c">
+       Constant function
+       <span class="math notranslate nohighlight">
+        \(f(x)=c\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-g-x-x">
+       Line
+       <span class="math notranslate nohighlight">
+        \(g(x)=x\)
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculations-with-random-variables">
+   Calculations with random variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1-mean-and-variance-of-the-uniform-distribution">
+     Example 1: mean and variance of the uniform distribution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mean">
+       Mean
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variance">
+       Variance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2-mean-and-variance-of-a-normal-distribution">
+     Example 2: mean and variance of a normal distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-models">
+   Probability models
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cut-material">
-   CUT MATERIAL
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computer-models-for-random-variables">
+   Computer models for random variables
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cut-example-plot-of-pdf-used-to-be-in-calculus-section">
-     CUT EXAMPLE PLOT OF PDF (used to be in Calculus section)
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-the-probability-functions">
+     Plotting the probability functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-distribution">
+     Properties of the distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-probabilities">
+     Computing probabilities
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-quantiles">
+     Computing quantiles
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#left-tail">
+       Left tail
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#right-tail">
+       Right tail
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-confidence-intervals">
+       Computing confidence intervals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generating-random-observations">
+     Generating random observations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-expectations">
+     Computing expectations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theoretical-calculus-topics">
+     Theoretical calculus topics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#limits">
+       Limits
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#derivatives">
+       Derivatives
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optimization-algorithms">
+       Optimization algorithms
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-scipy-optimization-functions">
+       Using SciPy optimization functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#riemann-sums">
+       Riemann sums
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fundamental-theorem-of-calculus">
+       Fundamental theorem of calculus
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bulk-of-the-normal-distribution">
+     Bulk of the normal distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tails-of-the-normal-distribution">
+     Tails of the normal distribution
     </a>
    </li>
   </ul>
@@ -780,290 +756,266 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Section 2.1 — Probability theory
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebook-setup">
+   Notebook setup
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notebook-setup">
-     Notebook setup
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-probability-theory">
-     What is probability theory?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definitions">
-     Definitions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#random-variables">
-       Random variables
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-1-uniform-distribution">
-         Example 1: Uniform distribution
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-2-normal-distribution">
-         Example 2: Normal distribution
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-3-coin-flip">
-         Example 3: Coin flip
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-4-rolling-a-six-sided-die">
-         Example 4: Rolling a six-sided die
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculus-prerequisites">
-     Calculus prerequisites
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-probability-theory">
+   What is probability theory?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions">
+   Definitions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-variables">
+     Random variables
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sets">
-       Sets
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-uniform-distribution">
+       Example 1: Uniform distribution
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#functions">
-       Functions
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#plotting-the-graph-of-the-function-g-x">
-         Plotting the graph of the function
-         <span class="math notranslate nohighlight">
-          \(g(x)\)
-         </span>
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-integrals-geometrically">
-       Computing integrals geometrically
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-normal-distribution">
+       Example 2: Normal distribution
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-integrals-numerically-using-scipy-integrate-methods">
-       Computing integrals numerically using SciPy
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         integrate
-        </span>
-       </code>
-       methods
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#trapezoid-approximation">
-         Trapezoid approximation
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-integrals-symbolically-using-sympy-integrate">
-       Computing integrals symbolically using SymPy
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         integrate
-        </span>
-       </code>
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#constant-function-f-x-c">
-         Constant function
-         <span class="math notranslate nohighlight">
-          \(f(x)=c\)
-         </span>
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#line-g-x-x">
-         Line
-         <span class="math notranslate nohighlight">
-          \(g(x)=x\)
-         </span>
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculations-with-random-variables">
-     Calculations with random variables
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-1-mean-and-variance-of-the-uniform-distribution">
-       Example 1: mean and variance of the uniform distribution
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#mean">
-         Mean
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#variance">
-         Variance
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-2-mean-and-variance-of-a-normal-distribution">
-       Example 2: mean and variance of a normal distribution
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-3-coin-flip">
+       Example 3: Coin flip
       </a>
      </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#probability-models">
-     Probability models
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#computer-models-for-random-variables">
-     Computer models for random variables
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plotting-the-probability-functions">
-       Plotting the probability functions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#properties-of-the-distribution">
-       Properties of the distribution
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-probabilities">
-       Computing probabilities
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-quantiles">
-       Computing quantiles
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#left-tail">
-         Left tail
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#right-tail">
-         Right tail
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#computing-confidence-intervals">
-         Computing confidence intervals
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#generating-random-observations">
-       Generating random observations
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computing-expectations">
-       Computing expectations
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion">
-     Discussion
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#theoretical-calculus-topics">
-       Theoretical calculus topics
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#limits">
-         Limits
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#derivatives">
-         Derivatives
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#optimization-algorithms">
-         Optimization algorithms
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#using-scipy-optimization-functions">
-         Using SciPy optimization functions
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#riemann-sums">
-         Riemann sums
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#fundamental-theorem-of-calculus">
-         Fundamental theorem of calculus
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#bulk-of-the-normal-distribution">
-       Bulk of the normal distribution
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tails-of-the-normal-distribution">
-       Tails of the normal distribution
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-4-rolling-a-six-sided-die">
+       Example 4: Rolling a six-sided die
       </a>
      </li>
     </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#figures-gen">
-   FIGURES GEN
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculus-prerequisites">
+   Calculus prerequisites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sets">
+     Sets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-the-graph-of-the-function-g-x">
+       Plotting the graph of the function
+       <span class="math notranslate nohighlight">
+        \(g(x)\)
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-integrals-geometrically">
+     Computing integrals geometrically
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-integrals-numerically-using-scipy-integrate-methods">
+     Computing integrals numerically using SciPy
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       integrate
+      </span>
+     </code>
+     methods
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trapezoid-approximation">
+       Trapezoid approximation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-integrals-symbolically-using-sympy-integrate">
+     Computing integrals symbolically using SymPy
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       integrate
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constant-function-f-x-c">
+       Constant function
+       <span class="math notranslate nohighlight">
+        \(f(x)=c\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-g-x-x">
+       Line
+       <span class="math notranslate nohighlight">
+        \(g(x)=x\)
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculations-with-random-variables">
+   Calculations with random variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1-mean-and-variance-of-the-uniform-distribution">
+     Example 1: mean and variance of the uniform distribution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mean">
+       Mean
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variance">
+       Variance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2-mean-and-variance-of-a-normal-distribution">
+     Example 2: mean and variance of a normal distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-models">
+   Probability models
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cut-material">
-   CUT MATERIAL
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computer-models-for-random-variables">
+   Computer models for random variables
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cut-example-plot-of-pdf-used-to-be-in-calculus-section">
-     CUT EXAMPLE PLOT OF PDF (used to be in Calculus section)
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-the-probability-functions">
+     Plotting the probability functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-distribution">
+     Properties of the distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-probabilities">
+     Computing probabilities
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-quantiles">
+     Computing quantiles
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#left-tail">
+       Left tail
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#right-tail">
+       Right tail
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-confidence-intervals">
+       Computing confidence intervals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generating-random-observations">
+     Generating random observations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-expectations">
+     Computing expectations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theoretical-calculus-topics">
+     Theoretical calculus topics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#limits">
+       Limits
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#derivatives">
+       Derivatives
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optimization-algorithms">
+       Optimization algorithms
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-scipy-optimization-functions">
+       Using SciPy optimization functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#riemann-sums">
+       Riemann sums
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fundamental-theorem-of-calculus">
+       Fundamental theorem of calculus
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bulk-of-the-normal-distribution">
+     Bulk of the normal distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tails-of-the-normal-distribution">
+     Tails of the normal distribution
     </a>
    </li>
   </ul>
@@ -1405,21 +1357,6 @@ We store this sequence of inputs into the variable <code class="docutils literal
 Next, we computer the output value <span class="math notranslate nohighlight">\(y = g(x)\)</span> for each of the inputs in the array <code class="docutils literal notranslate"><span class="pre">xs</span></code>,
 and store the result in the array <code class="docutils literal notranslate"><span class="pre">gxs</span></code>.
 Finally, we use the function <code class="docutils literal notranslate"><span class="pre">sns.lineplot()</span></code> to generate the plot.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import matplotlib.pyplot as plt</span>
-<span class="c1"># filename = &quot;figures/graph_of_function_g_eq_x.pdf&quot;</span>
-
-<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(4,4)}):</span>
-<span class="c1">#     ax = sns.lineplot(x=xs, y=ys, label=&quot;Graph of the function g(x)&quot;)</span>
-<span class="c1">#     ax.figure.tight_layout()</span>
-<span class="c1">#     ax.set_xlabel(&#39;x&#39;)</span>
-<span class="c1">#     ax.set_ylabel(&#39;g(x)&#39;)</span>
-<span class="c1">#     ax.figure.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1961,22 +1898,7 @@ is distributed according to model instance <span class="math notranslate nohighl
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/21_prob_theory_110_1.png" src="../_images/21_prob_theory_110_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import matplotlib.pyplot as plt</span>
-<span class="c1"># filename = &quot;figures/plot_of_pdf_of_rvN.pdf&quot;</span>
-
-<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(7,3)}):</span>
-<span class="c1">#     ns = np.linspace(0, 2000, 10000)</span>
-<span class="c1">#     fNs = rvN.pdf(ns)</span>
-<span class="c1">#     ax = sns.lineplot(x=ns, y=fNs, label=&quot;pdf of $N$&quot;)</span>
-<span class="c1">#     ax.figure.tight_layout()</span>
-<span class="c1">#     ax.figure.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
-</pre></div>
-</div>
+<img alt="../_images/21_prob_theory_109_1.png" src="../_images/21_prob_theory_109_1.png" />
 </div>
 </div>
 <p>The cumulative distribution is the integral of the probability density function:
@@ -1995,22 +1917,7 @@ $<span class="math notranslate nohighlight">\(
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/21_prob_theory_113_1.png" src="../_images/21_prob_theory_113_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import matplotlib.pyplot as plt</span>
-<span class="c1"># filename = &quot;figures/plot_of_CDF_of_rvN.pdf&quot;</span>
-
-<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(7,3)}):</span>
-<span class="c1">#     ns = np.linspace(0, 2000, 10000)</span>
-<span class="c1">#     FNs = rvN.cdf(ns)</span>
-<span class="c1">#     ax = sns.lineplot(x=ns, y=FNs, label=&quot;CDF of $N$&quot;)</span>
-<span class="c1">#     ax.figure.tight_layout()</span>
-<span class="c1">#     ax.figure.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
-</pre></div>
-</div>
+<img alt="../_images/21_prob_theory_111_1.png" src="../_images/21_prob_theory_111_1.png" />
 </div>
 </div>
 </section>
@@ -2328,7 +2235,7 @@ Bottles outside that range get rejected and you don’t get paid for them.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/21_prob_theory_151_1.png" src="../_images/21_prob_theory_151_1.png" />
+<img alt="../_images/21_prob_theory_148_1.png" src="../_images/21_prob_theory_148_1.png" />
 </div>
 </div>
 </section>
@@ -2482,7 +2389,6 @@ that includes an exponential, a trigonometric, and a logarithmic function.</p>
     <span class="n">x_i</span> <span class="o">=</span> <span class="n">x0</span>
     <span class="n">delta</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
     <span class="k">while</span> <span class="n">delta</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
-        <span class="c1"># print(&#39;current&#39;, x_i, delta)</span>
         <span class="n">df_at_x_i</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">x_i</span><span class="p">})</span>
         <span class="n">x_next</span> <span class="o">=</span> <span class="n">x_i</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">*</span><span class="n">df_at_x_i</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x_next</span> <span class="o">-</span> <span class="n">x_i</span><span class="p">)</span>
@@ -2663,7 +2569,7 @@ Change the value of <span class="math notranslate nohighlight">\(k\)</span> to g
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9544997361036417
 </pre></div>
 </div>
-<img alt="../_images/21_prob_theory_200_1.png" src="../_images/21_prob_theory_200_1.png" />
+<img alt="../_images/21_prob_theory_197_1.png" src="../_images/21_prob_theory_197_1.png" />
 </div>
 </div>
 <p>Try changing the value of the variable <code class="docutils literal notranslate"><span class="pre">k</span></code> to 1 or 3 in the above code cell.</p>
@@ -2722,367 +2628,12 @@ Pr( N&lt;700.0 or N&gt;1300.0 ) = 0.0027
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pr( {N&lt;800.0} ∪ {N&gt;1200.0} ) = 0.0455
 </pre></div>
 </div>
-<img alt="../_images/21_prob_theory_207_1.png" src="../_images/21_prob_theory_207_1.png" />
+<img alt="../_images/21_prob_theory_204_1.png" src="../_images/21_prob_theory_204_1.png" />
 </div>
 </div>
 <p>Try changing the value of the variable <code class="docutils literal notranslate"><span class="pre">k</span></code> in the above code cell.</p>
 <p>The above calculations leads us to an important rule of thumb: the values of the 5% tail of the distribution are <span class="math notranslate nohighlight">\(k=2\)</span> standard deviations away from the mean (more precisely, we should use <span class="math notranslate nohighlight">\(k=1.96\)</span> to get exactly 5%). We’ll use this facts later in STATS to define a <em>cutoff value</em> for events that are unlikely to occur by chance.</p>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="figures-gen">
-<h1>FIGURES GEN<a class="headerlink" href="#figures-gen" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">plot_helpers</span> <span class="kn">import</span> <span class="n">plot_pdf_and_cdf</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
-<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plot_pdf_and_cdf</span><span class="p">(</span><span class="n">rvU</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">rv_name</span><span class="o">=</span><span class="s2">&quot;U&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 432x288 with 2 Axes&gt;,
- array([&lt;AxesSubplot:title={&#39;center&#39;:&#39;Probability density function&#39;}&gt;,
-        &lt;AxesSubplot:title={&#39;center&#39;:&#39;Cumulative distribution function&#39;}&gt;],
-       dtype=object))
-</pre></div>
-</div>
-<img alt="../_images/21_prob_theory_215_1.png" src="../_images/21_prob_theory_215_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename = &quot;figures/uniform_pdf_and_CDF_until_b.pdf&quot;</span>
-
-<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(10,5)}):</span>
-<span class="c1">#     fig, axs = plot_pdf_and_cdf(rvU, 0.7, rv_name=&quot;U&quot;)</span>
-<span class="c1">#     fig.tight_layout()</span>
-<span class="c1">#     fig.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="n">mean</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">std</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
-
-<span class="n">plot_pdf_and_cdf</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="mi">1100</span><span class="p">,</span> <span class="n">rv_name</span><span class="o">=</span><span class="s2">&quot;N&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 432x288 with 2 Axes&gt;,
- array([&lt;AxesSubplot:title={&#39;center&#39;:&#39;Probability density function&#39;}&gt;,
-        &lt;AxesSubplot:title={&#39;center&#39;:&#39;Cumulative distribution function&#39;}&gt;],
-       dtype=object))
-</pre></div>
-</div>
-<img alt="../_images/21_prob_theory_217_1.png" src="../_images/21_prob_theory_217_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename = &quot;figures/normal_pdf_and_CDF_until_b.pdf&quot;</span>
-
-<span class="c1"># from scipy.stats.distributions import norm</span>
-<span class="c1"># mean = 1000</span>
-<span class="c1"># std = 100</span>
-<span class="c1"># rvN = norm(mean, std)</span>
-
-<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(10,5)}):</span>
-<span class="c1">#     fig, axs = plot_pdf_and_cdf(rvN, 1100, rv_name=&quot;N&quot;)</span>
-<span class="c1">#     fig.tight_layout()</span>
-<span class="c1">#     fig.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">plot_helpers</span> <span class="kn">import</span> <span class="n">calc_prob_and_plot</span>
-
-<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;figures/bulk_of_the_distribution_panel.pdf&quot;</span>
-
-<span class="n">mu</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>    <span class="c1"># mean of the random variable</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c1"># standard deviaiton of the random variable</span>
-
-<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">rc_context</span><span class="p">({</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">)}):</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span> <span class="o">=</span> <span class="n">axs</span>
-
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">bulk_interval1</span> <span class="o">=</span> <span class="p">[</span><span class="n">mu</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="n">mu</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">]</span>
-    <span class="n">p1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">calc_prob_and_plot</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="o">*</span><span class="n">bulk_interval1</span><span class="p">,</span> <span class="n">xlims</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span><span class="p">,</span> <span class="mi">1400</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span>
-                                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;(a) Pr({$\mu-\sigma \leq N \leq \mu+\sigma$})&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n =&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;interval contains&quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
-
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">bulk_interval2</span> <span class="o">=</span> <span class="p">[</span><span class="n">mu</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="n">mu</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">]</span>
-    <span class="n">p2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">calc_prob_and_plot</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="o">*</span><span class="n">bulk_interval2</span><span class="p">,</span> <span class="n">xlims</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span><span class="p">,</span> <span class="mi">1400</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span>
-                                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;(b) Pr({$\mu-2\sigma \leq N \leq \mu+2\sigma$})&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n =&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;interval contains&quot;</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
-
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">bulk_interval3</span> <span class="o">=</span> <span class="p">[</span><span class="n">mu</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="n">mu</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span><span class="p">]</span>
-    <span class="n">p3</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">calc_prob_and_plot</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="o">*</span><span class="n">bulk_interval3</span><span class="p">,</span> <span class="n">xlims</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span><span class="p">,</span> <span class="mi">1400</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">,</span>
-                                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;(c) Pr({$\mu-3\sigma \leq N \leq \mu+3\sigma$})&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n =&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;interval contains&quot;</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
-    
-    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n = 1 interval contains 0.6826894921370859
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n = 2 interval contains 0.9544997361036417
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n = 3 interval contains 0.99730020393674
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [98],</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n =&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;interval contains&quot;</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">32</span> <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/figure.py:3046,</span> in <span class="ni">Figure.savefig</span><span class="nt">(self, fname, transparent, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3042</span>     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3043</span>         <span class="n">stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3044</span>             <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">_cm_set</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">))</span>
-<span class="ne">-&gt; </span><span class="mi">3046</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/backend_bases.py:2319,</span> in <span class="ni">FigureCanvasBase.print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2315</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2316</span>     <span class="c1"># _get_renderer may change the figure dpi (as vector formats</span>
-<span class="g g-Whitespace">   </span><span class="mi">2317</span>     <span class="c1"># force the figure dpi to 72), so we need to set it again here.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2318</span>     <span class="k">with</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_setattr_cm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2319</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">print_method</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2320</span>             <span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2321</span>             <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2322</span>             <span class="n">edgecolor</span><span class="o">=</span><span class="n">edgecolor</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2323</span>             <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2324</span>             <span class="n">bbox_inches_restore</span><span class="o">=</span><span class="n">_bbox_inches_restore</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2325</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2326</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2327</span>     <span class="k">if</span> <span class="n">bbox_inches</span> <span class="ow">and</span> <span class="n">restore_bbox</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/backend_bases.py:1648,</span> in <span class="ni">_check_savefig_extra_args.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1640</span>     <span class="n">_api</span><span class="o">.</span><span class="n">warn_deprecated</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1641</span>         <span class="s1">&#39;3.3&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">removal</span><span class="o">=</span><span class="s1">&#39;3.6&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1642</span>         <span class="n">message</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">() got unexpected keyword argument &quot;&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1643</span>                 <span class="o">+</span> <span class="n">arg</span> <span class="o">+</span> <span class="s1">&#39;&quot; which is no longer supported as of &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1644</span>                 <span class="s1">&#39;</span><span class="si">%(since)s</span><span class="s1"> and will become an error &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1645</span>                 <span class="s1">&#39;</span><span class="si">%(removal)s</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1646</span>     <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1648</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/_api/deprecation.py:389,</span> in <span class="ni">delete_parameter.&lt;locals&gt;.wrapper</span><span class="nt">(*inner_args, **inner_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">inner_args</span><span class="p">,</span> <span class="o">**</span><span class="n">inner_kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">inner_args</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">name_idx</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">inner_kwargs</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">387</span>         <span class="c1"># Early return in the simple, non-deprecated case (much faster than</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span>         <span class="c1"># calling bind()).</span>
-<span class="ne">--&gt; </span><span class="mi">389</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inner_args</span><span class="p">,</span> <span class="o">**</span><span class="n">inner_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="n">arguments</span> <span class="o">=</span> <span class="n">signature</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">*</span><span class="n">inner_args</span><span class="p">,</span> <span class="o">**</span><span class="n">inner_kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">arguments</span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="k">if</span> <span class="n">is_varargs</span> <span class="ow">and</span> <span class="n">arguments</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/backends/backend_pdf.py:2783,</span> in <span class="ni">FigureCanvasPdf.print_pdf</span><span class="nt">(self, filename, dpi, bbox_inches_restore, metadata)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2781</span>     <span class="n">file</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">_file</span>
-<span class="g g-Whitespace">   </span><span class="mi">2782</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2783</span>     <span class="n">file</span> <span class="o">=</span> <span class="n">PdfFile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2784</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2785</span>     <span class="n">file</span><span class="o">.</span><span class="n">newPage</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/backends/backend_pdf.py:654,</span> in <span class="ni">PdfFile.__init__</span><span class="nt">(self, filename, metadata)</span>
-<span class="g g-Whitespace">    </span><span class="mi">652</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_file_like</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span> <span class="bp">self</span><span class="o">.</span><span class="n">tell_base</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ne">--&gt; </span><span class="mi">654</span> <span class="n">fh</span><span class="p">,</span> <span class="n">opened</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">to_filehandle</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">,</span> <span class="n">return_opened</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">opened</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/cbook/__init__.py:451,</span> in <span class="ni">to_filehandle</span><span class="nt">(fname, flag, return_opened, encoding)</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span>         <span class="n">fh</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">451</span>         <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">452</span>     <span class="n">opened</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span> <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;seek&#39;</span><span class="p">):</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;figures/bulk_of_the_distribution_panel.pdf&#39;
-</pre></div>
-</div>
-<img alt="../_images/21_prob_theory_222_4.png" src="../_images/21_prob_theory_222_4.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;figures/tails_of_the_distribution_panel.pdf&quot;</span>
-
-
-<span class="kn">from</span> <span class="nn">plot_helpers</span> <span class="kn">import</span> <span class="n">calc_prob_and_plot_tails</span>
-
-
-
-
-<span class="n">mu</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>    <span class="c1"># mean of the random variable</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c1"># standard deviaiton of the random variable</span>
-
-
-<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">rc_context</span><span class="p">({</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">)}):</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span> <span class="o">=</span> <span class="n">axs</span>
-
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">x_l</span> <span class="o">=</span> <span class="n">mu</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span>
-    <span class="n">x_r</span> <span class="o">=</span> <span class="n">mu</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span>
-    <span class="n">title1</span> <span class="o">=</span> <span class="s2">&quot;(a) Pr( {$N \leq \mu-\sigma$} $\cup$ {$N \geq \mu+\sigma$} )&quot;</span>
-    <span class="n">p2</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">calc_prob_and_plot_tails</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="n">x_l</span><span class="p">,</span> <span class="n">x_r</span><span class="p">,</span> <span class="n">xlims</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span><span class="p">,</span> <span class="mi">1400</span><span class="p">],</span>
-                                      <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title1</span><span class="p">)</span>
-
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">x_l</span> <span class="o">=</span> <span class="n">mu</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span>
-    <span class="n">x_r</span> <span class="o">=</span> <span class="n">mu</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span>
-    <span class="n">title2</span> <span class="o">=</span> <span class="s2">&quot;(b) Pr( {$N \leq \mu-2\sigma$} $\cup$ {$N \geq \mu+2\sigma$} )&quot;</span>
-    <span class="n">p2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">calc_prob_and_plot_tails</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="n">x_l</span><span class="p">,</span> <span class="n">x_r</span><span class="p">,</span> <span class="n">xlims</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span><span class="p">,</span> <span class="mi">1400</span><span class="p">],</span>
-                                      <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title2</span><span class="p">)</span>
-
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">x_l</span> <span class="o">=</span> <span class="n">mu</span><span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span>
-    <span class="n">x_r</span> <span class="o">=</span> <span class="n">mu</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">sigma</span>
-    <span class="n">title3</span> <span class="o">=</span> <span class="s2">&quot;(c) Pr( {$N \leq \mu-3\sigma$} $\cup$ {$N \geq \mu+3\sigma$} )&quot;</span>
-    <span class="n">p3</span><span class="p">,</span> <span class="n">ax3</span> <span class="o">=</span> <span class="n">calc_prob_and_plot_tails</span><span class="p">(</span><span class="n">rvN</span><span class="p">,</span> <span class="n">x_l</span><span class="p">,</span> <span class="n">x_r</span><span class="p">,</span> <span class="n">xlims</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span><span class="p">,</span> <span class="mi">1400</span><span class="p">],</span>
-                                      <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title3</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p1</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p2</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p3</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-
-    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p1=0.6826894921370859
-p2=0.04550026389615838
-p3=0.002699796063060157
-</pre></div>
-</div>
-<img alt="../_images/21_prob_theory_223_1.png" src="../_images/21_prob_theory_223_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;figures/plot_of_trapezoid_under_chi2_df_eq_8.pdf&quot;</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">chi2</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="n">X2</span> <span class="o">=</span> <span class="n">chi2</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">X2</span><span class="o">.</span><span class="n">pdf</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">25</span>
-
-
-<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">rc_context</span><span class="p">({</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">)}):</span>
-
-    <span class="c1"># x and y values for the trapezoid rule</span>
-    <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">ys</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
-
-    <span class="c1"># X and Y values for plotting y=f(x)</span>
-    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
-    <span class="n">Y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-    <span class="c1"># ax.set_title(&#39;Approximation to the area under $f(x)$ using n = {} trapezoids.&#39;.format(n), y=0, pad=-30)</span>
-
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">xcoords</span> <span class="o">=</span> <span class="p">[</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>    <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span>    <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
-        <span class="n">ycoords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span>     <span class="n">f</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">f</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">0</span>      <span class="p">]</span>
-        <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>==1 else 0.3
-        <span class="n">plt</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">xcoords</span><span class="p">,</span> <span class="n">ycoords</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>   <span class="mi">0</span><span class="p">,</span>          <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>   <span class="mi">0</span><span class="p">,</span>          <span class="s1">&#39;$(x_i, 0)$&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>   <span class="n">f</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>   <span class="n">f</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>    <span class="s1">&#39;$(x_i, f(x_i))$&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span>          <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span>          <span class="s1">&#39;$(x_i+\Delta x, 0)$&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">f</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span>  <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">f</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="s1">&#39;$(x_i+\Delta x, f(x_i+\Delta x))$&#39;</span><span class="p">)</span>
-
-
-    <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/21_prob_theory_225_0.png" src="../_images/21_prob_theory_225_0.png" />
-</div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="cut-material">
-<h1>CUT MATERIAL<a class="headerlink" href="#cut-material" title="Permalink to this headline">#</a></h1>
-<section id="cut-example-plot-of-pdf-used-to-be-in-calculus-section">
-<h2>CUT EXAMPLE PLOT OF PDF (used to be in Calculus section)<a class="headerlink" href="#cut-example-plot-of-pdf-used-to-be-in-calculus-section" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
-
-<span class="c1"># define normally distributed random variable with 𝜇=1000 and 𝜎=100</span>
-<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-
-<span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
-<span class="n">fNs</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ns</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">fNs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Probability density function $f_N$&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
-</pre></div>
-</div>
-<img alt="../_images/21_prob_theory_231_1.png" src="../_images/21_prob_theory_231_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import matplotlib.pyplot as plt</span>
-<span class="c1"># filename = &quot;figures/graph_of_pdf_of_rvN.pdf&quot;</span>
-
-<span class="c1"># with plt.rc_context({&quot;figure.figsize&quot;:(7,3)}):</span>
-<span class="c1">#     x = np.linspace(0, 2000, 10000)</span>
-<span class="c1">#     fN = rvN.pdf(x)</span>
-<span class="c1">#     ax = sns.lineplot(x=x, y=fN)</span>
-<span class="c1">#     ax.figure.tight_layout()</span>
-<span class="c1">#     ax.set_title(&quot;Probability density function for the distribution $\mathcal{N}(1000,100)$&quot;)</span>
-<span class="c1">#     ax.set_xlabel(&#39;$x$&#39;)</span>
-<span class="c1">#     ax.set_ylabel(&#39;$f_N(x)$&#39;)</span>
-<span class="c1">#     ax.figure.savefig(filename, dpi=300, bbox_inches=&quot;tight&quot;, pad_inches=0)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
