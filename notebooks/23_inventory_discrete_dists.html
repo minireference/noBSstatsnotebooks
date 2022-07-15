@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Section 2.4 — Continuous probability distributions &#8212; No BS Stats Notebooks</title>
+    <title>Section 2.3 — Inventory of discrete distributions &#8212; No BS Stats Notebooks</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Section 2.5 — Probability models for random samples" href="25_random_samples.html" />
-    <link rel="prev" title="Section 2.3 — Discrete probability distributions" href="23_discrete_prob_distr.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../stats_overview/00_Introduction.html">
    Statistics overview
@@ -175,41 +171,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="20_PROB.html">
    Chapter 2 — Probability theory
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="21_prob_theory.html">
-     Section 2.1 — Probability theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="22_multiple_random_vars.html">
-     Section 2.2 — Multiple random variable
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="23_discrete_prob_distr.html">
-     Section 2.3 — Discrete probability distributions
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Section 2.4 — Continuous probability distributions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="25_random_samples.html">
-     Section 2.5 — Probability models for random samples
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1">
@@ -308,7 +279,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./notebooks/24_continuous_prob_distr.ipynb"
+        <a href="https://mybinder.org/v2/gh/minireference/noBSstatsnotebooks/main?urlpath=tree/./notebooks/23_inventory_discrete_dists.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -386,7 +357,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fnotebooks/24_continuous_prob_distr.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/minireference/noBSstatsnotebooks/issues/new?title=Issue%20on%20page%20%2Fnotebooks/23_inventory_discrete_dists.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -414,7 +385,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/24_continuous_prob_distr.ipynb"
+        <a href="../_sources/notebooks/23_inventory_discrete_dists.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -478,16 +449,6 @@ title="Print to PDF"
    Notebook setup
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uniform-distribution">
-   Uniform distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#normal-probability-distribution">
-   Normal probability distribution
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -497,7 +458,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Section 2.4 — Continuous probability distributions</h1>
+                <h1>Section 2.3 — Inventory of discrete distributions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -512,16 +473,6 @@ title="Print to PDF"
    Notebook setup
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uniform-distribution">
-   Uniform distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#normal-probability-distribution">
-   Normal probability distribution
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -532,9 +483,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="section-2-4-continuous-probability-distributions">
-<h1>Section 2.4 — Continuous probability distributions<a class="headerlink" href="#section-2-4-continuous-probability-distributions" title="Permalink to this headline">#</a></h1>
-<p>This notebook contains all the code examples from <span class="xref myst">Section 2.4 Continuous probability distributions</span> in the <strong>No Bullshit Guide to Statistics</strong>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="section-2-3-inventory-of-discrete-distributions">
+<h1>Section 2.3 — Inventory of discrete distributions<a class="headerlink" href="#section-2-3-inventory-of-discrete-distributions" title="Permalink to this headline">#</a></h1>
+<p>This notebook contains all the code examples from <span class="xref myst">Section 2.3 Inventory of discrete distributions</span> of the <strong>No Bullshit Guide to Statistics</strong>.</p>
 <section id="notebook-setup">
 <h2>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
@@ -575,101 +526,6 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="uniform-distribution">
-<h2>Uniform distribution<a class="headerlink" href="#uniform-distribution" title="Permalink to this headline">#</a></h2>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Continuous_uniform_distribution">uniform distribution</a> <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span> is described by the following probability density function:
-$<span class="math notranslate nohighlight">\(
-  p_U(u) =
-  \begin{cases}
-      1 &amp; \mathrm{for}\ 0 \le u \le 1, \\
-      0 &amp; \mathrm{for}\ u&lt;0\ \mathrm{or}\ u&gt;1.
-  \end{cases}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>U<span class="math notranslate nohighlight">\( is the name of the random variable and \)</span>u$ are particular values it can take on.</p>
-<p>The above equation describes tells you how likely it is to observe <span class="math notranslate nohighlight">\(\{U=u\}.
-For a uniform distribution \)</span>\mathcal{U}(0,1)<span class="math notranslate nohighlight">\(, each \)</span>u<span class="math notranslate nohighlight">\( between 0 and 1 is equally likely to occur,
-and values of \)</span>u$ outside this range have zero probability of occurring.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
-
-<span class="c1"># create a uniform random variable U(0,1)</span>
-<span class="n">rvU</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">rvU</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;scipy.stats._distn_infrastructure.rv_frozen at 0x7f44b8ec1d60&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># draw 10 random samples from X</span>
-<span class="n">rvU</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.37454012, 0.95071431, 0.73199394, 0.59865848, 0.15601864,
-       0.15599452, 0.05808361, 0.86617615, 0.60111501, 0.70807258])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the probability density function (pdf) of the random variable X</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
-<span class="n">fU</span> <span class="o">=</span> <span class="n">rvU</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">fU</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Probability density function $f_X$ for the uniform distribution between 0 and 1&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/24_continuous_prob_distr_11_0.png" src="../_images/24_continuous_prob_distr_11_0.png" />
-</div>
-</div>
-</section>
-<section id="normal-probability-distribution">
-<h2>Normal probability distribution<a class="headerlink" href="#normal-probability-distribution" title="Permalink to this headline">#</a></h2>
-<p>A random variable <span class="math notranslate nohighlight">\(N\)</span> with a <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a>
-<span class="math notranslate nohighlight">\(\mathcal{N}(\mu,\sigma)\)</span> is described by the probability density function:
-$<span class="math notranslate nohighlight">\( \Large
-    p_N(n) = \tfrac{1}{\sigma\sqrt{2\pi}} e^{\small -\tfrac{(n-\mu)^2}{2\sigma^2}}.
-\)</span><span class="math notranslate nohighlight">\(
-The mean \)</span>\mu<span class="math notranslate nohighlight">\( and the standard deviation \)</span>\sigma<span class="math notranslate nohighlight">\( are called the parameters of the distribution.
-The math notation \)</span>\mathcal{N}(\mu, \sigma)$ is used to describe the whole family of normal probability distributions.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
-
-<span class="c1"># 1. choose the parameters:</span>
-<span class="n">mean</span> <span class="o">=</span> <span class="mi">1000</span>   <span class="c1"># 𝜇 (mu)    = where is its center?</span>
-<span class="n">std</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># 𝜎 (sigma) = how spread out is it?</span>
-
-<span class="c1"># 2. create a normal random variable</span>
-<span class="n">rvN</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
-
-<span class="c1"># 3. plot it&#39;s probability density function (pdf)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">rvN</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.999</span><span class="p">),</span> <span class="mi">10000</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">rvN</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Probability density for the normal distribution $\mathcal</span><span class="si">{N}</span><span class="s1">(&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">std</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)$&#39;</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">1700</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">1700</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.006</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/24_continuous_prob_distr_13_0.png" src="../_images/24_continuous_prob_distr_13_0.png" />
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -699,20 +555,6 @@ The math notation \)</span>\mathcal{N}(\mu, \sigma)$ is used to describe the who
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="23_discrete_prob_distr.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Section 2.3 — Discrete probability distributions</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="25_random_samples.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Section 2.5 — Probability models for random samples</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
