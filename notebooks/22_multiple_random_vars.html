@@ -54,6 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Section 2.3 — Inventory of discrete distributions" href="23_inventory_discrete_dists.html" />
+    <link rel="prev" title="Section 2.1 — Discrete random variables" href="21_discrete_random_vars.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../stats_overview/00_Introduction.html">
    Statistics overview
@@ -173,16 +175,51 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="20_PROB.html">
    Chapter 2 — Probability theory
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="21_discrete_random_vars.html">
+     Section 2.1 — Discrete random variables
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Section 2.2 — Multiple random variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="23_inventory_discrete_dists.html">
+     Section 2.3 — Inventory of discrete distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="24_calculus_prerequisites.html">
+     Section 2.4 — Calculus prerequisites
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="25_continuous_random_vars.html">
+     Section 2.5 — Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="26_inventory_continuous_dists.html">
+     Section 2.6 — Inventory of continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="27_random_samples.html">
+     Section 2.7 — Probability models for random samples
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -832,7 +869,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0006784909393334893
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0006784909393334898
 </pre></div>
 </div>
 </div>
@@ -1081,7 +1118,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7f027c6f9520&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7f1d2782e580&gt;
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_39_1.png" src="../_images/22_multiple_random_vars_39_1.png" />
@@ -1152,7 +1189,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f027f0f0fa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f1d644990a0&gt;
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_47_1.png" src="../_images/22_multiple_random_vars_47_1.png" />
@@ -1419,7 +1456,7 @@ and the current bottling process only produces “up to spec” bottles only …
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f027c4fbdf0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f1d2758ce80&gt;
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_57_1.png" src="../_images/22_multiple_random_vars_57_1.png" />
@@ -1432,7 +1469,7 @@ and the current bottling process only produces “up to spec” bottles only …
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f027c56c6d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f1d2a1c44c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_58_1.png" src="../_images/22_multiple_random_vars_58_1.png" />
@@ -1461,7 +1498,7 @@ and the current bottling process only produces “up to spec” bottles only …
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7f027930ed90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7f1d2a376700&gt;
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_61_1.png" src="../_images/22_multiple_random_vars_61_1.png" />
@@ -1476,7 +1513,7 @@ and the current bottling process only produces “up to spec” bottles only …
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7f02792a1c40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7f1d2431d550&gt;
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_62_1.png" src="../_images/22_multiple_random_vars_62_1.png" />
@@ -1490,7 +1527,7 @@ and the current bottling process only produces “up to spec” bottles only …
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f0279144160&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f1d242191c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_63_1.png" src="../_images/22_multiple_random_vars_63_1.png" />
@@ -1969,7 +2006,7 @@ and the current bottling process only produces “up to spec” bottles only …
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f0278811bb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1d1d8d9310&gt;]
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_88_1.png" src="../_images/22_multiple_random_vars_88_1.png" />
@@ -1993,7 +2030,7 @@ and the current bottling process only produces “up to spec” bottles only …
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7f0278e93ac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7f1d1d98f2e0&gt;
 </pre></div>
 </div>
 <img alt="../_images/22_multiple_random_vars_89_1.png" src="../_images/22_multiple_random_vars_89_1.png" />
@@ -2396,6 +2433,20 @@ and the current bottling process only produces “up to spec” bottles only …
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="21_discrete_random_vars.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Section 2.1 — Discrete random variables</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="23_inventory_discrete_dists.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Section 2.3 — Inventory of discrete distributions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
